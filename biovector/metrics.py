@@ -152,4 +152,3 @@ if __name__ == '__main__':
     #S,*trash = import_data()
     #print('Weird K rebuild') #to remove
     #update_K(S,st1=0,st2=0) #to remove
-
