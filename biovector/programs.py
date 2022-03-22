@@ -8,6 +8,16 @@ with open('../data/config.yaml','r') as file:
 #531
 W531 = '531'
 primary531 = ['S00','P10.0','P01.00','H00.0']
+class W531:
+    def __init__(self,week,movement):
+        self.movement = movement
+        self.week = int(week)
+        with open('../data/programs/531.yaml','r') as file:
+            self.config = yaml.safe_load(file)
+        self.TM = config['training_max'] 
+
+    def give_numbers(self,week,movement):
+        return [self.TM[movement]*i/100 for i in self.config[movement][week-1]]
 
 # PPL2.0
 PPL2 = 'PPL 2.0'
