@@ -49,3 +49,19 @@ ___
 Finally, a last useful metric is the volume index, which normalises by $m^{\frac{2}{3}}$ ([see  article](https://www.researchgate.net/profile/Guy-Haff/publication/239731099_Quantifying_Workloads_in_Resistance_Training_A_Brief_Review/links/02e7e51ca383fafe13000000/Quantifying-Workloads-in-Resistance-Training-A-Brief-Review.pdf) to account for weight changes or to compare different lifters. This can be done with either the Standardized Volume $\Psi$ or the Hard Set Volume $\Phi$
 
 $I_S = \Psi m^{-\frac{2}{3}}$ and $I_H = \Phi m^{-\frac{2}{3}}$
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>MathJax example</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+<p>
+  When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+  \[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]
+</p>
+</body>
