@@ -46,19 +46,19 @@ class Workout:
         self.all_K = metrics.import_data()[3]
         self.summary = pd.DataFrame({i:[] for i in list(self.all_S.columns)})
         self.BW = self.all_W.loc[len(self.all_W)-1,'Weight']
-        if self.program == 'free': 
+        if self.program == 'free':
             self.number = 0
         else:
             self.number = int(max(list(self.all_S.loc[:,'Number'])) + 1)
         self.exercise = None
         self.weight = None
-        self.status = 'active' 
+        self.status = 'active'
         self.template = None
         for i in [t+n for t in [str(i) for i in range(1,7)] for n in 'ABC']:
             if i in self.name:
                 self.week,self.L = i
                 self.template = programs.Monolith(self.week,self.L)
-    
+
     def take_input(self, user_input):
         exercise, weight, reps, note, status = self.translate(user_input)
         if status: self.status = status #if status='end' it quits
@@ -69,7 +69,7 @@ class Workout:
             if self.exercise != copy: self.weight = None
             if weight or weight==0: self.weight = float(weight)
             if self.weight == None: self.weight = 0
-            if reps and self.exercise and (self.weight or self.weight == 0): 
+            if reps and self.exercise and (self.weight or self.weight == 0):
                 self.add_set(self.weight,int(reps),note)
             self.print_summary()
         if self.status == 'help':
@@ -80,18 +80,18 @@ class Workout:
             try: self.program_print(note[0],note[1])
             except: pass
             try: self.program_print(self.week,self.L)
-            except: pass 
+            except: pass
         if self.status == 'todo':
-            print(self.template.show_todo(self.summary))    
+            print(self.template.show_todo(self.summary))
         if self.status == 'redo':
             self.redo(note)
             self.print_summary()
 
     def program_print(self,week,L):
         print(programs.Monolith(week,L))
-    
+
     def save(self,strg):
-        if strg != 'n': 
+        if strg != 'n':
             metrics.export_data(S=self.all_S)
         if self.number != 0:
             self.all_K = self.all_K.append(pd.DataFrame({'Number':[self.number],
@@ -101,7 +101,7 @@ class Workout:
                                                          'Load':[sum(list(self.summary.loc[:,'Load']))],
                                                          'Hardload':[sum(list(self.summary.loc[:,'phi']))]}),ignore_index=True)
             metrics.export_data(K=self.all_K)
-    
+
     def translate(self, strg):
         '''returns (exercise,weight,reps,note,status)'''
 #        # /
@@ -155,7 +155,7 @@ class Workout:
             self.all_S = self.all_S.iloc[:-n,:]
             self.summary = self.summary.iloc[:-n,:]
             self.exercise = Exercise(self.exercise.ID)
-    
+
     def print_summary(self):
         duration = str(datetime.datetime.now() - self.startingtime)[:-7]
         Phi = int(sum(list(self.summary['phi'])))
@@ -163,11 +163,11 @@ class Workout:
         print('*'*70,'\n')
         print("{:^20}\n{:^20}\n{:^20}\n{:^20}\n{:^20}\n{:^20}\n{:^20}".format(self.name, self.number,self.program, self.start, duration, str(Phi)+' kg-m', str(H)+' hard sets'))
         print('{:^20}{:<7}{:<3} {:<4} {:<4}  {:<4} {:<5} {:<2}'.format('', 'W', 'R', '1RM', 'Best', '1RL', 'I', 'h'))
-        for i in range(len(self.summary)): 
-            exo, reps, weight, rm, predrm, predrl, its, h = self.summary.loc[i,'Exercise Name'], self.summary.loc[i,'Reps'], self.summary.loc[i,'Weight'], self.summary.loc[i,'1RM'], self.summary.loc[i,'Pred1RM'], self.summary.loc[i,'Pred1RL'], self.summary.loc[i,'Int'], self.summary.loc[i,'h'] 
+        for i in range(len(self.summary)):
+            exo, reps, weight, rm, predrm, predrl, its, h = self.summary.loc[i,'Exercise Name'], self.summary.loc[i,'Reps'], self.summary.loc[i,'Weight'], self.summary.loc[i,'1RM'], self.summary.loc[i,'Pred1RM'], self.summary.loc[i,'Pred1RL'], self.summary.loc[i,'Int'], self.summary.loc[i,'h']
             print("{:^20}{:<7}{:<3} {:<4} {:<4}  {:<4} {:<4.0%} {:<2}".format(exo,weight, int(reps), round(predrm), round(rm), round(predrl), its, round(h,1)))
         print('*'*70)
-            
+
     def choose_exercise(self,name):
         if name in list(self.all_X['ID']):
             self.exercise = Exercise(name)
@@ -177,7 +177,7 @@ class Workout:
         if name in list(self.all_X['Exercise']):
             index = self.all_X[self.all_X['Exercise'] == name].index.tolist()[0]
             self.exercise = Exercise(self.all_X.loc[index,'ID'])
-    
+
     def redo(self,note):
         delay = 0
         try: to_add = self.summary.loc[len(self.summary)-note:]
@@ -220,11 +220,11 @@ class Workout:
         if note: set_dic['Notes'].append(note)
         else: set_dic['Notes'].append('')
         self.all_S = self.all_S.append(pd.DataFrame(set_dic),ignore_index=True)
-        self.summary = self.summary.append(pd.DataFrame(set_dic),ignore_index=True) 
+        self.summary = self.summary.append(pd.DataFrame(set_dic),ignore_index=True)
         self.exercise.cur_S = self.all_S[self.all_S['ID'] == self.exercise.ID]
         self.exercise.est1RM = max(list(self.exercise.cur_S['Pred1RM']))
         self.exercise.est1RL = max(list(self.exercise.cur_S['Pred1RL']))
         self.summary.to_csv('../data/.swap.csv',index=False)
-        
+
 if __name__ == '__main__':
-    list_exercises('C')
+    list_exercises(sys.argv[1].upper())

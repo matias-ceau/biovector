@@ -1,40 +1,25 @@
-import metrics, programs, workout
-import os, sys, numpy as np, pandas as pd
+import argparse
 
-##### ARGS ####################################################################
-#if len sys.argv
-#########################################################################
 
-# OPEN APP #########################################################################
-while True:
-    menu = input('[W]orkout\n[S]tats\n[I]nfo\n[U]pdate\n[Q]uit\n'+50*'*'+'\n')
-    
-# WORKOUT #########################################################################
-    if menu == 'w':
-        work = input('[C]ontinue program\n[N]ew program\n[F]ree workout\n'+50*'*'+'\n')#            
-        if work in 'cnf':
-            W = workout.Workout(input('Workout Name ?\n'),work)
-            while W.status != 'end': W.take_input(input())
-            if W.status == 'end': W.save(input('Save?\n[Yes]\n[N]o\n'+50*'*'+'\n'))
-# STATS (will open GUI) #########################################################################
-    if menu == 's':
-        while True:
-            stats = input('[B]asic\n[G]UI\n[Q]uit\n'+50*'*'+'\n')
-            if stats == 'q': break
-# INFO #########################################################################
-    if menu == 'i':
-        while True:
-            print(os.system('cat ../data/sets.csv | tail -20'))
-            info = input('info')
-            if info == 'q': break
-# UPDATE #########################################################################
-    if menu == 'u':
-        while True:
-            update = input('Update all?\nAdd [W]eight\n[Y]es\n[Q]uit\n'+50*'*'+'\n')
-            if update == 'w' : metrics.input_weight(input('weight?\n')) ; print(metrics.import_data()[2].tail())
-            if update == 'y': metrics.update_all()
-            if update == 'q': break
-    
-##### QUIT ####################################################################   
-    if menu == 'q':
-        break
+parser = argparse.ArgumentParser(prog=('biovector'),
+                                 description='biovector',
+                                 epilog='this is the epilog')
+parser.add_argument('cmd',choices = [1,2],nargs='?',default='ls')
+parser.add_argument('-i', '--ID',nargs='+', type=int)
+parser.add_argument('-C','--category')
+parser.add_argument('-N','--name',nargs='+')
+parser.add_argument('-I','--instrument',nargs='+')
+parser.add_argument('-t','--tags',nargs='+')
+parser.add_argument('-d','--description',nargs='*') #nargs???
+parser.add_argument('-l','--links',nargs='+')
+parser.add_argument('-f','--file')
+parser.add_argument('-p','--priority')
+parser.add_argument('--verbose', '-v', action='count', default=0)
+parser.add_argument('-s','--status', type=int)
+parser.add_argument('-g', '--goal',type=int)
+parser.add_argument('-u','--urg')
+parser.add_argument('--created')
+parser.add_argument('--log')
+parser.add_argument('--count',type=int)
+
+a = parser.parse_args()

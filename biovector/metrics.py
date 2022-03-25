@@ -41,7 +41,7 @@ def update_BW(W,S,start=0,end='end'):
                     ratio = (W.loc[t+1,'Time'] - S.loc[i,'Timestamp'])/(W.loc[t+1,'Time'] -  W.loc[t,'Time'])
                     weight_delta = (W.loc[t+1,'Weight'] -  W.loc[t,'Weight']) * ratio
                     S.loc[i,'User Weight'] = W.loc[t,'Weight'] + weight_delta
-        
+
 # Load
 # Might change (exercise) to ID
 def update_load(X,S,start=0,end='end'):
@@ -60,7 +60,7 @@ def update_1RL(S,start=0,end='end'):
     for i in range(start,end):
         S.loc[i,'Pred1RL'] = epley(S.loc[i,'Load']/S.loc[i,'Reps'],S.loc[i,'Reps'])
 
-    
+
 # find recent 1RL and 1RM
 def find_1RL_1RM(S,start=0,end='end'):
     '''Finds current 1RL 1RM'''
@@ -71,17 +71,17 @@ def find_1RL_1RM(S,start=0,end='end'):
             if S.loc[i,'Exercise Name'] == x:
                 S.loc[i,'1RL'] = np.array(df.loc[:i,'Pred1RL']).max()
                 S.loc[i,'1RM'] = np.array(df.loc[:i,'Pred1RM']).max()
-                
+
 def update_intensity(S,start=0,end='end'):
     if end == 'end': end = len(S)
     for i in range(start,end):
         S.loc[i,'Int'] = S.loc[i,'Pred1RL']/S.loc[i,'1RL']
-        
+
 def update_h(S,start=0,end='end'):
     if end == 'end': end = len(S)
     for i in range(start,end):
         S.loc[i,'h'] = logistic(S.loc[i,'Int'])
-        
+
 def update_phi(S,start=0,end='end'):
     if end == 'end': end = len(S)
     for i in range(start,end):
@@ -93,19 +93,6 @@ def logistic(x):
 def epley(weight,reps):
     return weight*(1+ reps/30)
 
-def update_K(S,st1=0,st2=0):
-    '''Not in use in main at the moment'''
-    nb = list(set(S['Number'])) ; nb.sort() ; emp = len(nb)*[0]
-    K = pd.DataFrame({'Number':nb,'Timestamp':emp,'Date':emp,'Hardsets':emp,'Load':emp,'Hardload':emp,'Notes':emp})
-    for i in range(st1,len(S)):
-        for j in range(st2,len(K)):
-            if S.loc[i,'Number'] == K.loc[j,'Number']:
-                K.loc[j,'Timestamp'] = S.loc[i,'Timestamp']
-                K.loc[j,'Date'] = S.loc[i,'Time']
-                K.loc[j,'Hardsets'] += S.loc[i,'h']
-                K.loc[j,'Load'] += S.loc[i,'Load']
-                K.loc[j,'Hardload'] += S.loc[i,'phi']
-    export_data(K=K)
 ###################################################################""
 def update_all():
     S,X,W,K = import_data()
@@ -137,7 +124,7 @@ def update_all():
 def input_weight(string):
     D = import_data()[2]
     W = {k:list(D[k]) for k in D.columns}
-    try: 
+    try:
         weight = float(string)
         print('weight is ok')
         W['Date'].append(str(datetime.datetime.now())[:-7])
