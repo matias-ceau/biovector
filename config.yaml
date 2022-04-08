@@ -1,0 +1,11 @@
+data:
+    sets:       '../data/sets.csv'
+    workouts:   '../data/stats/workouts.csv'
+    weight:     '../data/measures/weight.csv'
+    exercises:  '../data/exercises.csv'
+
+training_max:
+  S00: 116
+  H00.0: 141
+  P10.0: 57
+  P01.00: 91

@@ -1,9 +1,9 @@
 import pandas as pd, numpy as np
-import metrics
+import bv_utils
 import datetime
 
 def sel_1RM_finder(d,start=0,end='end',e=1):
-    sets = metrics.import_data()[0]
+    sets = bv_utils.import_data()[0]
     if end=='end':end=len(sets)
     k = (datetime.datetime.now()-datetime.timedelta(days = d)).timestamp()
     while end-start>e:

@@ -1,4 +1,4 @@
-import metrics, programs, workout
+import bv_utils,  workout
 import os, sys, numpy as np, pandas as pd
 
 ##### ARGS ####################################################################
@@ -7,7 +7,7 @@ import os, sys, numpy as np, pandas as pd
 
 # OPEN APP #########################################################################
 def main():
-    """Launch interactive mode"""
+    """Launch interactive mode."""
     while True:
         menu = input('[W]orkout\n[S]tats\n[I]nfo\n[U]pdate\n[Q]uit\n'+50*'*'+'\n')
 
@@ -33,8 +33,8 @@ def main():
         if menu == 'u':
             while True:
                 update = input('Update all?\nAdd [W]eight\n[Y]es\n[Q]uit\n'+50*'*'+'\n')
-                if update == 'w' : metrics.input_weight(input('weight?\n')) ; print(metrics.import_data()[2].tail())
-                if update == 'y': metrics.update_all()
+                if update == 'w' : bv_utils.Biovector(selected='weight').input_weight(input('weight?\n'))
+                if update == 'y': bv_utils.Updater().update_all()
                 if update == 'q': break
 
     ##### QUIT ####################################################################
