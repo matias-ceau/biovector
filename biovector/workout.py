@@ -1,5 +1,5 @@
 import os, sys, numpy as np, pandas as pd, datetime
-import stats, bv_utils
+import stats, bv_utils, printbv
 from bv_utils import Biovector
 
 
@@ -13,7 +13,7 @@ class Exercise(Biovector):
         self.exercise_data = self.exercises[self.exercises['ID'] == ID] #exercise data
         self.name = list(self.exercise_data['Exercise'])[0]
         self.Delta = list(self.exercise_data['Delta'])[0]
-        self.kappa = list(self.exercises_data['rho'])[0] * list(self.exercises_data['theta'])[0]
+        self.kappa = list(self.exercise_data['rho'])[0] * list(self.exercise_data['theta'])[0]
         self.Short = list(self.exercise_data['Short'])[0]
         self.est1RM = max(list(self.exercise_history['Pred1RM'])+[0])
         self.est1RL = max(list(self.exercise_history['Pred1RL'])+[0])
@@ -32,10 +32,6 @@ class Workout(Biovector):
         else:
             self.startingtime = datetime.datetime.now()
         self.start = self.startingtime.strftime("%Y-%m-%d %H:%M:%S")
-        # self.sets = bv_utils.import_data()[0]
-        # self.exercises = bv_utils.import_data()[1]
-        # self.weight = bv_utils.import_data()[2]
-        # self.workouts = bv_utils.import_data()[3]
         self.summary = pd.DataFrame({i:[] for i in list(self.sets.columns)})
         self.BW = self.weight.loc[len(self.weight)-1,'Weight']
         if self.program == 'free':
@@ -85,49 +81,10 @@ class Workout(Biovector):
                                'Date':      [self.startingtime],
                                'Hardsets':  [sum(list(self.summary.loc[:,'h']))],
                                'Load':      [sum(list(self.summary.loc[:,'Load']))],
-                               'Hardload':  [sum(list(self.summary.loc[:,'phi']))]},ignore_index=True)
+                               'Hardload':  [sum(list(self.summary.loc[:,'phi']))]})
             self.workouts = pd.concat((self.workouts,df),ignore_index=True)
             # bv_utils.export_data(K=self.workouts)
             self.export('workouts')
-
-    # def translate(self, strg):
-    #     '''returns (exercise,weight,reps,note,status)'''
-    #     if '@' in strg:
-    #         try: return (None,None,None,strg.split('@')[-1],'template')
-    #         except: return (None,None,None,None,'template')
-    #     # $
-    #     if '$' in strg: return (None,None,None,None,'todo')
-    #     # redo
-    #     if '!' in strg:
-    #         try: note = int(strg.split('!')[0])
-    #         except: note = 1
-    #         return (None,None,None,note,'redo')
-    #     # delete
-    #     if 'delete' in strg:
-    #         try: note = strg.split('delete')[1]
-    #         except: note = 1
-    #         return (None,None,None,note,'delete')
-    #     # help
-    #     if 'help' in strg:
-    #         try: note = strg.split('help')[1]
-    #         except: note = None
-    #         return (None,None,None,note,'help')
-    #     # quit
-    #     if 'quit' in strg: return (None,None,None,None,'end') # help
-    #     # set
-    #     s = strg.split(' ')
-    #     if len(s) == 3:
-    #         try: return (s[0],float(s[1]),int(s[2]),None,'active')
-    #         except: pass
-    #     if len(s) == 2:
-    #         try: return (None,float(s[0]),int(s[1]),None,'active')
-    #         except: pass
-    #         try: return (s[0],None,int(s[1]),None,'active')
-    #         except: pass
-    #     if len(s) == 1:
-    #         if s[0].isdigit(): return (None,None,int(s[0]),None,'active')
-    #         else: return (s[0],None,None,None,'active')
-    #     return(None,None,None,None,None)
 
     def delete_set(self,n=1):
         try: n = int(n)
@@ -140,16 +97,7 @@ class Workout(Biovector):
             self.exercise = Exercise(self.exercise.ID)
 
     def print_summary(self):
-        duration = str(datetime.datetime.now() - self.startingtime)[:-7]
-        Phi = int(sum(list(self.summary['phi'])))
-        H = round(sum(list(self.summary['h'])),1)
-        print('*'*70,'\n')
-        print("{:^20}\n{:^20}\n{:^20}\n{:^20}\n{:^20}\n{:^20}\n{:^20}".format(self.name, self.number,self.program, self.start, duration, str(Phi)+' kg-m', str(H)+' hard sets'))
-        print('{:^20}{:<7}{:<3} {:<4} {:<4}  {:<4} {:<5} {:<2}'.format('', 'W', 'R', '1RM', 'Best', '1RL', 'I', 'h'))
-        for i in range(len(self.summary)):
-            exo, reps, weight, rm, predrm, predrl, its, h = self.summary.loc[i,'Exercise Name'], self.summary.loc[i,'Reps'], self.summary.loc[i,'Weight'], self.summary.loc[i,'1RM'], self.summary.loc[i,'Pred1RM'], self.summary.loc[i,'Pred1RL'], self.summary.loc[i,'Int'], self.summary.loc[i,'h']
-            print("{:^20}{:<7}{:<3} {:<4} {:<4}  {:<4} {:<4.0%} {:<2}".format(exo,weight, int(reps), round(predrm), round(rm), round(predrl), its, round(h,1)))
-        print('*'*70)
+        printbv.print_summary(self.summary)
 
     def choose_exercise(self,name):
         if name in list(self.exercises['ID']):
@@ -174,11 +122,11 @@ class Workout(Biovector):
 
     def add_set(self, weight,reps,note,delay=0):
         set_dic = {i:[] for i in list(self.sets.columns)}
-        load = (self.exercise.Delta*weight+self.BW*self.exercise.kappa)*reps
+        load = round((self.exercise.Delta*weight+self.BW*self.exercise.kappa)*reps)
         if self.exercise.est1RL:
-            intensity = bv_utils.epley(load/reps,reps) / self.exercise.est1RL
+            intensity = round(bv_utils.epley(load/reps,reps) / self.exercise.est1RL,2)
         else: intensity = 1
-        h = bv_utils.logistic(intensity)
+        h = round(bv_utils.logistic(intensity),2)
         if self.program =='fileadd':
             set_dic['Timestamp'].append(self.startingtime+delay)
         else:
@@ -192,9 +140,9 @@ class Workout(Biovector):
         set_dic['Weight'].append(weight)
         set_dic['Reps'].append(reps)
         set_dic['User Weight'].append(self.BW)
-        set_dic['Pred1RL'].append(bv_utils.epley(load/reps,reps))
+        set_dic['Pred1RL'].append(round(bv_utils.epley(load/reps,reps)))
         set_dic['1RL'].append(self.exercise.est1RL)
-        set_dic['Pred1RM'].append(bv_utils.epley(weight,reps))
+        set_dic['Pred1RM'].append(round(bv_utils.epley(weight,reps)))
         set_dic['1RM'].append(self.exercise.est1RM)
         set_dic['Int'].append(intensity)
         set_dic['h'].append(h)
@@ -209,5 +157,5 @@ class Workout(Biovector):
         self.exercise.est1RL = max(list(self.exercise.exercise_history['Pred1RL']))
         self.summary.to_csv('../data/.swap.csv',index=False)
 
-if __name__ == '__main__':
-    bv_utils.list_exercises(sys.argv[1].upper())
+# if __name__ == '__main__':
+#     bv_utils.list_exercises(sys.argv[1].upper())

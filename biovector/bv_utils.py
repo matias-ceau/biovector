@@ -91,22 +91,19 @@ class Updater(Biovector):
         print(f'Update took {datetime.datetime.now().timestamp() - timer_start} seconds.')
 
 
-    def update_1RM(self,start=0,end='end'):
+    def update_1RM(self):
         """Update 1RM in sets."""
-        if end == 'end': end = len(self.sets)
-        weights = self.sets['Weight']
-        reps = self.sets['Reps']
-        self.sets['Pred1RM'] = np.around(epley(weights,reps),2)
+        self.sets['Pred1RM'] = np.around(epley(self.sets['Weight'], self.sets['Reps']))
 
     # Body weight
-    def update_BW(self,start=0,end='end'):
+    def update_BW(self):
         """Estimate weight based on data in weight.csv."""
         interpolation = np.interp(self.sets['Timestamp'], self.weight['Time'], self.weight['Weight'])
-        self.sets['Weight'] = np.around(interpolation,2)
+        self.sets['User Weight'] = np.around(interpolation,1)
 
     # Load
     # Might change (exercise) to ID
-    def update_load(self,start=0,end='end'):
+    def update_load(self):
         """Update loads."""
         #if end == 'end': end = len(self.sets)
         deltadic = {k:v for k,v in zip(self.exercises['ID'].values,self.exercises['Delta'].values)}
@@ -118,7 +115,7 @@ class Updater(Biovector):
         weights      = self.sets['Weight'].values
         reps         = self.sets['Reps'].values
         user_weights = self.sets['User Weight'].values
-        self.sets['Load'] = (weights*deltas + user_weights*rhos*thetas) * reps
+        self.sets['Load'] = np.around((weights*deltas + user_weights*rhos*thetas) * reps)
         # for i in range(len(self.exercises)):
         #     Delta = self.exercises.loc[i,'Delta']
         #     kappa = self.exercises.loc[i,'theta']*self.exercises.loc[i,'rho']
@@ -126,52 +123,53 @@ class Updater(Biovector):
         #         if self.sets.loc[s,'Exercise Name'] == self.exercises.loc[i,'Exercise']:
         #             self.sets.loc[s,'Load'] = (self.sets.loc[s,'Weight']*Delta + self.sets.loc[s,'User Weight']*kappa) * self.sets.loc[s,'Reps']
 
-    def update_1RL(self,start=0,end='end'):
+    def update_1RL(self):
         """Update 1RL."""
         # if end == 'end': end = len(self.sets)
         # for i in range(start,end):
         #     self.sets.loc[i,'Pred1RL'] = epley(self.sets.loc[i,'Load']/self.sets.loc[i,'Reps'],self.sets.loc[i,'Reps'])
-        loads = self.sets['Load']
-        reps = self.sets['Reps']
-        self.sets['Pred1RL'] = np.around(epley(loads/reps,reps),2)
+        self.sets['Pred1RL'] = np.around(epley(self.sets['Load']/self.sets['Reps'],self.sets['Reps']))
 
-    # find recent 1RL and 1RM
-    def find_1RL_1RM(self,start=0,end='end'):
+    # find recent 1RL and 1RM #here
+    def find_1RL_1RM(self):
         """Find current 1RL 1RM."""
-        if end == 'end': end = len(self.sets)
-        for x in set(self.sets['Exercise Name']):
-            df = self.sets[self.sets['Exercise Name'] == x]
-            for i in range(start,end):
-                if self.sets.loc[i,'Exercise Name'] == x:
-                    self.sets.loc[i,'1RL'] = np.array(df.loc[:i,'Pred1RL']).max()
-                    self.sets.loc[i,'1RM'] = np.array(df.loc[:i,'Pred1RM']).max()
+        # if end == 'end': end = len(self.sets)
+        # for x in set(self.sets['Exercise Name']):
+        #     df = self.sets[self.sets['Exercise Name'] == x]
+        #     for i in range(start,end):
+        #         if self.sets.loc[i,'Exercise Name'] == x:
+        #             self.sets.loc[i,'1RL'] = np.array(df.loc[:i,'Pred1RL']).max()
+        #             self.sets.loc[i,'1RM'] = np.array(df.loc[:i,'Pred1RM']).max()
+        all_exercises = set(self.sets['Exercise Name'])
+        for write,read in [('1RL','Pred1RL'),('1RM','Pred1RM')]:
+            dic = {x : pd.Series(self.sets[self.sets['Exercise Name']==x][read].values,index=self.sets[self.sets['Exercise Name']==x].index) for x in all_exercises}
+            for x,d in dic.items():
+                dic[x] = pd.Series([d.values[0]] +[max(d.values[:i]) for i in range(1,len(d))],index=d.index)
+            a = pd.concat([v for k,v in dic.items()]).sort_index()
+            self.sets.loc[a.index, write] = np.around(a.values)
 
-    def update_intensity(self,start=0,end='end'):
+    def update_intensity(self):
         """Update intensity."""
-        if end == 'end': end = len(self.sets)
-        for i in range(start,end):
-            self.sets.loc[i,'Int'] = self.sets.loc[i,'Pred1RL']/self.sets.loc[i,'1RL']
+        self.sets.loc[:,'Int'] = np.around(self.sets.loc[:,'Pred1RL']/self.sets.loc[:,'1RL'],2)
 
-    def update_h(self,start=0,end='end'):
+    def update_h(self):
         """Update set hardness."""
-        if end == 'end': end = len(self.sets)
-        for i in range(start,end):
-            self.sets.loc[i,'h'] = logistic(self.sets.loc[i,'Int'])
+        self.sets.loc[:,'h'] = np.around(logistic(self.sets.loc[:,'Int']),2)
 
-    def update_phi(self,start=0,end='end'):
+    def update_phi(self):
         """Update volume of hard sets."""
-        if end == 'end': end = len(self.sets)
-        for i in range(start,end):
-            self.sets.loc[i,'phi'] = self.sets.loc[i,'Load'] * self.sets.loc[i,'h']
+        self.sets.loc[:,'phi'] = np.around(self.sets.loc[:,'Load'] * self.sets.loc[:,'h'])
 
 
 ###############################################
 
 ##########################################################
 def logistic(x):
+    """Return hard set index when inputed proportion."""
     return 1.05/(1+math.e**(-40*(x-0.75)))
 
 def epley(weight,reps):
+    """Estimate 1RM."""
     return weight*(1+ reps/30)
 
 
