@@ -1,22 +1,6 @@
 import argparse, sys
 import bv_utils,stats,workout,interactive
 
-# parser.add_argument('-i', '--ID',nargs='+', type=int)
-# parser.add_argument('-C','--category')
-# parser.add_argument('-N','--name',nargs='+')
-# parser.add_argument('-I','--instrument',nargs='+')
-# parser.add_argument('-t','--tags',nargs='+')
-# parser.add_argument('-d','--description',nargs='*') #nargs???
-# parser.add_argument('-l','--links',nargs='+')
-#
-# parser.add_argument('-p','--priority')
-
-# parser.add_argument('-s','--status', type=int)
-# parser.add_argument('-g', '--goal',type=int)
-# parser.add_argument('-u','--urg')
-# parser.add_argument('--created')
-# parser.add_argument('--log')
-# parser.add_argument('--count',type=int)
 
 class Main():
     """Main object, redirects user inputs into different modules and functions."""
@@ -29,14 +13,11 @@ class Main():
 
 {self.info}
                              ''')
-        #parser.add_argument('-g', '--global')
-        #parser.add_argument('-f','--file')
-        #parser.add_argument('--verbose', '-v', action='count', default=0)
         parser.add_argument('command', help='Subcommand to run')
         args = parser.parse_args(sys.argv[1:2])
-        if not hasattr(self, args.command):
-            print('Unrecognized command')
-            parser.print_help()
+        #if not hasattr(self, args.command):
+        #    print('Unrecognized command')
+        #    parser.print_help()
             #exit(1)
         # use dispatch pattern to invoke method with same name
         getattr(self, args.command)()

@@ -5,11 +5,12 @@ Created on Wed Apr 13 13:15:40 2022
 @author: mceau
 """
 from tabulate import tabulate
+import bv_utils
 import datetime
 import pandas as pd, numpy as np
 
 # weights = pd.read_csv('../data/measures/weight.csv')
-sets = pd.read_csv('../data/sets.csv')
+sets = bv_utils.Biovector(selected=['sets']).sets
 # exercises = pd.read_csv('../data/exercises.csv')
 
 workout = sets[sets['Number'] == 1000]

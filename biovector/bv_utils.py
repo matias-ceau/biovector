@@ -1,26 +1,27 @@
 import numpy as np, pandas as pd, math, datetime
-import yaml
-
+import yaml, os
 
 class Biovector:
 
-    with open('../config.yaml') as f:
+    ROOT_DIR = os.path.dirname(os.path.dirname(__file__))
+    CONFIG =  os.path.join(ROOT_DIR,'config.yaml')
+    with open(CONFIG) as f:
         config = yaml.load(f, Loader=yaml.FullLoader)
 
     def __init__(self,droplist=[],selected='all'):
-        if selected == 'all': selected = list(self.config['data'].keys())
-        for d,p in self.config['data'].items():
+        if selected == 'all': selected = list(self.config['paths'].keys())
+        for d,p in self.config['paths'].items():
             if (d not in droplist) & (d in selected):
-                self.__dict__[d] = pd.read_csv(p)
+                self.__dict__[d] = pd.read_csv(os.path.join(self.ROOT_DIR,p))
 
     def export(self,data):
         """Export specific or all available data."""
         if data == 'all':
-            for d in self.config['data']:
+            for d in self.config['paths']:
                 if d in self.__dict__.keys():
                     self.export(d)
-        if data in self.config['data'].keys():
-            self.__dict__[data].to_csv(self.config['data'][data], index=False)
+        if data in self.config['paths'].keys():
+            self.__dict__[data].to_csv(os.path.join(self.ROOT_DIR,self.config['paths'][data]), index=False)
 
     def input_weight(self,string):
         """Input new weight."""
