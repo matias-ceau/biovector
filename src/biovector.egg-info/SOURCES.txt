@@ -1,0 +1,25 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+src/biovector/KO_programs.py
+src/biovector/__init__.py
+src/biovector/__main__.py
+src/biovector/bv_utils.py
+src/biovector/config.yaml
+src/biovector/interactive.py
+src/biovector/printbv.py
+src/biovector/stats.py
+src/biovector/workout.py
+src/biovector.egg-info/PKG-INFO
+src/biovector.egg-info/SOURCES.txt
+src/biovector.egg-info/dependency_links.txt
+src/biovector.egg-info/requires.txt
+src/biovector.egg-info/top_level.txt
+src/biovector/data/.swap.csv
+src/biovector/data/exercises.csv
+src/biovector/data/sets (conflict 2022-04-21-01-16-13).csv
+src/biovector/data/sets.csv
+src/biovector/data/workouts.csv
+src/biovector/data/programs/531.yaml
+src/biovector/data/programs/monolith.yaml

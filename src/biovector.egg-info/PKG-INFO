@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: biovector
+Version: 0.0.0
+Summary: Scientific work out app
+Home-page: https://github.com/matias-ceau/biovector
+Author: Matias Ceau
+Author-email: matias@ceau.net
+License: GPLv3
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: Unix
+Classifier: Topic :: Scientific/Engineering
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Description-Content-Type: text/markdown
+License-File: LICENSE
