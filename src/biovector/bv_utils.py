@@ -1,5 +1,10 @@
-import numpy as np, pandas as pd, math, datetime
-import yaml, os
+import numpy as np
+import pandas as pd
+import math
+import datetime
+import yaml
+import os
+
 
 class Biovector:
 
