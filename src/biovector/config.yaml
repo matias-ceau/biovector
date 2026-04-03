@@ -1,8 +1,12 @@
 paths:
     sets:       'data/sets.csv'
-    workouts:   'data/stats/workouts.csv'
-    weight:     'data/measures/weight.csv'
+    workouts:   'data/workouts.csv'
+    weight:     'data/weight.csv'
     exercises:  'data/exercises.csv'
+    cardio:     'data/cardio.csv'
+    kettlebell: 'data/kettlebell.csv'
+    imports:    'data/imports.csv'
+    ocr_notes:  'data/ocr_notes.csv'
 
 training_max:
   S00: 116

@@ -1,5 +1,6 @@
 import argparse, sys
 import bv_utils,stats,workout,interactive
+import datetime
 
 
 class Main():
@@ -15,11 +16,10 @@ class Main():
                              ''')
         parser.add_argument('command', help='Subcommand to run')
         args = parser.parse_args(sys.argv[1:2])
-        #if not hasattr(self, args.command):
-        #    print('Unrecognized command')
-        #    parser.print_help()
-            #exit(1)
-        # use dispatch pattern to invoke method with same name
+        if not hasattr(self, args.command):
+            print('Unrecognized command')
+            parser.print_help()
+            exit(1)
         getattr(self, args.command)()
 
     def sets(self):
@@ -125,6 +125,91 @@ class Main():
         parser.add_argument('--rm')
         args = parser.parse_args(sys.argv[2:])
         print(args)
+
+    def cardio(self):
+        """Log cardio activity."""
+        parser = argparse.ArgumentParser(description=self.cardio.__doc__)
+        parser.add_argument("name")
+        parser.add_argument("--type", default="run")
+        parser.add_argument("--duration", type=int, required=True, help="Duration in seconds")
+        parser.add_argument("--distance", type=float, default=0.0, help="Distance in km")
+        parser.add_argument("--hr", type=float, default=0.0, help="Average heart rate")
+        parser.add_argument("--calories", type=float, default=0.0)
+        parser.add_argument("--notes", default="")
+        args = parser.parse_args(sys.argv[2:])
+
+        bio = bv_utils.Biovector(selected=["cardio"])
+        bio.append_record("cardio", {
+            "Timestamp": datetime.datetime.now().timestamp(),
+            "Date": str(datetime.datetime.now())[:-7],
+            "Workout Name": args.name,
+            "Type": args.type,
+            "DurationSec": args.duration,
+            "DistanceKm": args.distance,
+            "AvgHeartRate": args.hr,
+            "Calories": args.calories,
+            "Notes": args.notes,
+        })
+        print("Cardio entry added.")
+
+    def kettlebell(self):
+        """Log kettlebell activity."""
+        parser = argparse.ArgumentParser(description=self.kettlebell.__doc__)
+        parser.add_argument("name")
+        parser.add_argument("--exercise", required=True)
+        parser.add_argument("--weight", type=float, required=True, help="Weight in kg")
+        parser.add_argument("--reps", type=int, required=True)
+        parser.add_argument("--sets", type=int, default=1)
+        parser.add_argument("--style", default="standard", help="e.g. emom, amrap, ladder")
+        parser.add_argument("--duration", type=int, default=0, help="Optional duration in seconds")
+        parser.add_argument("--notes", default="")
+        args = parser.parse_args(sys.argv[2:])
+
+        bio = bv_utils.Biovector(selected=["kettlebell"])
+        bio.append_record("kettlebell", {
+            "Timestamp": datetime.datetime.now().timestamp(),
+            "Date": str(datetime.datetime.now())[:-7],
+            "Workout Name": args.name,
+            "Exercise": args.exercise,
+            "WeightKg": args.weight,
+            "Reps": args.reps,
+            "Sets": args.sets,
+            "Style": args.style,
+            "DurationSec": args.duration,
+            "Notes": args.notes,
+        })
+        print("Kettlebell entry added.")
+
+    def import_data(self):
+        """Import CSV from external source into biovector data."""
+        parser = argparse.ArgumentParser(description=self.import_data.__doc__)
+        parser.add_argument("--source", required=True, help="Source label, e.g. garmin, strava, hevy")
+        parser.add_argument("--file", required=True, help="Path to CSV file")
+        parser.add_argument("--target", required=True, choices=["cardio", "kettlebell", "sets"])
+        args = parser.parse_args(sys.argv[2:])
+
+        bio = bv_utils.Biovector(selected=[args.target, "imports"])
+        count = bio.import_records_from_csv(args.source, args.file, args.target)
+        print(f"Imported {count} rows into {args.target}.")
+
+    def ocr(self):
+        """Ingest OCR note text and classify it."""
+        parser = argparse.ArgumentParser(description=self.ocr.__doc__)
+        parser.add_argument("--source-image", required=True)
+        parser.add_argument("--text", required=True, help="OCR extracted text")
+        args = parser.parse_args(sys.argv[2:])
+
+        parsed_type, confidence = bv_utils.Biovector.parse_ocr_text(args.text)
+        bio = bv_utils.Biovector(selected=["ocr_notes"])
+        bio.add_ocr_note(
+            source_image=args.source_image,
+            raw_text=args.text,
+            parsed_type=parsed_type,
+            confidence=confidence,
+            status="pending_review",
+            notes="",
+        )
+        print(f"OCR note ingested as {parsed_type} (confidence={confidence}).")
 
 
 if __name__ == '__main__':

@@ -194,7 +194,7 @@ class Workout(Biovector):
             list(self.exercise.exercise_history['Pred1RM']))
         self.exercise.est1RL = max(
             list(self.exercise.exercise_history['Pred1RL']))
-        self.summary.to_csv('../data/.swap.csv', index=False)
+        self.summary.to_csv(bv_utils.Biovector.swap_path(), index=False)
 
 # if __name__ == '__main__':
 #     bv_utils.list_exercises(sys.argv[1].upper())

@@ -4,20 +4,179 @@ import math
 import datetime
 import yaml
 import os
+import shutil
+from pathlib import Path
 
 
 class Biovector:
 
-    ROOT_DIR = os.path.dirname(os.path.dirname(__file__))
-    CONFIG =  os.path.join(ROOT_DIR,'config.yaml')
+    PACKAGE_DIR = Path(__file__).resolve().parent
+    CONFIG = PACKAGE_DIR / "config.yaml"
+    SEED_DATA_DIR = PACKAGE_DIR / "data"
+    DATA_DIR_ENV_VAR = "BIOVECTOR_DATA_DIR"
+    DEFAULT_DATA_DIR = Path.home() / ".local" / "share" / "biovector"
     with open(CONFIG) as f:
         config = yaml.load(f, Loader=yaml.FullLoader)
 
     def __init__(self,droplist=[],selected='all'):
+        self.data_dir = self.resolve_data_dir()
+        self._bootstrap_runtime_data()
         if selected == 'all': selected = list(self.config['paths'].keys())
         for d,p in self.config['paths'].items():
             if (d not in droplist) & (d in selected):
-                self.__dict__[d] = pd.read_csv(os.path.join(self.ROOT_DIR,p))
+                self.__dict__[d] = pd.read_csv(self.dataset_path(d))
+
+    @classmethod
+    def resolve_data_dir(cls):
+        configured = os.getenv(cls.DATA_DIR_ENV_VAR)
+        path = Path(configured).expanduser() if configured else cls.DEFAULT_DATA_DIR
+        path.mkdir(parents=True, exist_ok=True)
+        return path
+
+    @classmethod
+    def dataset_path(cls, dataset_name):
+        if dataset_name not in cls.config["paths"]:
+            raise KeyError(f"Unknown dataset: {dataset_name}")
+        return cls.resolve_data_dir() / cls.config["paths"][dataset_name]
+
+    @classmethod
+    def swap_path(cls):
+        return cls.resolve_data_dir() / ".swap.csv"
+
+    def _bootstrap_runtime_data(self):
+        for dataset_name in self.config["paths"]:
+            runtime_path = self.dataset_path(dataset_name)
+            if runtime_path.exists():
+                continue
+
+            seed_path = self.SEED_DATA_DIR / self.config["paths"][dataset_name]
+            if seed_path.exists():
+                runtime_path.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(seed_path, runtime_path)
+                continue
+
+            runtime_path.parent.mkdir(parents=True, exist_ok=True)
+            if dataset_name == "weight":
+                now = datetime.datetime.now()
+                pd.DataFrame([{
+                    "Date": str(now)[:-7],
+                    "Time": now.timestamp(),
+                    "Weight": 0.0,
+                }]).to_csv(runtime_path, index=False)
+            elif dataset_name == "workouts":
+                pd.DataFrame(columns=[
+                    "Number",
+                    "Timestamp",
+                    "Date",
+                    "Hardsets",
+                    "Load",
+                    "Hardload",
+                    "Notes",
+                ]).to_csv(runtime_path, index=False)
+            elif dataset_name == "cardio":
+                pd.DataFrame(columns=[
+                    "Timestamp",
+                    "Date",
+                    "Workout Name",
+                    "Type",
+                    "DurationSec",
+                    "DistanceKm",
+                    "AvgHeartRate",
+                    "Calories",
+                    "Notes",
+                ]).to_csv(runtime_path, index=False)
+            elif dataset_name == "kettlebell":
+                pd.DataFrame(columns=[
+                    "Timestamp",
+                    "Date",
+                    "Workout Name",
+                    "Exercise",
+                    "WeightKg",
+                    "Reps",
+                    "Sets",
+                    "Style",
+                    "DurationSec",
+                    "Notes",
+                ]).to_csv(runtime_path, index=False)
+            elif dataset_name == "imports":
+                pd.DataFrame(columns=[
+                    "Timestamp",
+                    "Source",
+                    "FilePath",
+                    "ImportedRows",
+                    "Status",
+                    "Notes",
+                ]).to_csv(runtime_path, index=False)
+            elif dataset_name == "ocr_notes":
+                pd.DataFrame(columns=[
+                    "Timestamp",
+                    "SourceImage",
+                    "RawText",
+                    "ParsedType",
+                    "Confidence",
+                    "Status",
+                    "Notes",
+                ]).to_csv(runtime_path, index=False)
+            else:
+                raise FileNotFoundError(
+                    f"Missing seed data for required dataset '{dataset_name}' at {seed_path}"
+                )
+
+    def append_record(self, dataset_name, record):
+        if dataset_name not in self.config["paths"]:
+            raise KeyError(f"Unknown dataset: {dataset_name}")
+        frame = pd.read_csv(self.dataset_path(dataset_name))
+        frame = pd.concat((frame, pd.DataFrame([record])), ignore_index=True)
+        frame.to_csv(self.dataset_path(dataset_name), index=False)
+        if hasattr(self, dataset_name):
+            self.__dict__[dataset_name] = frame
+
+    def import_records_from_csv(self, source, source_path, target_dataset, mapping=None):
+        if target_dataset not in self.config["paths"]:
+            raise KeyError(f"Unknown target dataset: {target_dataset}")
+        incoming = pd.read_csv(source_path)
+        if mapping:
+            incoming = incoming.rename(columns=mapping)
+        target_path = self.dataset_path(target_dataset)
+        existing = pd.read_csv(target_path)
+        missing = [c for c in existing.columns if c not in incoming.columns]
+        for column in missing:
+            incoming[column] = np.nan
+        incoming = incoming[existing.columns]
+        merged = pd.concat((existing, incoming), ignore_index=True)
+        merged.to_csv(target_path, index=False)
+        if hasattr(self, target_dataset):
+            self.__dict__[target_dataset] = merged
+
+        self.append_record("imports", {
+            "Timestamp": datetime.datetime.now().timestamp(),
+            "Source": source,
+            "FilePath": source_path,
+            "ImportedRows": len(incoming),
+            "Status": "ok",
+            "Notes": "",
+        })
+        return len(incoming)
+
+    def add_ocr_note(self, source_image, raw_text, parsed_type="unknown", confidence=0.0, status="pending", notes=""):
+        self.append_record("ocr_notes", {
+            "Timestamp": datetime.datetime.now().timestamp(),
+            "SourceImage": source_image,
+            "RawText": raw_text,
+            "ParsedType": parsed_type,
+            "Confidence": confidence,
+            "Status": status,
+            "Notes": notes,
+        })
+
+    @staticmethod
+    def parse_ocr_text(raw_text):
+        lower = raw_text.lower()
+        if "kb" in lower or "kettlebell" in lower:
+            return "kettlebell", 0.7
+        if "km" in lower or "run" in lower or "cardio" in lower:
+            return "cardio", 0.7
+        return "unknown", 0.3
 
     def export(self,data):
         """Export specific or all available data."""
@@ -26,7 +185,7 @@ class Biovector:
                 if d in self.__dict__.keys():
                     self.export(d)
         if data in self.config['paths'].keys():
-            self.__dict__[data].to_csv(os.path.join(self.ROOT_DIR,self.config['paths'][data]), index=False)
+            self.__dict__[data].to_csv(self.dataset_path(data), index=False)
 
     def input_weight(self,string):
         """Input new weight."""

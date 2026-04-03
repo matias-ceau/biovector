@@ -16,7 +16,7 @@ setup(
     include_package_data=True,
     license='GPLv3',
     url="https://github.com/matias-ceau/biovector",
-    install_requires=['numpy','scipy','pandas','pyyaml','datetime','seaborn','matplotlib'],
+    install_requires=['numpy','scipy','pandas','pyyaml','seaborn','matplotlib'],
     classifiers=[
         "Development Status :: 4 - Beta",
         "Programming Language :: Python :: 3",

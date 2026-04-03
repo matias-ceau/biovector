@@ -26,7 +26,7 @@ def main():
     # INFO #########################################################################
         if menu == 'i':
             while True:
-                print(os.system('cat ../data/sets.csv | tail -20'))
+                print(bv_utils.Biovector(selected=['sets']).sets.tail(20))
                 info = input('info')
                 if info == 'q': break
     # UPDATE #########################################################################
