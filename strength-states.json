@@ -1,0 +1,12 @@
+{
+  "updated": "2026-04-04",
+  "next_session": "A1",
+  "FS": { "state": "S0", "load": 80 },
+  "SQ": { "state": "S0", "load": 100 },
+  "BP": { "state": "S0", "load": 90 },
+  "DL": { "state": "D0", "load": 130 },
+  "MP": { "state": "S0", "load": 60 },
+  "PC": { "state": "P0", "load": 60 },
+  "chins_target": 15,
+  "dips_target": 12
+}
