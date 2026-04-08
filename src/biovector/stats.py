@@ -1,5 +1,5 @@
 import pandas as pd, numpy as np
-import bv_utils
+from . import bv_utils
 import datetime
 
 def sel_1RM_finder(d,start=0,end='end',e=1):

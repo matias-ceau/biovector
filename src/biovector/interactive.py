@@ -1,4 +1,4 @@
-import bv_utils,  workout
+from . import bv_utils, workout
 import os, sys, numpy as np, pandas as pd
 
 ##### ARGS ####################################################################

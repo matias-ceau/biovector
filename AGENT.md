@@ -113,3 +113,21 @@ When a session is correctly logged:
 - git push is confirmed
 
 If you are unsure about any value, leave `est1RM` and `est1RL` as `0` — this is what Matias does and the system handles it.
+
+## Development workflow
+
+When developing on biovector itself:
+
+```bash
+# Install in editable mode
+uv tool install -e .
+
+# Run commands with correct data path
+BIOVECTOR_DATA_DIR=$PWD/src/biovector/data biovector viz
+BIOVECTOR_DATA_DIR=$PWD/src/biovector/data biovector update
+```
+
+Or add to your shell profile:
+```bash
+export BIOVECTOR_DATA_DIR=$HOME/ghq/github.com/matias-ceau/biovector/src/biovector/data
+```

@@ -1,6 +1,7 @@
 import argparse, sys
-import bv_utils,stats,workout,interactive
 import datetime
+
+from . import bv_utils, stats, workout, interactive
 
 
 class Main():
@@ -210,6 +211,132 @@ class Main():
             notes="",
         )
         print(f"OCR note ingested as {parsed_type} (confidence={confidence}).")
+
+    def viz(self):
+        """Generate training visualization charts."""
+        from pathlib import Path
+        import csv
+        from datetime import datetime
+        from collections import defaultdict
+        
+        import matplotlib
+        matplotlib.use('Agg')
+        import matplotlib.pyplot as plt
+        import matplotlib.dates as mdates
+        
+        PACKAGE_DIR = Path(__file__).resolve().parent
+        DATA_DIR = bv_utils.Biovector.resolve_data_dir()
+        REPORTS_DIR = PACKAGE_DIR.parent.parent / "reports"
+        REPORTS_DIR.mkdir(exist_ok=True)
+
+        def load_data():
+            workouts = []
+            workouts_path = DATA_DIR / "workouts.csv"
+            if workouts_path.exists():
+                with open(workouts_path, "r") as f:
+                    reader = csv.DictReader(f)
+                    for row in reader:
+                        try:
+                            workouts.append({
+                                "date": datetime.fromtimestamp(float(row["Timestamp"])),
+                                "hardsets": float(row["Hardsets"]),
+                                "load": float(row["Load"]),
+                                "hardload": float(row["Hardload"]),
+                            })
+                        except (ValueError, KeyError):
+                            continue
+
+            sets = []
+            sets_path = DATA_DIR / "sets.csv"
+            if sets_path.exists():
+                with open(sets_path, "r") as f:
+                    reader = csv.DictReader(f)
+                    for row in reader:
+                        try:
+                            sets.append({
+                                "date": datetime.fromtimestamp(float(row["Timestamp"])),
+                                "exercise": row["Exercise Name"],
+                                "weight": float(row["Weight"]),
+                                "load": float(row["Load"]) if row["Load"] else 0,
+                            })
+                        except (ValueError, KeyError):
+                            continue
+            return workouts, sets
+
+        print("Generating visualizations...")
+        workouts, sets = load_data()
+        print(f"Loaded {len(workouts)} workouts, {len(sets)} sets")
+
+        if not workouts:
+            print("No data to visualize.")
+            return
+
+        # Main lifts progression
+        main_lifts = ["Squat", "Deadlift", "Bench Press", "Front Squat", "Military Press"]
+        fig, axes = plt.subplots(2, 3, figsize=(15, 10))
+        axes = axes.flatten()
+        for idx, lift in enumerate(main_lifts):
+            ax = axes[idx]
+            lift_sets = [s for s in sets if s["exercise"] == lift and s["weight"] > 0]
+            if not lift_sets:
+                ax.text(0.5, 0.5, f"No data", ha="center", va="center", transform=ax.transAxes)
+                ax.set_title(lift)
+                continue
+            monthly_max = defaultdict(float)
+            for s in lift_sets:
+                month_key = s["date"].strftime("%Y-%m")
+                monthly_max[month_key] = max(monthly_max[month_key], s["weight"])
+            sorted_months = sorted(monthly_max.items())
+            dates = [datetime.strptime(m, "%Y-%m") for m, _ in sorted_months]
+            weights = [w for _, w in sorted_months]
+            ax.plot(dates, weights, marker="o", linewidth=2, markersize=4)
+            ax.set_title(f"{lift}", fontsize=12, fontweight="bold")
+            ax.set_ylabel("Weight (kg)")
+            ax.grid(True, alpha=0.3)
+            ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
+        fig.delaxes(axes[5])
+        plt.tight_layout()
+        plt.savefig(REPORTS_DIR / "main_lifts.png", dpi=150, bbox_inches="tight")
+        plt.close()
+        print(f"✓ reports/main_lifts.png")
+
+        # Volume trends
+        fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(14, 8))
+        dates = [w["date"] for w in workouts]
+        ax1.plot(dates, [w["load"] for w in workouts], marker="o", markersize=2, alpha=0.7)
+        ax1.set_title("Total Volume (Ψ)", fontsize=12, fontweight="bold")
+        ax1.set_ylabel("Load (kg·m)")
+        ax1.grid(True, alpha=0.3)
+        ax1.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
+        ax2.plot(dates, [w["hardload"] for w in workouts], marker="o", markersize=2, alpha=0.7, color="red")
+        ax2.set_title("Hard Set Volume (Φ)", fontsize=12, fontweight="bold")
+        ax2.set_ylabel("Hardload (kg·m)")
+        ax2.set_xlabel("Date")
+        ax2.grid(True, alpha=0.3)
+        ax2.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
+        plt.tight_layout()
+        plt.savefig(REPORTS_DIR / "volume_trends.png", dpi=150, bbox_inches="tight")
+        plt.close()
+        print(f"✓ reports/volume_trends.png")
+
+        # Exercise distribution
+        exercise_stats = defaultdict(lambda: {"load": 0})
+        for s in sets:
+            exercise_stats[s["exercise"]]["load"] += s["load"]
+        sorted_ex = sorted(exercise_stats.items(), key=lambda x: x[1]["load"], reverse=True)[:10]
+        fig, ax = plt.subplots(figsize=(12, 6))
+        exercises = [ex for ex, _ in sorted_ex][::-1]
+        volumes = [stats["load"] for _, stats in sorted_ex][::-1]
+        ax.barh(exercises, volumes, color="steelblue")
+        ax.set_title("Top 10 Exercises by Volume", fontsize=12, fontweight="bold")
+        ax.set_xlabel("Total Volume (kg·m)")
+        ax.grid(True, alpha=0.3, axis="x")
+        plt.tight_layout()
+        plt.savefig(REPORTS_DIR / "exercise_distribution.png", dpi=150, bbox_inches="tight")
+        plt.close()
+        print(f"✓ reports/exercise_distribution.png")
+
+        print(f"\nDone. Reports saved to: {REPORTS_DIR}")
 
 
 if __name__ == '__main__':

@@ -3,10 +3,10 @@ import sys
 import numpy as np
 import pandas as pd
 import datetime
-import stats
-import bv_utils
-import printbv
-from bv_utils import Biovector
+from . import stats
+from . import bv_utils
+from . import printbv
+from .bv_utils import Biovector
 
 
 #######################################################################################
