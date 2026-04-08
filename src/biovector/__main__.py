@@ -302,6 +302,22 @@ class Main():
         print(f"✓ reports/main_lifts.png")
 
         # Volume trends - discrete values with MA10 on secondary axis
+        # Filter outliers: remove workouts with extreme load from light weights
+        filtered_workouts = []
+        for w in workouts:
+            # Skip if load > 3 std above mean (likely light weight high rep outlier)
+            if w["load"] > 0:
+                filtered_workouts.append(w)
+        
+        if filtered_workouts:
+            loads_for_filter = [w["load"] for w in filtered_workouts]
+            mean_load = np.mean(loads_for_filter)
+            std_load = np.std(loads_for_filter)
+            threshold = mean_load + 3 * std_load
+            filtered_workouts = [w for w in filtered_workouts if w["load"] < threshold]
+        
+        workouts = filtered_workouts
+        
         fig, axes = plt.subplots(3, 1, figsize=(14, 12), sharex=True)
         
         dates = np.array([w["date"] for w in workouts])
