@@ -29,7 +29,13 @@ class Biovector:
     @classmethod
     def resolve_data_dir(cls):
         configured = os.getenv(cls.DATA_DIR_ENV_VAR)
-        path = Path(configured).expanduser() if configured else cls.DEFAULT_DATA_DIR
+        if configured:
+            path = Path(configured).expanduser()
+        elif cls.SEED_DATA_DIR.exists() and (cls.SEED_DATA_DIR / "sets.csv").exists():
+            # Use repo data if available (editable install)
+            path = cls.SEED_DATA_DIR
+        else:
+            path = cls.DEFAULT_DATA_DIR
         path.mkdir(parents=True, exist_ok=True)
         return path
 
