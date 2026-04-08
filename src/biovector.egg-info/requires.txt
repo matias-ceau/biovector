@@ -1,7 +1,3 @@
 numpy
-scipy
 pandas
-pyyaml
-datetime
-seaborn
 matplotlib

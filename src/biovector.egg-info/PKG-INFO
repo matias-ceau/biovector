@@ -1,7 +1,7 @@
-Metadata-Version: 2.1
+Metadata-Version: 2.4
 Name: biovector
-Version: 0.0.0
-Summary: Scientific work out app
+Version: 0.1.0
+Summary: Training data tracker
 Home-page: https://github.com/matias-ceau/biovector
 Author: Matias Ceau
 Author-email: matias@ceau.net
@@ -14,5 +14,28 @@ Classifier: Operating System :: Unix
 Classifier: Topic :: Scientific/Engineering
 Classifier: Intended Audience :: Science/Research
 Classifier: Intended Audience :: Developers
+Requires-Python: >=3.12
 Description-Content-Type: text/markdown
 License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+
+# biovector
+
+## Data location
+
+Biovector now keeps runtime CSV data outside the source tree.
+
+- Default runtime data directory: `~/.local/share/biovector`
+- Override with: `BIOVECTOR_DATA_DIR=/path/to/dir`
+
+On first run, Biovector bootstraps missing runtime files from packaged seed CSVs.

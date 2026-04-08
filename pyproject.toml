@@ -1,3 +1,15 @@
+[project]
+name = "biovector"
+version = "0.1.0"
+description = "Training data tracker"
+requires-python = ">=3.12"
+dynamic = ["readme", "license", "authors", "classifiers"]
+dependencies = [
+    "numpy",
+    "pandas",
+    "matplotlib",
+]
+
 [build-system]
 requires = ["setuptools>=61", "wheel"]
 build-backend = "setuptools.build_meta"
