@@ -301,33 +301,53 @@ class Main():
         plt.close()
         print(f"✓ reports/main_lifts.png")
 
-        # Volume trends - discrete values per workout
+        # Volume trends - discrete values with MA10 on secondary axis
         fig, axes = plt.subplots(3, 1, figsize=(14, 12), sharex=True)
         
-        dates = [w["date"] for w in workouts]
-        hardsets = [w["hardsets"] for w in workouts]
-        loads_t = [w["load"] / 1000 for w in workouts]  # tonne·m
-        hardloads_t = [w["hardload"] / 1000 for w in workouts]  # tonne·m
+        dates = np.array([w["date"] for w in workouts])
+        hardsets = np.array([w["hardsets"] for w in workouts])
+        loads_t = np.array([w["load"] / 1000 for w in workouts])  # tonne·m
+        hardloads_t = np.array([w["hardload"] / 1000 for w in workouts])  # tonne·m
         
-        # Hardsets (H) - count per workout
+        # Rolling average (window=10)
+        def rolling_avg(arr, window=10):
+            ret = np.cumsum(arr, dtype=float)
+            ret[window:] = ret[window:] - ret[:-window]
+            ret[:window-1] = ret[:window-1] / np.arange(1, window)
+            ret[window-1:] = ret[window-1:] / window
+            return ret
+        
+        # Hardsets (H)
         ax = axes[0]
-        ax.scatter(dates, hardsets, s=15, alpha=0.6, color="green")
+        ax.scatter(dates, hardsets, s=15, alpha=0.5, color="green", label="H")
+        ax2 = ax.twinx()
+        ax2.plot(dates, rolling_avg(hardsets), color="darkgreen", linewidth=2, label="H MA10")
+        ax2.set_ylabel("H MA10", color="darkgreen")
+        ax2.tick_params(axis='y', labelcolor="darkgreen")
         ax.set_title("Hard Sets (H) per Workout", fontsize=12, fontweight="bold")
         ax.set_ylabel("Hard Sets")
         ax.grid(True, alpha=0.3)
         ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
         
-        # Load (Ψ) - volume per workout in tonne·m
+        # Load (Ψ)
         ax = axes[1]
-        ax.scatter(dates, loads_t, s=15, alpha=0.6, color="orange")
+        ax.scatter(dates, loads_t, s=15, alpha=0.5, color="orange", label="Ψ")
+        ax2 = ax.twinx()
+        ax2.plot(dates, rolling_avg(loads_t), color="darkorange", linewidth=2, label="Ψ MA10")
+        ax2.set_ylabel("Ψ MA10 (t·m)", color="darkorange")
+        ax2.tick_params(axis='y', labelcolor="darkorange")
         ax.set_title("Volume (Ψ) per Workout", fontsize=12, fontweight="bold")
         ax.set_ylabel("Load (t·m)")
         ax.grid(True, alpha=0.3)
         ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
         
-        # Hardload (Φ) - hard set volume per workout in tonne·m
+        # Hardload (Φ)
         ax = axes[2]
-        ax.scatter(dates, hardloads_t, s=15, alpha=0.6, color="red")
+        ax.scatter(dates, hardloads_t, s=15, alpha=0.5, color="red", label="Φ")
+        ax2 = ax.twinx()
+        ax2.plot(dates, rolling_avg(hardloads_t), color="darkred", linewidth=2, label="Φ MA10")
+        ax2.set_ylabel("Φ MA10 (t·m)", color="darkred")
+        ax2.tick_params(axis='y', labelcolor="darkred")
         ax.set_title("Hard Set Volume (Φ) per Workout", fontsize=12, fontweight="bold")
         ax.set_ylabel("Hardload (t·m)")
         ax.set_xlabel("Date")
