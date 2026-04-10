@@ -1,9 +1,9 @@
 {
-  "updated": "2026-04-07",
-  "next_session": "B1",
+  "updated": "2026-04-10",
+  "next_session": "C1",
   "FS": { "state": "S0p", "load": 80 },
-  "SQ": { "state": "S0p", "load": 100 },
-  "BP": { "state": "S0p", "load": 70 },
+  "SQ": { "state": "S2", "load": 100 },
+  "BP": { "state": "S2", "load": 70 },
   "DL": { "state": "D0", "load": 130 },
   "MP": { "state": "S0", "load": 60 },
   "PC": { "state": "P0p", "load": 60 },
