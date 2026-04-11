@@ -1,106 +1,282 @@
-# Current 3-day A/B/C program
-# Started 2026-04-04 (Calibration) → A1 (04-06) → B1 (04-08) → C1 → A2 → ...
-# Cycle: A-B-C, numbered by week (A1,B1,C1 = week 1; A2,B2,C2 = week 2; ...)
+# ─────────────────────────────────────────────────────────────────────
+# Minimalist Strength Block — "Restart 2026"
+# ─────────────────────────────────────────────────────────────────────
+# Started: 2026-04-04 (Calibration)
+# Frequency: 3×/week
+# Duration: ~15 min per session
+# Goal: strength >> hypertrophy, low rep (3–10), minimalist equipment
+# Equipment: 10 kg bar, 3 pairs of 20 kg plates (130 kg cap), rack w/ safeties,
+#            bench, pull-up bar, dip station
+# BW: 103 kg (as of 2026-04-04)
+#
+# Old bests (2019–2022): DL 190, SQ 150, MP 70, FS ~100
+# ─────────────────────────────────────────────────────────────────────
 
-name: "Restart 2026"
-frequency: 3x/week
-duration: ~15 min per session
-
-# ─── Workout templates ───────────────────────────────────────────────
+# ═══════════════════════════════════════════════════════════════════
+# WORKOUT STRUCTURE
+# ═══════════════════════════════════════════════════════════════════
 
 A:
+  # Power clean goes first (degrades fastest under fatigue)
   exercises:
-    - id: T20.1    # Power Clean
-      scheme: 5x1  # 5 singles
-      notes: "Power work — explosive, full rest between singles"
-    - id: S10      # Front Squat
-      scheme: 3x3-5  # 3 sets of 3-5 reps
-      notes: "Strength — last set push for reps if feeling good"
-    - id: P01.00   # Bench Press
-      scheme: 3x1-3  # 3 sets of 1-3 reps (heavy)
-      notes: "Heavy singles/triples"
+    - id: T20.1     # Power Clean
+      role: power
+      ladder: clean  # uses clean ladder (P0–P4)
+    - id: S10       # Front Squat
+      role: main
+      ladder: main   # uses main ladder (S0–S5)
+      plus_cap: 8
+    - id: P01.00    # Bench Press
+      role: main
+      ladder: main
+      plus_cap: 8
+      notes: "A-day bench drives progression; B-day bench is support"
 
 B:
   exercises:
-    - id: S00      # Squat
-      scheme: 3x3-5  # 3 sets of 3-5 reps, last set AMRAP
-      notes: "Strength — last set push for reps"
-    - id: P01.00   # Bench Press
-      scheme: 3x3-10  # 3 sets, volume work (lighter than A)
-      notes: "Volume — lighter weight, last set AMRAP"
-    - id: T00      # Chin Up
-      scheme: 3xAMRAP  # 3 sets to near-failure
-      notes: "Bodyweight, target total from chins_target"
+    - id: S00       # Back Squat
+      role: main
+      ladder: main
+      plus_cap: 8
+    - id: P01.00    # Bench Press
+      role: support  # volume follows A-day state
+      ladder: bench_support
+    - id: T00       # Chin Up (bodyweight)
+      role: accessory
+      ladder: bw_reps
 
 C:
   exercises:
-    - id: P10.0    # Military Press
-      scheme: 3x5  # 3 sets of 5 (or AMRAP on calibration)
-      notes: "Strength work"
-    - id: H00.0    # Deadlift
-      scheme: 3x3-5  # 3 sets of 3-5 reps
-      notes: "Currently in deload — use reduced load"
-    - id: P20      # Dips
-      scheme: 3xAMRAP  # 3 sets to near-failure
-      notes: "Bodyweight, target total from dips_target"
+    - id: H00.0     # Deadlift
+      role: main
+      ladder: deadlift  # uses deadlift ladder (D0–D4)
+      plus_cap: 6
+    - id: P10.0     # Military Press
+      role: main
+      ladder: main
+      plus_cap: 7
+    - id: P20       # Dips (bodyweight)
+      role: accessory
+      ladder: bw_reps
 
-# ─── State-based progression rules ──────────────────────────────────
+# ═══════════════════════════════════════════════════════════════════
+# MAIN LADDER — FS / SQ / BP / MP
+# ═══════════════════════════════════════════════════════════════════
+# Fixed-load / rep-state system. Load changes are infrequent.
+# Rep-state changes do the work. Third set is always the + set.
 #
-# Each exercise in strength-states.json has a "state" and "load" (working weight).
-# The state determines the rep/set scheme and progression logic.
+# States:
+#   S0 = 3, 3, 3+
+#   S1 = 3, 3, 4+
+#   S2 = 3, 4, 4+
+#   S3 = 4, 4, 4+
+#   S4 = 4, 4, 5+
+#   S5 = 5, 5, 5+
 #
-# State machine:
+# Rep caps:
+#   FS / SQ / BP: cap + set at 8
+#   MP: cap + set at 7
 #
-#   S0 (base strength)
-#     Prescription: 3×5 at load
-#     Progress: If all 3×5 completed → S0p (add 2.5 kg next session)
-#     Stall: If failed 3×5 twice at same load → D0
+# Advancement (let t = target reps on + set for that state):
+#   + set < t         → repeat state
+#   + set = t or t+1  → advance 1 state
+#   + set ≥ t+2       → advance 2 states
+#   ugly/rejected set → treat as one bracket lower
 #
-#   S0p (strength progressed)
-#     Same as S0 but load was just increased
-#     Progress: If 3×5 completed → stay S0p (keep adding 2.5 kg)
-#     Stall: If failed → back to S0 at same load (retry once)
-#     Double stall: → D0
+# Load increase:
+#   When S5 reached and + set gives:
+#     FS / SQ / BP: 7+ clean reps → add load, reset to S0
+#     MP: 6+ clean reps → add load, reset to S0
 #
-#   S2 (strength phase 2)
-#     Prescription: 3×3 at load, then 1×AMRAP at 70% of load
-#     Used for exercises that have stalled on 3×5
-#     Progress: If 3×3 completed and AMRAP ≥ 8 → add 2.5 kg
-#     Stall: If failed 3×3 → D0
+# Load jumps:
+#   FS / BP / MP / PC: +10 kg total
+#   SQ / DL: +20 kg total
+
+main_ladder:
+  states:
+    S0: [3, 3, "3+"]
+    S1: [3, 3, "4+"]
+    S2: [3, 4, "4+"]
+    S3: [4, 4, "4+"]
+    S4: [4, 4, "5+"]
+    S5: [5, 5, "5+"]
+  plus_caps:
+    default: 8
+    MP: 7
+  advancement:
+    below_target: repeat
+    at_target_or_plus_1: advance_1
+    at_target_plus_2_or_more: advance_2
+  load_increase_threshold:
+    default: 7   # reps on + set at S5
+    MP: 6
+  load_jumps:
+    FS: 10
+    BP: 10
+    MP: 10
+    SQ: 20
+
+# ═══════════════════════════════════════════════════════════════════
+# DEADLIFT LADDER
+# ═══════════════════════════════════════════════════════════════════
+# Shorter ladder. No hero AMRAP deadlifts.
+# Cap + set at 6. Max advance = 1 state per session.
 #
-#   D0 (deload)
-#     Prescription: 3×5 at load × 0.85 (round to nearest 2.5)
-#     Duration: 1 session
-#     After: → S0 at deload weight (reset load)
+# States:
+#   D0 = 3, 3, 3+
+#   D1 = 3, 3, 4+
+#   D2 = 3, 4, 4+
+#   D3 = 4, 4, 4+
+#   D4 = 4, 4, 5+
 #
-#   P0 (power base)
-#     Prescription: 5×1 at load
-#     Progress: If all 5 singles clean → P0p (add 2.5 kg)
-#     Stall: If form breaks down → stay P0
+# Advancement:
+#   < target → repeat
+#   = target or +1 → advance 1 state
+#   ≥ target+2 → still only advance 1 state (capped)
 #
-#   P0p (power progressed)
-#     Same as P0 but load was just increased
-#     Progress: If 5×1 clean → keep P0p (add 2.5 kg)
-#     Stall: → P0 at same load
+# At D4, if + set = 6 clean → add +20 total, reset to D0
+
+deadlift_ladder:
+  states:
+    D0: [3, 3, "3+"]
+    D1: [3, 3, "4+"]
+    D2: [3, 4, "4+"]
+    D3: [4, 4, "4+"]
+    D4: [4, 4, "5+"]
+  plus_cap: 6
+  max_advance_per_session: 1
+  load_jump: 20
+
+# ═══════════════════════════════════════════════════════════════════
+# POWER CLEAN LADDER
+# ═══════════════════════════════════════════════════════════════════
+# No + sets. Technical quality is the only advancement criterion.
+# Every rep must be fast, sharp, technically identical.
+# If catches get messy or muscled → stay or reduce.
 #
-# Bodyweight exercises (Chins, Dips):
-#   Target is total reps across 3 sets
-#   Progress: When target reached in ≤ 3 sets → increase target by 1-2
-#   Example: chins_target=15 → sets of 7+5+3=15 → next time target=16
+# States:
+#   P0 = 5×1
+#   P1 = 6×1
+#   P2 = 4×2
+#   P3 = 5×2
+#   P4 = 6×2
 #
-# ─── Load increments ────────────────────────────────────────────────
+# At P4, if still crisp → add +10 total, reset to P0
+
+clean_ladder:
+  states:
+    P0: {sets: 5, reps: 1}
+    P1: {sets: 6, reps: 1}
+    P2: {sets: 4, reps: 2}
+    P3: {sets: 5, reps: 2}
+    P4: {sets: 6, reps: 2}
+  advancement: "only if all reps fast and technically clean"
+  load_jump: 10
+
+# ═══════════════════════════════════════════════════════════════════
+# BENCH SUPPORT (B-day bench)
+# ═══════════════════════════════════════════════════════════════════
+# B-day bench follows A-day bench state. Same load, no + set.
 #
-# Barbell exercises: +2.5 kg per progression
-# Power Clean: +5 kg per progression (or +2.5 if near limit)
-# Bodyweight: +1-2 reps on target
+#   A bench at S0 or S1 → B bench = 3×3
+#   A bench at S2 or S3 → B bench = 3×4
+#   A bench at S4 or S5 → B bench = 3×5
 #
-# ─── C1 prescription (from current states) ──────────────────────────
+# Special: during groove rebuild phase (load < programmed),
+# B bench = prescribed paused reps (e.g. 5×3 paused)
+
+bench_support:
+  mapping:
+    S0: [3, 3, 3]
+    S1: [3, 3, 3]
+    S2: [3, 4, 4]
+    S3: [3, 4, 4]
+    S4: [3, 5, 5]
+    S5: [3, 5, 5]
+
+# ═══════════════════════════════════════════════════════════════════
+# BODYWEIGHT REP-GOAL PROGRESSION — Chins / Dips
+# ═══════════════════════════════════════════════════════════════════
+# Max 3 sets. Stop each set with ≥1 rep in reserve.
+# When target total reached comfortably → raise target by +2 to +3.
 #
-# MP: S0 at 60 kg → 3×5 @ 60 kg
-#   (Calibration was 50×9, so 60 is a reasonable S0 starting point)
+# Starting targets:
+#   Chins: 15 total reps
+#   Dips: 12 total reps
+
+bw_reps:
+  max_sets: 3
+  progression_increment: [2, 3]  # raise target by 2-3 when hit
+  starting_targets:
+    chins: 15
+    dips: 12
+
+# ═══════════════════════════════════════════════════════════════════
+# STARTING LOADS (as of 2026-04-04 calibration)
+# ═══════════════════════════════════════════════════════════════════
+
+starting_loads:
+  SQ: 100   # 90×4 calibration → e1RM ~102 → program at 100
+  FS: 80    # ~0.8 × SQ
+  BP: 70    # reset from 90 (groove issue) → rebuild at 70
+  DL: 130   # conservative restart (~68% of old 190)
+  MP: 60    # 50×9 calibration → e1RM ~65 → program at 60
+  PC: 60    # 50 was too light → bumped to 60
+
+# ═══════════════════════════════════════════════════════════════════
+# CURRENT STATE (after B1, 2026-04-08)
+# ═══════════════════════════════════════════════════════════════════
+# See strength-states.json for live state.
 #
-# DL: D0 at 130 kg → 3×5 @ 110 kg (130 × 0.85 ≈ 110, rounded to 2.5)
-#   After this session: DL moves to S0 at 110 kg
-#
-# Dips: target 12 → 3 sets, aim for 12 total BW reps
-#   (Calibration showed BW×5, so 3 sets of ~4 = 12 is reasonable)
+# SQ: S2 @ 100  (jumped from S0 after 100: 3-3-6, +3 over target)
+# FS: S0p @ 80  (advancing state, keeping load — safeties weren't set)
+# BP: S2 @ 70   (groove rebuild: 70: 3-3-10 → re-entering normal ladder)
+# DL: D0 @ 130  (untested — first exposure in C1)
+# MP: S0 @ 60   (untested at programmed load — first exposure in C1)
+# PC: P0p @ 60  (easy 5×1 → advance to P1 = 6×1)
+# Chins: target 15 → hit 15 in 3 sets → next target 17
+# Dips: target 12 (baseline only from calibration BW×5)
+
+# ═══════════════════════════════════════════════════════════════════
+# NEXT SESSIONS (prescribed from current state)
+# ═══════════════════════════════════════════════════════════════════
+
+next_sessions:
+  C1:
+    - exercise: Deadlift
+      load: 130
+      prescription: "3, 3, 3+ (cap 6)"
+      state: D0
+    - exercise: Military Press
+      load: 60
+      prescription: "3, 3, 3+ (cap 7)"
+      state: S0
+    - exercise: Dips
+      prescription: "BW — 12 total reps, max 3 sets"
+
+  A2:
+    - exercise: Power Clean
+      load: 60
+      prescription: "6×1"
+      state: P1
+    - exercise: Front Squat
+      load: 80
+      prescription: "3, 4, 4+ (cap 8)"
+      state: S0p  # advancing state, not load
+    - exercise: Bench Press
+      load: 70
+      prescription: "5×3 paused (strict, no AMRAP)"
+      notes: "groove rebuild — every rep identical"
+
+  B2:
+    - exercise: Squat
+      load: 100
+      prescription: "3, 4, 4+ (cap 8)"
+      state: S2
+    - exercise: Bench Press
+      load: 80
+      prescription: "3, 3, 3+ (cap 8)"
+      state: S0  # re-entering normal ladder at 80
+      notes: "transition from groove phase"
+    - exercise: Chin Up
+      prescription: "BW — 17 total reps, max 3 sets"
