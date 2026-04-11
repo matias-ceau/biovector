@@ -1,51 +1,111 @@
-# Overcomplicated Workout Metrics
-## Standardized Volume $\Psi$:
-Volume ($V$) is traditionally calculated by multiplying the number of sets ($s$) by reps ($r$) and weight ($w$) but this leads to uninformative data for two main reasons : (1) volume of different exercises are not comparable and thus not summable, (2) volume can be artificially inflated by high-rep low-intensity sets such as warm ups.
+# Workout Metrics System
 
-To adress (1), the 'load' ($\psi$), which takes into account the type of exercice (range of motion) and the lifter (bodyweight), is used instead of $V$. 
-$$\psi = r(w\Delta+m\kappa)$$
+Mathematical foundations for the biovector training metrics.
 
-$\Delta$: distance traveled by the weight (obtained through video, measurements) 
+---
 
-$m$: current bodyweight
+## 1. Standardised Volume (Ψ)
 
-$\kappa = p\delta$: the 'body coefficient' equal to the proportion $p$ of body weight being moved (approximate estimates) multiplied by the distance $\delta$ traveled by the center of mass of the moving body (approximate estimates)
+Volume ($V$) is traditionally calculated by multiplying the number of sets ($s$) by reps ($r$) and weight ($w$), but this leads to uninformative data for two main reasons:
 
-$r$: number of reps (for some exercise it can be time or distance, the other coefficient are adjusted accordingly)
+1. **Non-comparable**: Volume of different exercises cannot be meaningfully compared or summed.
+2. **Inflatible**: Volume can be artificially inflated by high-rep, low-intensity sets such as warm-ups.
 
-The obtain value calculated for all exercises of the workout is called standardised Volume ($\Psi$), expressed in kg.m but of similar order of magnitude to traditional volume (for compound exercises). 
-$$\Psi = \sum_{i = 1}^n{\psi_i} = \sum_{i=1}^n{r(w\Delta_j+m\kappa_j)}$$
-(with $\Delta_j$ and $\kappa_j$ constants for each exercise $j$)
+### Per-set load (ψ)
 
-To address point (2), another useful metric must first be defined: the number of hard sets.
-___
-## Number of hard sets $N$:
-A 'hard set' [has been defined](https://www.strongerbyscience.com/the-new-approach-to-training-volume/) as any set at over 80-85% intensity. Here, hard sets are determined by applying a logistic function $f$ to each set intensity. Its parameters are such that it returns around 1 for sets between 80-85%, 0.5 for sets at 75% (not high intensity but not easy either) and up to 1.05 for intensity above 90%.  
-$$f : x \longmapsto \frac{1.05}{1+e^{-40(x-0.75)}}$$
+To address (1), the **load** ($\psi$), which accounts for both the type of exercise (range of motion) and the lifter (bodyweight), is used instead of raw volume:
 
-1RM is calculated with Epley's formula (better for high repetitions): 
-$1RM = w\left(1+\frac{r}{30}\right)$
-As 1RM can only be calculated for exercises that use weights, $\Pi$, the predicted 1RM using $(w\Delta+m\kappa)$ instead of $w$ is used.
+$$\psi = r(w\Delta + m\kappa)$$
 
-$$\Pi = \frac{\psi}{r}\left(1+\frac{r}{30}\right) = \frac{\psi}{r}+\frac{\psi}{30}$$
+| Symbol | Definition |
+|--------|-----------|
+| $\Delta$ | Distance traveled by the weight (measured via video/tape) |
+| $m$ | Current bodyweight |
+| $\kappa = \rho\theta$ | **Body coefficient** — proportion $\rho$ of bodyweight being moved × distance $\theta$ traveled by the body's centre of mass |
+| $r$ | Number of reps (or time/distance for some exercises, with coefficients adjusted accordingly) |
 
-$\Pi_{max}$: maximum predicted $\Pi$ (it can be set on a time period)
+### Workout total (Ψ)
 
-$n$: total number of sets (*ie* the whole workout)
+The sum over all sets in a workout is the **standardised volume** ($\Psi$), expressed in kg·m:
 
-$\epsilon$: intensity-related weight of a set (*ie* value of a set, for hard sets, $\epsilon \approx 1$, for medium sets $\epsilon \approx 0.5$, for easy and warmup sets, $\epsilon \approx 0$
+$$\Psi = \sum_{i = 1}^n{\psi_i} = \sum_{i=1}^n{r_i(w_i\Delta_j + m\kappa_j)}$$
 
-$$N = \sum_{i=1}^{n}{f\left(\frac{\Pi}{\Pi_{max}}\right)} = \sum_{i=1}^{n}{\epsilon_i}$$
-___
-## Volume of hard sets $\Phi$
+where $\Delta_j$ and $\kappa_j$ are constants for each exercise $j$. The resulting value has a similar order of magnitude to traditional volume for compound exercises.
 
-Now, the volume of the different sets can be transformed into a 'meaningful load' $\phi$ that diminish the workload easy sets, which adresses point (2) adressed.
+---
 
-$\phi$ : meaningful load of a set
+## 2. Number of Hard Sets (N)
+
+To address point (2) — filtering out low-intensity work — a **hard set** metric is defined.
+
+A "hard set" [has been defined](https://www.strongerbyscience.com/the-new-approach-to-training-volume/) as any set performed above 80–85% intensity. Rather than a binary cutoff, a **logistic function** $f$ provides a smooth transition:
+
+$$f(x) = \frac{1.05}{1 + e^{-40(x - 0.75)}}$$
+
+| Intensity | $f(x)$ ≈ | Interpretation |
+|-----------|-----------|----------------|
+| < 60% | ≈ 0 | Warm-up / easy |
+| 75% | ≈ 0.5 | Moderate effort |
+| 80–85% | ≈ 1.0 | Hard set |
+| > 90% | ≈ 1.05 | Near-maximal |
+
+### Predicted 1RM and 1RL
+
+1RM is estimated using **Epley's formula** (better for higher repetitions):
+
+$$1RM = w\left(1 + \frac{r}{30}\right)$$
+
+Since 1RM can only be calculated for weighted exercises, $\Pi$ — the **predicted 1RL** — uses load-based values instead of raw weight:
+
+$$\Pi = \frac{\psi}{r}\left(1 + \frac{r}{30}\right) = \frac{\psi}{r} + \frac{\psi}{30}$$
+
+### Hard-set count
+
+With $\Pi_{max}$ as the maximum predicted 1RL (over a configurable time period, e.g. rolling 90 days), the intensity-related weight $\epsilon$ of each set is:
+
+$$\epsilon_i = f\!\left(\frac{\Pi_i}{\Pi_{max}}\right)$$
+
+The total hard-set count across $n$ sets in a workout:
+
+$$N = \sum_{i=1}^{n}{\epsilon_i}$$
+
+For hard sets $\epsilon \approx 1$, for moderate sets $\epsilon \approx 0.5$, and for warm-ups $\epsilon \approx 0$.
+
+---
+
+## 3. Hard-Set Volume (Φ)
+
+The per-set load can now be weighted by intensity, producing **meaningful load** $\phi$ that discounts easy sets:
+
+$$\phi_i = \psi_i \cdot \epsilon_i$$
+
+The workout total — **hard-set volume**:
 
 $$\Phi = \sum_{i = 1}^n \phi_i = \sum_{i = 1}^n \psi_i \epsilon_i$$
-___
-## Volume index
-Finally, a last useful metric is the volume index, which normalises by $m^{\frac{2}{3}}$ ([see  article](https://www.researchgate.net/profile/Guy-Haff/publication/239731099_Quantifying_Workloads_in_Resistance_Training_A_Brief_Review/links/02e7e51ca383fafe13000000/Quantifying-Workloads-in-Resistance-Training-A-Brief-Review.pdf) to account for weight changes or to compare different lifters. This can be done with either the Standardized Volume $\Psi$ or the Hard Set Volume $\Phi$
 
-$I_S = \Psi m^{-\frac{2}{3}}$ and $I_H = \Phi m^{-\frac{2}{3}}$
+---
+
+## 4. Volume Index
+
+To account for bodyweight changes or to compare lifters of different sizes, volume is normalised by $m^{2/3}$ following [established allometric scaling laws](https://www.researchgate.net/profile/Guy-Haff/publication/239731099_Quantifying_Workloads_in_Resistance_Training_A_Brief_Review/links/02e7e51ca383fafe13000000/Quantifying-Workloads-in-Resistance-Training-A-Brief-Review.pdf):
+
+$$I_S = \Psi \cdot m^{-2/3} \qquad \text{(standardised volume index)}$$
+
+$$I_H = \Phi \cdot m^{-2/3} \qquad \text{(hard-set volume index)}$$
+
+---
+
+## Summary of Symbols
+
+| Symbol | Name | Scope | Description |
+|--------|------|-------|-------------|
+| $\psi$ | Load | Per set | Biomechanically standardised load |
+| $\Psi$ | Standardised Volume | Per workout | Sum of all set loads |
+| $\epsilon$ | Hard-set weight | Per set | Logistic intensity weighting (0–1.05) |
+| $N$ | Hard sets | Per workout | Sum of $\epsilon$ values |
+| $\phi$ | Meaningful load | Per set | $\psi \cdot \epsilon$ |
+| $\Phi$ | Hard-set Volume | Per workout | Sum of meaningful loads |
+| $\Pi$ | Predicted 1RL | Per set | Load-based 1RM estimate |
+| $\Delta$ | Distance coeff. | Per exercise | Weight travel distance (m) |
+| $\kappa$ | Body coeff. | Per exercise | $\rho \cdot \theta$ |
+| $I_S$, $I_H$ | Volume indices | Per workout | Bodyweight-normalised volumes |
