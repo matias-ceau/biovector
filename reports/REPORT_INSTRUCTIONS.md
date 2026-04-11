@@ -1,0 +1,418 @@
+# Biovector Report Generation Instructions
+
+> **Audience:** LLM agents (Claude, GPT, etc.) generating training reports with or without code.
+
+---
+
+## Overview
+
+This document describes how to produce training reports from the biovector dataset. Reports **must exclude minor/accessory exercises** (grip, forearm, core isolation, curls, etc.) whose inflated load values distort aggregate metrics. The tier system in [`exercise_tiers.json`](exercise_tiers.json) governs which exercises appear in each report type.
+
+---
+
+## 1. Data Sources
+
+All data lives under `data/` relative to the repo root.
+
+| File | Contents |
+|------|----------|
+| [`data/user/sets.json`](../data/user/sets.json) | Array of `{ timestamp, exercise_name, weight, reps, session_name?, notes? }` |
+| [`data/user/sessions.json`](../data/user/sessions.json) | Array of `{ id, start_timestamp, end_timestamp, name, exercises[] }` |
+| [`data/user/bodyweight.json`](../data/user/bodyweight.json) | Array of `{ timestamp, weight_kg }` |
+| [`data/reference/exercises.json`](../data/reference/exercises.json) | Exercise definitions with `{ id, name, delta, rho, theta }` |
+| [`strength-states.json`](../strength-states.json) | Current program state: next session, per-exercise load/state |
+| [`exercise_tiers.json`](exercise_tiers.json) | Tier classification for filtering |
+
+### Set record shape
+
+```json
+{
+  "timestamp": 1712500000,
+  "exercise_name": "Squat",
+  "weight": 100.0,
+  "reps": 5,
+  "session_name": "A1",
+  "notes": ""
+}
+```
+
+Only `timestamp`, `exercise_name`, `weight`, `reps` are guaranteed present.
+
+---
+
+## 2. Exercise Tiers — The Core Filter
+
+### Why filter?
+
+Accessory exercises (especially grip work like Barbell Support, Bar Hang, Block Pinch Hold, Wrist Curl) produce **enormous load values** because of `reps × weight` multiplication at tiny delta coefficients. Including them in totals makes volume charts meaningless.
+
+### Tier definitions
+
+| Tier | Label | Include in reports? | Examples |
+|------|-------|-------------------|----------|
+| **1** | Program lifts | ✅ Always | Squat, Front Squat, Bench Press, Deadlift, Military Press, Power Clean, Chin Up, Dips |
+| **2** | Supporting compounds | ✅ In detailed reports | Romanian Deadlift, Kettlebell Swing, Push Press, Bent Over Row, Pull Up, Snatch |
+| **3** | Minor accessories | ❌ Excluded from standard reports | All grip (G*), core (C*), arm isolation (U*), leg isolation (L*), shrugs, calf raises, neck work |
+
+### Quick filter rule (by exercise ID prefix)
+
+```
+Tier 3 (exclude) if ID starts with: C, G, L, U
+```
+
+All other exercises are tier 1 or tier 2 — consult `exercise_tiers.json` for the precise list.
+
+### Tier 1 exercises (exhaustive)
+
+| Exercise | ID | Abbrev |
+|----------|----|--------|
+| Squat | S00 | SQ |
+| Front Squat | S10 | FS |
+| Bench Press | P01.00 | BP |
+| Deadlift | H00.0 | DL |
+| Military Press | P10.0 | MP |
+| Power Clean | T20.1 | PC |
+| Chin Up | T00 | CU |
+| Dips | P20 | DP |
+
+---
+
+## 3. Formulas Reference
+
+All derived metrics are computed on-the-fly — **never stored** in the data files.
+
+### Epley 1RM estimate
+
+```
+pred_1rm = weight × (1 + reps / 30)
+```
+
+### Standardised load (ψ)
+
+```
+kappa = rho × theta
+load = reps × (weight × delta + bodyweight × kappa)
+```
+
+Where `delta`, `rho`, `theta` come from `exercises.json` for the given exercise.
+
+### Predicted 1RL (load-based 1RM)
+
+```
+pred_1rl = epley(load / reps, reps)
+```
+
+### Intensity and hard-set weight
+
+```
+logistic(x) = 1.05 / (1 + e^(-40 × (x - 0.75)))
+intensity = pred_1rl / est_1rl    (use 1.0 if no est_1rl)
+h = logistic(intensity)
+```
+
+### Meaningful load (φ)
+
+```
+phi = load × h
+```
+
+### Bodyweight
+
+Current BW ≈ 103 kg (April 2026). Use `bodyweight.json` for historical interpolation.
+
+---
+
+## 4. Report Types
+
+### 4.1 Standard Report (Tier 1 only)
+
+**Purpose:** Quick overview of program lift progress.
+
+**Sections:**
+1. **Header** — Date range, session count, current program state from `strength-states.json`
+2. **Program Lift Table** — For each tier 1 exercise:
+   - Current load (from strength-states.json)
+   - Current state (S0, S2, D0, P0p, etc.)
+   - Best predicted 1RM (from historical sets)
+   - Most recent session performance
+3. **Recent Sessions** — Last 5–10 sessions, showing only tier 1 exercises
+4. **Progression Chart Data** — Weight × date for each main lift (for charting)
+
+**Filter:** `exercise_name IN tier_1_exercises`
+
+### 4.2 Detailed Report (Tier 1 + Tier 2)
+
+**Purpose:** Full training analysis including supporting work.
+
+**Additional sections beyond Standard:**
+5. **Volume Breakdown** — Weekly/monthly total load (ψ) and hardload (φ), grouped by movement category (squat, hinge, press, pull, olympic)
+6. **Supporting Exercise Summary** — Tier 2 exercises: frequency, typical weight, e1RM if applicable
+7. **Movement Balance** — Ratio of push:pull, squat:hinge
+8. **Training Density** — Sessions/week, sets/session over time
+
+**Filter:** `exercise_name IN tier_1_exercises OR exercise_name IN tier_2_exercises`
+
+### 4.3 Full Report (All tiers, accessories separated)
+
+**Purpose:** Complete audit including accessories.
+
+**Additional sections:**
+9. **Accessory Appendix** — Tier 3 exercises listed separately, clearly labelled as accessories
+10. **Volume Warning** — Note that tier 3 load values are NOT included in aggregate totals
+
+**Filter:** All exercises, but aggregate totals use `tier_1 + tier_2` only.
+
+---
+
+## 5. Step-by-Step: Generating a Report Without Code
+
+An LLM can produce a report by reading the JSON files directly. Here is the procedure:
+
+### Step 1: Read current state
+
+```
+Read strength-states.json → get next_session, per-exercise state/load
+```
+
+Output:
+> **Next session:** C1  
+> **SQ:** 100 kg (S2) | **FS:** 80 kg (S0p) | **BP:** 70 kg (S2) | **DL:** 130 kg (D0) | **MP:** 60 kg (S0) | **PC:** 60 kg (P0p)
+
+### Step 2: Read sets.json and filter
+
+```
+Read data/user/sets.json → array of set records
+Filter: keep only sets where exercise_name matches tier 1 (or tier 1+2) list
+```
+
+### Step 3: Compute per-exercise stats
+
+For each included exercise:
+- **Total sets** = count of records
+- **Best weight** = max(weight) where reps ≥ 1
+- **Best e1RM** = max(weight × (1 + reps/30))
+- **Last session** = most recent sets for that exercise
+- **Date range** = min/max timestamps
+
+### Step 4: Group by session
+
+Use `session_name` field (if present) or group by date (sets within same calendar day).
+
+### Step 5: Compute volume trends
+
+For each week/month:
+```
+weekly_load = sum of (reps × weight × delta) for filtered exercises only
+```
+
+Use approximate delta values if exercise lookup is impractical:
+- Squat/Deadlift variants: delta ≈ 0.6–0.7
+- Bench/Press variants: delta ≈ 0.5–0.7
+- Pulls: delta ≈ 0.5–0.7
+- Power Clean/Olympic: delta ≈ 1.2–2.1
+
+### Step 6: Format output
+
+Use the template in Section 7 below.
+
+---
+
+## 6. Step-by-Step: Generating a Report With Code
+
+### Using the biovector library
+
+```python
+from biovector.core import Biovector, epley
+import json
+
+bv = Biovector()
+
+# Load tier config
+with open("reports/exercise_tiers.json") as f:
+    tiers = json.load(f)
+
+tier_1_names = {e["name"] for e in tiers["tier_1_program_lifts"]["exercises"]}
+tier_2_names = set()
+for cat in tiers["tier_2_supporting_compounds"]["exercises_by_category"].values():
+    tier_2_names.update(cat)
+
+# Filter sets
+main_sets = [s for s in bv.sets if s["exercise_name"] in tier_1_names]
+detailed_sets = [s for s in bv.sets if s["exercise_name"] in (tier_1_names | tier_2_names)]
+```
+
+### Using the helper script
+
+```bash
+BIOVECTOR_DATA_DIR=$PWD/data python reports/generate_report.py --type standard
+BIOVECTOR_DATA_DIR=$PWD/data python reports/generate_report.py --type detailed
+BIOVECTOR_DATA_DIR=$PWD/data python reports/generate_report.py --type full --since 2026-01-01
+```
+
+---
+
+## 7. Report Template
+
+````markdown
+# Training Report — [REPORT_TYPE]
+
+**Generated:** YYYY-MM-DD  
+**Data range:** YYYY-MM-DD to YYYY-MM-DD  
+**Sessions in range:** N  
+**Filter:** [Tier 1 only | Tier 1+2 | Full]
+
+---
+
+## Current Program State
+
+| Exercise | Load (kg) | State | Chins target | Dips target |
+|----------|-----------|-------|--------------|-------------|
+| SQ | ... | ... | | |
+| FS | ... | ... | | |
+| BP | ... | ... | | |
+| DL | ... | ... | | |
+| MP | ... | ... | | |
+| PC | ... | ... | | |
+
+Next session: **...**
+
+---
+
+## Main Lift Progression
+
+| Exercise | Best Weight | Best e1RM | Current Load | Sets (total) | Last Session |
+|----------|------------|-----------|--------------|-------------|-------------|
+| Squat | ... kg | ... kg | ... kg | ... | YYYY-MM-DD: w×r, w×r, w×r |
+| ... | | | | | |
+
+---
+
+## Recent Sessions
+
+### YYYY-MM-DD — Session Name
+| Exercise | Sets |
+|----------|------|
+| Power Clean | 60×1, 60×1, 60×1, 60×1, 60×1 |
+| Front Squat | 80×3, 80×3, 80×6 |
+| Bench Press | 70×3, 70×4, 70×5 |
+
+### YYYY-MM-DD — Session Name
+...
+
+---
+
+## Volume Trends (weekly)
+
+| Week | Load (ψ) | Sessions | Avg load/session |
+|------|----------|----------|------------------|
+| 2026-W14 | ... | ... | ... |
+| ... | | | |
+
+---
+
+## Movement Balance
+
+| Category | Sets | Load (ψ) | % of total |
+|----------|------|----------|------------|
+| Squat | ... | ... | ... |
+| Hinge | ... | ... | ... |
+| Press | ... | ... | ... |
+| Pull | ... | ... | ... |
+| Olympic | ... | ... | ... |
+
+---
+
+*⚠️ Accessory exercises (grip, core, arm isolation) excluded from all aggregations.*
+````
+
+---
+
+## 8. Exercise Name Matching
+
+Exercise names in `sets.json` must match **exactly** against the tier lists. Common gotchas:
+
+| In sets.json | Tier list match |
+|-------------|----------------|
+| `"Chin Up"` | ✅ tier 1 |
+| `"Dips"` | ✅ tier 1 |
+| `"Dip"` | ❌ variant spelling — treat as tier 1 synonym |
+| `"Bicep Curl"` | ❌ not in exercises.json — treat as tier 3 (U-prefix) |
+| `"Overhead Press"` | Map to `"Military Press"` or treat as tier 2 |
+
+### Known synonyms to remap
+
+```json
+{
+  "Dip": "Dips",
+  "Ring Dip": "Ring Dips",
+  "Bicep Curl": "Bicep Curl (Barbell)",
+  "Overhead Press": "Military Press",
+  "Upright Row": "Upright Row (Barbell)",
+  "Hang Snatch": "Power Snatch (Barbell)",
+  "Snatch": "Snatch (Barbell)",
+  "Clean and Jerk": "Clean and Jerk (Barbell)",
+  "Hang Clean": "Hang Clean (Barbell)",
+  "Power Snatch": "Power Snatch (Barbell)",
+  "Side Bend": "Side Bend (Dumbell)",
+  "Reverse Military Press": "Reverse Overhead Press",
+  "Unilateral Military Press": "Unilateral Overhead Press",
+  "Seated Military Press (Barbell)": "Seated Overhead Press (Barbell)",
+  "Hand Gripper": "Barbell Crush",
+  "Supergripper": "Barbell Crush"
+}
+```
+
+---
+
+## 9. Date Handling
+
+Timestamps are Unix epoch (seconds). Convert with:
+```python
+from datetime import datetime
+dt = datetime.fromtimestamp(timestamp)
+date_str = dt.strftime("%Y-%m-%d")
+```
+
+For weekly grouping, use ISO week: `dt.strftime("%G-W%V")`.
+
+---
+
+## 10. Common Report Scenarios
+
+### "How did this week go?"
+→ Standard report, filtered to last 7 days. Show each session, tier 1 performance, compare to previous week.
+
+### "Monthly progress check"
+→ Detailed report, last 30 days. Include volume trends, e1RM progression, movement balance.
+
+### "Am I ready to increase load on X?"
+→ Read strength-states.json for current state. Look at last 2–3 sessions for that exercise. Check if the + set criteria from `restart-2026.md` are met.
+
+### "Full data audit"
+→ Full report, all time. Tier 3 in appendix. Flag any anomalies (huge loads from grip work, missing sessions, etc.).
+
+---
+
+## 11. What NOT to Do
+
+1. **Never include tier 3 exercises in volume totals** — they inflate numbers meaninglessly
+2. **Never compute "total volume" as sum of (weight × reps)** — use standardised load (ψ) instead
+3. **Never store derived metrics** — they are always computed on-the-fly
+4. **Never mix raw weight comparisons across exercises** — 100 kg squat ≠ 100 kg curl
+5. **Don't forget the bodyweight component** — for bodyweight exercises (chin ups, dips, push ups), the load formula includes `kappa × bodyweight`, which is the dominant term
+
+---
+
+## 12. Quick Reference: Tier Assignment by ID Prefix
+
+| Prefix | Category | Default Tier | Notes |
+|--------|----------|-------------|-------|
+| S | Squat | 1–2 | S00=tier 1, S10=tier 1, others=tier 2 |
+| H | Hip Hinge | 1–2 | H00.0=tier 1, others=tier 2 |
+| P | Press | 1–2 | P01.00=tier 1, P10.0=tier 1, P20=tier 1, others=tier 2 |
+| T | Pull | 1–2 | T00=tier 1, T20.1=tier 1, others=tier 2 (except T21, T22, T23.1, T30.1 = tier 3) |
+| X | Olympic/Complex | 2 | All tier 2 |
+| **C** | **Core/Neck** | **3** | **Always exclude from aggregations** |
+| **G** | **Grip/Forearm** | **3** | **Always exclude — worst offender for load inflation** |
+| **L** | **Leg Isolation** | **3** | **Always exclude from aggregations** |
+| **U** | **Upper Arm Isolation** | **3** | **Always exclude from aggregations** |

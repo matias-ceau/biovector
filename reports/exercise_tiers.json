@@ -1,0 +1,78 @@
+{
+  "_doc": "Exercise classification for report filtering. Tier 1 = program lifts (always included). Tier 2 = supporting compounds (included in detailed reports). Tier 3 = accessories/minor (excluded from standard reports). Classification by ID prefix pattern or explicit exercise name.",
+  "tier_1_program_lifts": {
+    "description": "Core lifts tracked in strength-states.json. Always included in every report.",
+    "exercises": [
+      { "name": "Squat",        "id": "S00",    "abbrev": "SQ" },
+      { "name": "Front Squat",  "id": "S10",    "abbrev": "FS" },
+      { "name": "Bench Press",  "id": "P01.00", "abbrev": "BP" },
+      { "name": "Deadlift",     "id": "H00.0",  "abbrev": "DL" },
+      { "name": "Military Press","id": "P10.0",  "abbrev": "MP" },
+      { "name": "Power Clean",  "id": "T20.1",  "abbrev": "PC" },
+      { "name": "Chin Up",      "id": "T00",    "abbrev": "CU" },
+      { "name": "Dips",         "id": "P20",    "abbrev": "DP" }
+    ]
+  },
+  "tier_2_supporting_compounds": {
+    "description": "Meaningful compound movements. Included in detailed reports, volume breakdowns, and progression analysis.",
+    "exercises_by_category": {
+      "squat_variants": [
+        "High Bar Squat", "Safety Bar Squat", "Zercher Squat (Barbell)",
+        "Pistol Squat", "Goblet Squat", "Overhead Squat",
+        "Bulgarian Split Squat", "Squat (Bodyweight)", "Jump Squat"
+      ],
+      "hinge_variants": [
+        "Romanian Deadlift", "Sumo Deadlift", "Trap Bar Deadlift",
+        "Deficit Deadlift", "Snatch Grip Deadlift",
+        "Good Morning", "Zercher Goodmorning",
+        "Kettlebell Swing", "Unilateral Kettlebell Swing",
+        "Hip Thrust (Barbell)", "Nordic Hamstring Curl (Assisted)",
+        "Nordic Hamstring Curl (Eccentric)"
+      ],
+      "press_variants": [
+        "Close Grip Bench Press", "Push Press", "Z Press", "Klokov Press",
+        "Bench Press (Dumbbell)", "Pin Bench (Top Half)",
+        "Ring Dips", "Push Up", "One Arm Push Up", "Ring Push Up", "A9",
+        "Kneeling Landmine Press", "Seated Overhead Press (Barbell)"
+      ],
+      "pull_variants": [
+        "Pull Up", "Wide Pull Up", "One Arm Chin Up (assisted)",
+        "One Arm Chinup (Eccentric)", "Rope Climb (legless)",
+        "Bent Over Row", "Pendlay Row", "Kroc Row",
+        "Australian Pull Up", "Inverted Row (Bodyweight)",
+        "Hanging Inverted Row", "Seated Cable Row",
+        "Unilateral T-Bar Row", "Chest Supported T-Bar Row", "T Bar Row",
+        "Upright Row (Barbell)", "Deadlift High Pull (Barbell)"
+      ],
+      "olympic_variants": [
+        "Clean and Jerk (Barbell)", "Snatch (Barbell)",
+        "Power Snatch (Barbell)", "Hang Clean (Barbell)",
+        "Kettlebell Snatch", "Dumbbell Snatch",
+        "Thruster (Barbell)", "Kettlebell Turkish Get Up"
+      ]
+    }
+  },
+  "tier_3_minor_accessories": {
+    "description": "Isolation and accessory work. EXCLUDED from standard reports. These inflate volume metrics disproportionately (especially grip work with enormous load values from high reps × heavy weight at tiny delta).",
+    "id_prefix_patterns": ["C", "G", "L", "U"],
+    "note": "All exercises starting with C (core/neck), G (grip/forearm), L (leg isolation), U (upper arm isolation) are tier 3. Some T-prefix exercises below are also tier 3.",
+    "additional_exercises": [
+      "Shrug (Barbell)", "Shrug (Dumbbell)",
+      "Rack Pull (Barbell)", "Rack Pull (18'')",
+      "Karwoski Rows", "Band Face Pulls",
+      "Rack Row", "Lat Pulldown (Single Arm)",
+      "Step-up", "Reverse Lunge (Dumbbells)", "Leg Press",
+      "Hack Squat", "Reverse Hyper",
+      "Burpee", "Tactical Stand Up",
+      "Box Jump", "Glute Bridge",
+      "Pin Squat (Top Half)", "Pin Squat (Top Quarter)",
+      "Floor Press (Barbell)"
+    ]
+  },
+  "filter_rules": {
+    "standard_report": "Include tier_1 only",
+    "detailed_report": "Include tier_1 + tier_2",
+    "full_report": "Include all tiers (with tier_3 in a separate 'accessories' section)",
+    "volume_aggregation": "NEVER include tier_3 in total volume/load sums — they distort the picture"
+  }
+}
