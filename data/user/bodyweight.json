@@ -1,2478 +1,2478 @@
 {
   "measurements": [
     {
-      "timestamp": 1518444054.0,
+      "timestamp": 1518444054,
       "date": "2018-02-12",
       "weight_kg": 93.1
     },
     {
-      "timestamp": 1518616806.0,
+      "timestamp": 1518616806,
       "date": "2018-02-14",
       "weight_kg": 93.0
     },
     {
-      "timestamp": 1523534409.0,
+      "timestamp": 1523534409,
       "date": "2018-04-12",
       "weight_kg": 90.9
     },
     {
-      "timestamp": 1523623896.0,
+      "timestamp": 1523623896,
       "date": "2018-04-13",
       "weight_kg": 87.0
     },
     {
-      "timestamp": 1524740434.0,
+      "timestamp": 1524740434,
       "date": "2018-04-26",
       "weight_kg": 88.0
     },
     {
-      "timestamp": 1524823248.0,
+      "timestamp": 1524823248,
       "date": "2018-04-27",
       "weight_kg": 88.1
     },
     {
-      "timestamp": 1524920411.0,
+      "timestamp": 1524920411,
       "date": "2018-04-28",
       "weight_kg": 88.2
     },
     {
-      "timestamp": 1524978024.0,
+      "timestamp": 1524978024,
       "date": "2018-04-29",
       "weight_kg": 88.2
     },
     {
-      "timestamp": 1525064408.0,
+      "timestamp": 1525064408,
       "date": "2018-04-30",
       "weight_kg": 86.0
     },
     {
-      "timestamp": 1525150800.0,
+      "timestamp": 1525150800,
       "date": "2018-05-01",
       "weight_kg": 86.1
     },
     {
-      "timestamp": 1525237251.0,
+      "timestamp": 1525237251,
       "date": "2018-05-02",
       "weight_kg": 86.2
     },
     {
-      "timestamp": 1525323615.0,
+      "timestamp": 1525323615,
       "date": "2018-05-03",
       "weight_kg": 86.3
     },
     {
-      "timestamp": 1525410036.0,
+      "timestamp": 1525410036,
       "date": "2018-05-04",
       "weight_kg": 86.4
     },
     {
-      "timestamp": 1525496405.0,
+      "timestamp": 1525496405,
       "date": "2018-05-05",
       "weight_kg": 86.5
     },
     {
-      "timestamp": 1525669204.0,
+      "timestamp": 1525669204,
       "date": "2018-05-07",
       "weight_kg": 86.7
     },
     {
-      "timestamp": 1525770007.0,
+      "timestamp": 1525770007,
       "date": "2018-05-08",
       "weight_kg": 86.8
     },
     {
-      "timestamp": 1525842022.0,
+      "timestamp": 1525842022,
       "date": "2018-05-09",
       "weight_kg": 86.9
     },
     {
-      "timestamp": 1525930224.0,
+      "timestamp": 1525930224,
       "date": "2018-05-10",
       "weight_kg": 84.6
     },
     {
-      "timestamp": 1526014530.0,
+      "timestamp": 1526014530,
       "date": "2018-05-11",
       "weight_kg": 84.7
     },
     {
-      "timestamp": 1526119259.0,
+      "timestamp": 1526119259,
       "date": "2018-05-12",
       "weight_kg": 85.0
     },
     {
-      "timestamp": 1526232422.0,
+      "timestamp": 1526232422,
       "date": "2018-05-13",
       "weight_kg": 85.2
     },
     {
-      "timestamp": 1526271975.0,
+      "timestamp": 1526271975,
       "date": "2018-05-14",
       "weight_kg": 85.3
     },
     {
-      "timestamp": 1526359972.0,
+      "timestamp": 1526359972,
       "date": "2018-05-15",
       "weight_kg": 85.5
     },
     {
-      "timestamp": 1526444715.0,
+      "timestamp": 1526444715,
       "date": "2018-05-16",
       "weight_kg": 85.7
     },
     {
-      "timestamp": 1526532518.0,
+      "timestamp": 1526532518,
       "date": "2018-05-17",
       "weight_kg": 85.9
     },
     {
-      "timestamp": 1526616915.0,
+      "timestamp": 1526616915,
       "date": "2018-05-18",
       "weight_kg": 84.2
     },
     {
-      "timestamp": 1526713947.0,
+      "timestamp": 1526713947,
       "date": "2018-05-19",
       "weight_kg": 84.3
     },
     {
-      "timestamp": 1526821007.0,
+      "timestamp": 1526821007,
       "date": "2018-05-20",
       "weight_kg": 84.3
     },
     {
-      "timestamp": 1526885706.0,
+      "timestamp": 1526885706,
       "date": "2018-05-21",
       "weight_kg": 84.3
     },
     {
-      "timestamp": 1526965216.0,
+      "timestamp": 1526965216,
       "date": "2018-05-22",
       "weight_kg": 84.4
     },
     {
-      "timestamp": 1527049488.0,
+      "timestamp": 1527049488,
       "date": "2018-05-23",
       "weight_kg": 84.4
     },
     {
-      "timestamp": 1527138388.0,
+      "timestamp": 1527138388,
       "date": "2018-05-24",
       "weight_kg": 84.5
     },
     {
-      "timestamp": 1527222057.0,
+      "timestamp": 1527222057,
       "date": "2018-05-25",
       "weight_kg": 84.3
     },
     {
-      "timestamp": 1527318806.0,
+      "timestamp": 1527318806,
       "date": "2018-05-26",
       "weight_kg": 84.3
     },
     {
-      "timestamp": 1527481551.0,
+      "timestamp": 1527481551,
       "date": "2018-05-28",
       "weight_kg": 84.3
     },
     {
-      "timestamp": 1527607635.0,
+      "timestamp": 1527607635,
       "date": "2018-05-29",
       "weight_kg": 84.2
     },
     {
-      "timestamp": 1527656108.0,
+      "timestamp": 1527656108,
       "date": "2018-05-30",
       "weight_kg": 84.2
     },
     {
-      "timestamp": 1527781727.0,
+      "timestamp": 1527781727,
       "date": "2018-05-31",
       "weight_kg": 84.2
     },
     {
-      "timestamp": 1527835443.0,
+      "timestamp": 1527835443,
       "date": "2018-06-01",
       "weight_kg": 84.0
     },
     {
-      "timestamp": 1527939358.0,
+      "timestamp": 1527939358,
       "date": "2018-06-02",
       "weight_kg": 84.2
     },
     {
-      "timestamp": 1528109657.0,
+      "timestamp": 1528109657,
       "date": "2018-06-04",
       "weight_kg": 84.9
     },
     {
-      "timestamp": 1528209883.0,
+      "timestamp": 1528209883,
       "date": "2018-06-05",
       "weight_kg": 84.8
     },
     {
-      "timestamp": 1528259262.0,
+      "timestamp": 1528259262,
       "date": "2018-06-06",
       "weight_kg": 84.7
     },
     {
-      "timestamp": 1528377198.0,
+      "timestamp": 1528377198,
       "date": "2018-06-07",
       "weight_kg": 84.5
     },
     {
-      "timestamp": 1528451378.0,
+      "timestamp": 1528451378,
       "date": "2018-06-08",
       "weight_kg": 84.4
     },
     {
-      "timestamp": 1528736028.0,
+      "timestamp": 1528736028,
       "date": "2018-06-11",
       "weight_kg": 84.0
     },
     {
-      "timestamp": 1528813060.0,
+      "timestamp": 1528813060,
       "date": "2018-06-12",
       "weight_kg": 85.3
     },
     {
-      "timestamp": 1528977061.0,
+      "timestamp": 1528977061,
       "date": "2018-06-14",
       "weight_kg": 85.2
     },
     {
-      "timestamp": 1529339005.0,
+      "timestamp": 1529339005,
       "date": "2018-06-18",
       "weight_kg": 85.0
     },
     {
-      "timestamp": 1529412595.0,
+      "timestamp": 1529412595,
       "date": "2018-06-19",
       "weight_kg": 85.0
     },
     {
-      "timestamp": 1529469562.0,
+      "timestamp": 1529469562,
       "date": "2018-06-20",
       "weight_kg": 87.4
     },
     {
-      "timestamp": 1530010666.0,
+      "timestamp": 1530010666,
       "date": "2018-06-26",
       "weight_kg": 86.8
     },
     {
-      "timestamp": 1530095371.0,
+      "timestamp": 1530095371,
       "date": "2018-06-27",
       "weight_kg": 86.7
     },
     {
-      "timestamp": 1530278353.0,
+      "timestamp": 1530278353,
       "date": "2018-06-29",
       "weight_kg": 86.6
     },
     {
-      "timestamp": 1530359382.0,
+      "timestamp": 1530359382,
       "date": "2018-06-30",
       "weight_kg": 86.5
     },
     {
-      "timestamp": 1530620654.0,
+      "timestamp": 1530620654,
       "date": "2018-07-03",
       "weight_kg": 86.2
     },
     {
-      "timestamp": 1530710221.0,
+      "timestamp": 1530710221,
       "date": "2018-07-04",
       "weight_kg": 86.1
     },
     {
-      "timestamp": 1530791986.0,
+      "timestamp": 1530791986,
       "date": "2018-07-05",
       "weight_kg": 86.0
     },
     {
-      "timestamp": 1531139763.0,
+      "timestamp": 1531139763,
       "date": "2018-07-09",
       "weight_kg": 85.7
     },
     {
-      "timestamp": 1531199896.0,
+      "timestamp": 1531199896,
       "date": "2018-07-10",
       "weight_kg": 85.6
     },
     {
-      "timestamp": 1531562057.0,
+      "timestamp": 1531562057,
       "date": "2018-07-14",
       "weight_kg": 87.4
     },
     {
-      "timestamp": 1531745039.0,
+      "timestamp": 1531745039,
       "date": "2018-07-16",
       "weight_kg": 87.4
     },
     {
-      "timestamp": 1531803115.0,
+      "timestamp": 1531803115,
       "date": "2018-07-17",
       "weight_kg": 87.4
     },
     {
-      "timestamp": 1531916980.0,
+      "timestamp": 1531916980,
       "date": "2018-07-18",
       "weight_kg": 87.4
     },
     {
-      "timestamp": 1531977766.0,
+      "timestamp": 1531977766,
       "date": "2018-07-19",
       "weight_kg": 87.4
     },
     {
-      "timestamp": 1532063366.0,
+      "timestamp": 1532063366,
       "date": "2018-07-20",
       "weight_kg": 87.4
     },
     {
-      "timestamp": 1532352600.0,
+      "timestamp": 1532352600,
       "date": "2018-07-23",
       "weight_kg": 87.4
     },
     {
-      "timestamp": 1532516684.0,
+      "timestamp": 1532516684,
       "date": "2018-07-25",
       "weight_kg": 87.4
     },
     {
-      "timestamp": 1532611751.0,
+      "timestamp": 1532611751,
       "date": "2018-07-26",
       "weight_kg": 87.4
     },
     {
-      "timestamp": 1532706827.0,
+      "timestamp": 1532706827,
       "date": "2018-07-27",
       "weight_kg": 87.4
     },
     {
-      "timestamp": 1532772957.0,
+      "timestamp": 1532772957,
       "date": "2018-07-28",
       "weight_kg": 87.4
     },
     {
-      "timestamp": 1532954544.0,
+      "timestamp": 1532954544,
       "date": "2018-07-30",
       "weight_kg": 88.4
     },
     {
-      "timestamp": 1534852809.0,
+      "timestamp": 1534852809,
       "date": "2018-08-21",
       "weight_kg": 87.8
     },
     {
-      "timestamp": 1535953684.0,
+      "timestamp": 1535953684,
       "date": "2018-09-03",
       "weight_kg": 87.5
     },
     {
-      "timestamp": 1536040108.0,
+      "timestamp": 1536040108,
       "date": "2018-09-04",
       "weight_kg": 87.4
     },
     {
-      "timestamp": 1536215503.0,
+      "timestamp": 1536215503,
       "date": "2018-09-06",
       "weight_kg": 87.8
     },
     {
-      "timestamp": 1536302451.0,
+      "timestamp": 1536302451,
       "date": "2018-09-07",
       "weight_kg": 87.8
     },
     {
-      "timestamp": 1536561333.0,
+      "timestamp": 1536561333,
       "date": "2018-09-10",
       "weight_kg": 87.8
     },
     {
-      "timestamp": 1536649296.0,
+      "timestamp": 1536649296,
       "date": "2018-09-11",
       "weight_kg": 87.9
     },
     {
-      "timestamp": 1536740248.0,
+      "timestamp": 1536740248,
       "date": "2018-09-12",
       "weight_kg": 87.9
     },
     {
-      "timestamp": 1536822174.0,
+      "timestamp": 1536822174,
       "date": "2018-09-13",
       "weight_kg": 87.9
     },
     {
-      "timestamp": 1536916404.0,
+      "timestamp": 1536916404,
       "date": "2018-09-14",
       "weight_kg": 87.9
     },
     {
-      "timestamp": 1537013012.0,
+      "timestamp": 1537013012,
       "date": "2018-09-15",
       "weight_kg": 87.9
     },
     {
-      "timestamp": 1537099513.0,
+      "timestamp": 1537099513,
       "date": "2018-09-16",
       "weight_kg": 87.9
     },
     {
-      "timestamp": 1537176034.0,
+      "timestamp": 1537176034,
       "date": "2018-09-17",
       "weight_kg": 87.9
     },
     {
-      "timestamp": 1537250716.0,
+      "timestamp": 1537250716,
       "date": "2018-09-18",
       "weight_kg": 87.9
     },
     {
-      "timestamp": 1537342223.0,
+      "timestamp": 1537342223,
       "date": "2018-09-19",
       "weight_kg": 88.0
     },
     {
-      "timestamp": 1537868448.0,
+      "timestamp": 1537868448,
       "date": "2018-09-25",
       "weight_kg": 88.0
     },
     {
-      "timestamp": 1537943325.0,
+      "timestamp": 1537943325,
       "date": "2018-09-26",
       "weight_kg": 88.0
     },
     {
-      "timestamp": 1538026085.0,
+      "timestamp": 1538026085,
       "date": "2018-09-27",
       "weight_kg": 88.0
     },
     {
-      "timestamp": 1538115198.0,
+      "timestamp": 1538115198,
       "date": "2018-09-28",
       "weight_kg": 88.1
     },
     {
-      "timestamp": 1538198600.0,
+      "timestamp": 1538198600,
       "date": "2018-09-29",
       "weight_kg": 88.1
     },
     {
-      "timestamp": 1538371252.0,
+      "timestamp": 1538371252,
       "date": "2018-10-01",
       "weight_kg": 88.1
     },
     {
-      "timestamp": 1538457405.0,
+      "timestamp": 1538457405,
       "date": "2018-10-02",
       "weight_kg": 88.1
     },
     {
-      "timestamp": 1538544853.0,
+      "timestamp": 1538544853,
       "date": "2018-10-03",
       "weight_kg": 88.1
     },
     {
-      "timestamp": 1538630942.0,
+      "timestamp": 1538630942,
       "date": "2018-10-04",
       "weight_kg": 88.1
     },
     {
-      "timestamp": 1538716062.0,
+      "timestamp": 1538716062,
       "date": "2018-10-05",
       "weight_kg": 88.1
     },
     {
-      "timestamp": 1538816422.0,
+      "timestamp": 1538816422,
       "date": "2018-10-06",
       "weight_kg": 88.1
     },
     {
-      "timestamp": 1538974483.0,
+      "timestamp": 1538974483,
       "date": "2018-10-08",
       "weight_kg": 88.2
     },
     {
-      "timestamp": 1539060499.0,
+      "timestamp": 1539060499,
       "date": "2018-10-09",
       "weight_kg": 88.2
     },
     {
-      "timestamp": 1539147749.0,
+      "timestamp": 1539147749,
       "date": "2018-10-10",
       "weight_kg": 88.2
     },
     {
-      "timestamp": 1539233489.0,
+      "timestamp": 1539233489,
       "date": "2018-10-11",
       "weight_kg": 88.2
     },
     {
-      "timestamp": 1539344156.0,
+      "timestamp": 1539344156,
       "date": "2018-10-12",
       "weight_kg": 88.2
     },
     {
-      "timestamp": 1539582041.0,
+      "timestamp": 1539582041,
       "date": "2018-10-15",
       "weight_kg": 88.2
     },
     {
-      "timestamp": 1539667139.0,
+      "timestamp": 1539667139,
       "date": "2018-10-16",
       "weight_kg": 88.3
     },
     {
-      "timestamp": 1539756952.0,
+      "timestamp": 1539756952,
       "date": "2018-10-17",
       "weight_kg": 88.3
     },
     {
-      "timestamp": 1539838588.0,
+      "timestamp": 1539838588,
       "date": "2018-10-18",
       "weight_kg": 88.3
     },
     {
-      "timestamp": 1539931430.0,
+      "timestamp": 1539931430,
       "date": "2018-10-19",
       "weight_kg": 88.3
     },
     {
-      "timestamp": 1540379091.0,
+      "timestamp": 1540379091,
       "date": "2018-10-24",
       "weight_kg": 88.3
     },
     {
-      "timestamp": 1540795036.0,
+      "timestamp": 1540795036,
       "date": "2018-10-29",
       "weight_kg": 89.0
     },
     {
-      "timestamp": 1540880791.0,
+      "timestamp": 1540880791,
       "date": "2018-10-30",
       "weight_kg": 89.0
     },
     {
-      "timestamp": 1541053994.0,
+      "timestamp": 1541053994,
       "date": "2018-11-01",
       "weight_kg": 88.9
     },
     {
-      "timestamp": 1541141736.0,
+      "timestamp": 1541141736,
       "date": "2018-11-02",
       "weight_kg": 88.9
     },
     {
-      "timestamp": 1541403980.0,
+      "timestamp": 1541403980,
       "date": "2018-11-05",
       "weight_kg": 88.9
     },
     {
-      "timestamp": 1541490669.0,
+      "timestamp": 1541490669,
       "date": "2018-11-06",
       "weight_kg": 88.9
     },
     {
-      "timestamp": 1541664796.0,
+      "timestamp": 1541664796,
       "date": "2018-11-08",
       "weight_kg": 88.8
     },
     {
-      "timestamp": 1541752010.0,
+      "timestamp": 1541752010,
       "date": "2018-11-09",
       "weight_kg": 88.8
     },
     {
-      "timestamp": 1542717290.0,
+      "timestamp": 1542717290,
       "date": "2018-11-20",
       "weight_kg": 88.6
     },
     {
-      "timestamp": 1542785558.0,
+      "timestamp": 1542785558,
       "date": "2018-11-21",
       "weight_kg": 88.6
     },
     {
-      "timestamp": 1542961958.0,
+      "timestamp": 1542961958,
       "date": "2018-11-23",
       "weight_kg": 88.6
     },
     {
-      "timestamp": 1543062096.0,
+      "timestamp": 1543062096,
       "date": "2018-11-24",
       "weight_kg": 88.5
     },
     {
-      "timestamp": 1543220823.0,
+      "timestamp": 1543220823,
       "date": "2018-11-26",
       "weight_kg": 88.5
     },
     {
-      "timestamp": 1543306469.0,
+      "timestamp": 1543306469,
       "date": "2018-11-27",
       "weight_kg": 88.5
     },
     {
-      "timestamp": 1543487539.0,
+      "timestamp": 1543487539,
       "date": "2018-11-29",
       "weight_kg": 88.4
     },
     {
-      "timestamp": 1543558809.0,
+      "timestamp": 1543558809,
       "date": "2018-11-30",
       "weight_kg": 88.4
     },
     {
-      "timestamp": 1543903127.0,
+      "timestamp": 1543903127,
       "date": "2018-12-04",
       "weight_kg": 88.4
     },
     {
-      "timestamp": 1544034273.0,
+      "timestamp": 1544034273,
       "date": "2018-12-05",
       "weight_kg": 88.3
     },
     {
-      "timestamp": 1544162347.0,
+      "timestamp": 1544162347,
       "date": "2018-12-07",
       "weight_kg": 88.3
     },
     {
-      "timestamp": 1544282671.0,
+      "timestamp": 1544282671,
       "date": "2018-12-08",
       "weight_kg": 88.3
     },
     {
-      "timestamp": 1544422129.0,
+      "timestamp": 1544422129,
       "date": "2018-12-10",
       "weight_kg": 88.3
     },
     {
-      "timestamp": 1544714557.0,
+      "timestamp": 1544714557,
       "date": "2018-12-13",
       "weight_kg": 88.2
     },
     {
-      "timestamp": 1545048893.0,
+      "timestamp": 1545048893,
       "date": "2018-12-17",
       "weight_kg": 88.1
     },
     {
-      "timestamp": 1545241114.0,
+      "timestamp": 1545241114,
       "date": "2018-12-19",
       "weight_kg": 88.1
     },
     {
-      "timestamp": 1545583207.0,
+      "timestamp": 1545583207,
       "date": "2018-12-23",
       "weight_kg": 88.0
     },
     {
-      "timestamp": 1545751838.0,
+      "timestamp": 1545751838,
       "date": "2018-12-25",
       "weight_kg": 88.0
     },
     {
-      "timestamp": 1545828351.0,
+      "timestamp": 1545828351,
       "date": "2018-12-26",
       "weight_kg": 88.0
     },
     {
-      "timestamp": 1545910787.0,
+      "timestamp": 1545910787,
       "date": "2018-12-27",
       "weight_kg": 87.9
     },
     {
-      "timestamp": 1546102635.0,
+      "timestamp": 1546102635,
       "date": "2018-12-29",
       "weight_kg": 87.9
     },
     {
-      "timestamp": 1546697299.0,
+      "timestamp": 1546697299,
       "date": "2019-01-05",
       "weight_kg": 90.1
     },
     {
-      "timestamp": 1546789206.0,
+      "timestamp": 1546789206,
       "date": "2019-01-06",
       "weight_kg": 90.0
     },
     {
-      "timestamp": 1546965445.0,
+      "timestamp": 1546965445,
       "date": "2019-01-08",
       "weight_kg": 89.7
     },
     {
-      "timestamp": 1547188471.0,
+      "timestamp": 1547188471,
       "date": "2019-01-11",
       "weight_kg": 89.4
     },
     {
-      "timestamp": 1547371720.0,
+      "timestamp": 1547371720,
       "date": "2019-01-13",
       "weight_kg": 89.1
     },
     {
-      "timestamp": 1547534681.0,
+      "timestamp": 1547534681,
       "date": "2019-01-15",
       "weight_kg": 88.1
     },
     {
-      "timestamp": 1547792749.0,
+      "timestamp": 1547792749,
       "date": "2019-01-18",
       "weight_kg": 88.7
     },
     {
-      "timestamp": 1547886839.0,
+      "timestamp": 1547886839,
       "date": "2019-01-19",
       "weight_kg": 88.9
     },
     {
-      "timestamp": 1548051616.0,
+      "timestamp": 1548051616,
       "date": "2019-01-21",
       "weight_kg": 89.2
     },
     {
-      "timestamp": 1548224903.0,
+      "timestamp": 1548224903,
       "date": "2019-01-23",
       "weight_kg": 89.5
     },
     {
-      "timestamp": 1548338998.0,
+      "timestamp": 1548338998,
       "date": "2019-01-24",
       "weight_kg": 89.8
     },
     {
-      "timestamp": 1548430681.0,
+      "timestamp": 1548430681,
       "date": "2019-01-25",
       "weight_kg": 90.0
     },
     {
-      "timestamp": 1548580275.0,
+      "timestamp": 1548580275,
       "date": "2019-01-27",
       "weight_kg": 88.0
     },
     {
-      "timestamp": 1548705785.0,
+      "timestamp": 1548705785,
       "date": "2019-01-28",
       "weight_kg": 88.0
     },
     {
-      "timestamp": 1548743163.0,
+      "timestamp": 1548743163,
       "date": "2019-01-29",
       "weight_kg": 88.0
     },
     {
-      "timestamp": 1548858062.0,
+      "timestamp": 1548858062,
       "date": "2019-01-30",
       "weight_kg": 88.0
     },
     {
-      "timestamp": 1548915965.0,
+      "timestamp": 1548915965,
       "date": "2019-01-31",
       "weight_kg": 88.0
     },
     {
-      "timestamp": 1549468425.0,
+      "timestamp": 1549468425,
       "date": "2019-02-06",
       "weight_kg": 88.0
     },
     {
-      "timestamp": 1549526474.0,
+      "timestamp": 1549526474,
       "date": "2019-02-07",
       "weight_kg": 88.0
     },
     {
-      "timestamp": 1549609517.0,
+      "timestamp": 1549609517,
       "date": "2019-02-08",
       "weight_kg": 88.0
     },
     {
-      "timestamp": 1549698849.0,
+      "timestamp": 1549698849,
       "date": "2019-02-09",
       "weight_kg": 88.0
     },
     {
-      "timestamp": 1549866455.0,
+      "timestamp": 1549866455,
       "date": "2019-02-11",
       "weight_kg": 87.9
     },
     {
-      "timestamp": 1549953914.0,
+      "timestamp": 1549953914,
       "date": "2019-02-12",
       "weight_kg": 87.9
     },
     {
-      "timestamp": 1550044094.0,
+      "timestamp": 1550044094,
       "date": "2019-02-13",
       "weight_kg": 87.9
     },
     {
-      "timestamp": 1550128377.0,
+      "timestamp": 1550128377,
       "date": "2019-02-14",
       "weight_kg": 87.9
     },
     {
-      "timestamp": 1550212979.0,
+      "timestamp": 1550212979,
       "date": "2019-02-15",
       "weight_kg": 87.9
     },
     {
-      "timestamp": 1550314960.0,
+      "timestamp": 1550314960,
       "date": "2019-02-16",
       "weight_kg": 87.9
     },
     {
-      "timestamp": 1550506505.0,
+      "timestamp": 1550506505,
       "date": "2019-02-18",
       "weight_kg": 87.9
     },
     {
-      "timestamp": 1550651872.0,
+      "timestamp": 1550651872,
       "date": "2019-02-20",
       "weight_kg": 87.9
     },
     {
-      "timestamp": 1550845006.0,
+      "timestamp": 1550845006,
       "date": "2019-02-22",
       "weight_kg": 87.9
     },
     {
-      "timestamp": 1550913305.0,
+      "timestamp": 1550913305,
       "date": "2019-02-23",
       "weight_kg": 87.9
     },
     {
-      "timestamp": 1551111257.0,
+      "timestamp": 1551111257,
       "date": "2019-02-25",
       "weight_kg": 87.9
     },
     {
-      "timestamp": 1551192424.0,
+      "timestamp": 1551192424,
       "date": "2019-02-26",
       "weight_kg": 89.2
     },
     {
-      "timestamp": 1551261149.0,
+      "timestamp": 1551261149,
       "date": "2019-02-27",
       "weight_kg": 89.1
     },
     {
-      "timestamp": 1551880357.0,
+      "timestamp": 1551880357,
       "date": "2019-03-06",
       "weight_kg": 88.2
     },
     {
-      "timestamp": 1552126774.0,
+      "timestamp": 1552126774,
       "date": "2019-03-09",
       "weight_kg": 90.1
     },
     {
-      "timestamp": 1552290357.0,
+      "timestamp": 1552290357,
       "date": "2019-03-11",
       "weight_kg": 90.0
     },
     {
-      "timestamp": 1552578018.0,
+      "timestamp": 1552578018,
       "date": "2019-03-14",
       "weight_kg": 89.9
     },
     {
-      "timestamp": 1552728678.0,
+      "timestamp": 1552728678,
       "date": "2019-03-16",
       "weight_kg": 89.9
     },
     {
-      "timestamp": 1552918704.0,
+      "timestamp": 1552918704,
       "date": "2019-03-18",
       "weight_kg": 89.8
     },
     {
-      "timestamp": 1553058905.0,
+      "timestamp": 1553058905,
       "date": "2019-03-20",
       "weight_kg": 89.8
     },
     {
-      "timestamp": 1553145208.0,
+      "timestamp": 1553145208,
       "date": "2019-03-21",
       "weight_kg": 89.7
     },
     {
-      "timestamp": 1553231861.0,
+      "timestamp": 1553231861,
       "date": "2019-03-22",
       "weight_kg": 89.7
     },
     {
-      "timestamp": 1553490887.0,
+      "timestamp": 1553490887,
       "date": "2019-03-25",
       "weight_kg": 89.6
     },
     {
-      "timestamp": 1553577435.0,
+      "timestamp": 1553577435,
       "date": "2019-03-26",
       "weight_kg": 89.6
     },
     {
-      "timestamp": 1553760079.0,
+      "timestamp": 1553760079,
       "date": "2019-03-28",
       "weight_kg": 89.6
     },
     {
-      "timestamp": 1554133139.0,
+      "timestamp": 1554133139,
       "date": "2019-04-01",
       "weight_kg": 89.4
     },
     {
-      "timestamp": 1554184022.0,
+      "timestamp": 1554184022,
       "date": "2019-04-02",
       "weight_kg": 89.4
     },
     {
-      "timestamp": 1554357291.0,
+      "timestamp": 1554357291,
       "date": "2019-04-04",
       "weight_kg": 89.4
     },
     {
-      "timestamp": 1554443453.0,
+      "timestamp": 1554443453,
       "date": "2019-04-05",
       "weight_kg": 89.3
     },
     {
-      "timestamp": 1554702569.0,
+      "timestamp": 1554702569,
       "date": "2019-04-08",
       "weight_kg": 90.1
     },
     {
-      "timestamp": 1554788567.0,
+      "timestamp": 1554788567,
       "date": "2019-04-09",
       "weight_kg": 88.3
     },
     {
-      "timestamp": 1554961778.0,
+      "timestamp": 1554961778,
       "date": "2019-04-11",
       "weight_kg": 88.5
     },
     {
-      "timestamp": 1555048263.0,
+      "timestamp": 1555048263,
       "date": "2019-04-12",
       "weight_kg": 88.6
     },
     {
-      "timestamp": 1555306782.0,
+      "timestamp": 1555306782,
       "date": "2019-04-15",
       "weight_kg": 88.8
     },
     {
-      "timestamp": 1555401478.0,
+      "timestamp": 1555401478,
       "date": "2019-04-16",
       "weight_kg": 88.9
     },
     {
-      "timestamp": 1555573927.0,
+      "timestamp": 1555573927,
       "date": "2019-04-18",
       "weight_kg": 89.1
     },
     {
-      "timestamp": 1555676002.0,
+      "timestamp": 1555676002,
       "date": "2019-04-19",
       "weight_kg": 89.2
     },
     {
-      "timestamp": 1556037476.0,
+      "timestamp": 1556037476,
       "date": "2019-04-23",
       "weight_kg": 89.6
     },
     {
-      "timestamp": 1556258205.0,
+      "timestamp": 1556258205,
       "date": "2019-04-26",
       "weight_kg": 89.8
     },
     {
-      "timestamp": 1556548078.0,
+      "timestamp": 1556548078,
       "date": "2019-04-29",
       "weight_kg": 90.1
     },
     {
-      "timestamp": 1556801035.0,
+      "timestamp": 1556801035,
       "date": "2019-05-02",
       "weight_kg": 89.4
     },
     {
-      "timestamp": 1556890270.0,
+      "timestamp": 1556890270,
       "date": "2019-05-03",
       "weight_kg": 89.1
     },
     {
-      "timestamp": 1557130047.0,
+      "timestamp": 1557130047,
       "date": "2019-05-06",
       "weight_kg": 88.4
     },
     {
-      "timestamp": 1557217114.0,
+      "timestamp": 1557217114,
       "date": "2019-05-07",
       "weight_kg": 89.7
     },
     {
-      "timestamp": 1557383942.0,
+      "timestamp": 1557383942,
       "date": "2019-05-09",
       "weight_kg": 91.0
     },
     {
-      "timestamp": 1557470258.0,
+      "timestamp": 1557470258,
       "date": "2019-05-10",
       "weight_kg": 90.8
     },
     {
-      "timestamp": 1557738625.0,
+      "timestamp": 1557738625,
       "date": "2019-05-13",
       "weight_kg": 90.4
     },
     {
-      "timestamp": 1557820358.0,
+      "timestamp": 1557820358,
       "date": "2019-05-14",
       "weight_kg": 90.2
     },
     {
-      "timestamp": 1557995699.0,
+      "timestamp": 1557995699,
       "date": "2019-05-16",
       "weight_kg": 89.9
     },
     {
-      "timestamp": 1558078025.0,
+      "timestamp": 1558078025,
       "date": "2019-05-17",
       "weight_kg": 89.8
     },
     {
-      "timestamp": 1558366540.0,
+      "timestamp": 1558366540,
       "date": "2019-05-20",
       "weight_kg": 89.3
     },
     {
-      "timestamp": 1558416994.0,
+      "timestamp": 1558416994,
       "date": "2019-05-21",
       "weight_kg": 91.2
     },
     {
-      "timestamp": 1558589469.0,
+      "timestamp": 1558589469,
       "date": "2019-05-23",
       "weight_kg": 91.2
     },
     {
-      "timestamp": 1558686496.0,
+      "timestamp": 1558686496,
       "date": "2019-05-24",
       "weight_kg": 91.2
     },
     {
-      "timestamp": 1558795740.0,
+      "timestamp": 1558795740,
       "date": "2019-05-25",
       "weight_kg": 91.2
     },
     {
-      "timestamp": 1558941150.0,
+      "timestamp": 1558941150,
       "date": "2019-05-27",
       "weight_kg": 91.2
     },
     {
-      "timestamp": 1559031145.0,
+      "timestamp": 1559031145,
       "date": "2019-05-28",
       "weight_kg": 91.2
     },
     {
-      "timestamp": 1559205704.0,
+      "timestamp": 1559205704,
       "date": "2019-05-30",
       "weight_kg": 91.2
     },
     {
-      "timestamp": 1559289239.0,
+      "timestamp": 1559289239,
       "date": "2019-05-31",
       "weight_kg": 91.2
     },
     {
-      "timestamp": 1559387529.0,
+      "timestamp": 1559387529,
       "date": "2019-06-01",
       "weight_kg": 91.2
     },
     {
-      "timestamp": 1559554542.0,
+      "timestamp": 1559554542,
       "date": "2019-06-03",
       "weight_kg": 91.2
     },
     {
-      "timestamp": 1559633653.0,
+      "timestamp": 1559633653,
       "date": "2019-06-04",
       "weight_kg": 91.2
     },
     {
-      "timestamp": 1559753132.0,
+      "timestamp": 1559753132,
       "date": "2019-06-05",
       "weight_kg": 91.2
     },
     {
-      "timestamp": 1559811194.0,
+      "timestamp": 1559811194,
       "date": "2019-06-06",
       "weight_kg": 91.2
     },
     {
-      "timestamp": 1559894018.0,
+      "timestamp": 1559894018,
       "date": "2019-06-07",
       "weight_kg": 91.2
     },
     {
-      "timestamp": 1560160183.0,
+      "timestamp": 1560160183,
       "date": "2019-06-10",
       "weight_kg": 91.2
     },
     {
-      "timestamp": 1560333801.0,
+      "timestamp": 1560333801,
       "date": "2019-06-12",
       "weight_kg": 91.2
     },
     {
-      "timestamp": 1560591941.0,
+      "timestamp": 1560591941,
       "date": "2019-06-15",
       "weight_kg": 91.2
     },
     {
-      "timestamp": 1560756191.0,
+      "timestamp": 1560756191,
       "date": "2019-06-17",
       "weight_kg": 91.2
     },
     {
-      "timestamp": 1560834175.0,
+      "timestamp": 1560834175,
       "date": "2019-06-18",
       "weight_kg": 91.2
     },
     {
-      "timestamp": 1561144434.0,
+      "timestamp": 1561144434,
       "date": "2019-06-21",
       "weight_kg": 91.2
     },
     {
-      "timestamp": 1561635144.0,
+      "timestamp": 1561635144,
       "date": "2019-06-27",
       "weight_kg": 91.2
     },
     {
-      "timestamp": 1561901829.0,
+      "timestamp": 1561901829,
       "date": "2019-06-30",
       "weight_kg": 92.2
     },
     {
-      "timestamp": 1562260629.0,
+      "timestamp": 1562260629,
       "date": "2019-07-04",
       "weight_kg": 92.1
     },
     {
-      "timestamp": 1562692240.0,
+      "timestamp": 1562692240,
       "date": "2019-07-09",
       "weight_kg": 92.0
     },
     {
-      "timestamp": 1562862009.0,
+      "timestamp": 1562862009,
       "date": "2019-07-11",
       "weight_kg": 91.9
     },
     {
-      "timestamp": 1562954836.0,
+      "timestamp": 1562954836,
       "date": "2019-07-12",
       "weight_kg": 91.9
     },
     {
-      "timestamp": 1563041175.0,
+      "timestamp": 1563041175,
       "date": "2019-07-13",
       "weight_kg": 91.9
     },
     {
-      "timestamp": 1563091658.0,
+      "timestamp": 1563091658,
       "date": "2019-07-14",
       "weight_kg": 91.8
     },
     {
-      "timestamp": 1563189259.0,
+      "timestamp": 1563189259,
       "date": "2019-07-15",
       "weight_kg": 91.8
     },
     {
-      "timestamp": 1563255312.0,
+      "timestamp": 1563255312,
       "date": "2019-07-16",
       "weight_kg": 91.8
     },
     {
-      "timestamp": 1563470004.0,
+      "timestamp": 1563470004,
       "date": "2019-07-18",
       "weight_kg": 91.7
     },
     {
-      "timestamp": 1563555529.0,
+      "timestamp": 1563555529,
       "date": "2019-07-19",
       "weight_kg": 91.7
     },
     {
-      "timestamp": 1563774705.0,
+      "timestamp": 1563774705,
       "date": "2019-07-22",
       "weight_kg": 91.7
     },
     {
-      "timestamp": 1563947123.0,
+      "timestamp": 1563947123,
       "date": "2019-07-24",
       "weight_kg": 91.6
     },
     {
-      "timestamp": 1564119499.0,
+      "timestamp": 1564119499,
       "date": "2019-07-26",
       "weight_kg": 91.6
     },
     {
-      "timestamp": 1564226590.0,
+      "timestamp": 1564226590,
       "date": "2019-07-27",
       "weight_kg": 91.5
     },
     {
-      "timestamp": 1564311726.0,
+      "timestamp": 1564311726,
       "date": "2019-07-28",
       "weight_kg": 91.5
     },
     {
-      "timestamp": 1564378461.0,
+      "timestamp": 1564378461,
       "date": "2019-07-29",
       "weight_kg": 91.5
     },
     {
-      "timestamp": 1564553155.0,
+      "timestamp": 1564553155,
       "date": "2019-07-31",
       "weight_kg": 91.4
     },
     {
-      "timestamp": 1564732892.0,
+      "timestamp": 1564732892,
       "date": "2019-08-02",
       "weight_kg": 91.4
     },
     {
-      "timestamp": 1565081684.0,
+      "timestamp": 1565081684,
       "date": "2019-08-06",
       "weight_kg": 91.3
     },
     {
-      "timestamp": 1565376355.0,
+      "timestamp": 1565376355,
       "date": "2019-08-09",
       "weight_kg": 91.2
     },
     {
-      "timestamp": 1565448939.0,
+      "timestamp": 1565448939,
       "date": "2019-08-10",
       "weight_kg": 92.5
     },
     {
-      "timestamp": 1565627191.0,
+      "timestamp": 1565627191,
       "date": "2019-08-12",
       "weight_kg": 92.4
     },
     {
-      "timestamp": 1565737512.0,
+      "timestamp": 1565737512,
       "date": "2019-08-14",
       "weight_kg": 92.3
     },
     {
-      "timestamp": 1565865033.0,
+      "timestamp": 1565865033,
       "date": "2019-08-15",
       "weight_kg": 92.3
     },
     {
-      "timestamp": 1566053372.0,
+      "timestamp": 1566053372,
       "date": "2019-08-17",
       "weight_kg": 92.2
     },
     {
-      "timestamp": 1566201632.0,
+      "timestamp": 1566201632,
       "date": "2019-08-19",
       "weight_kg": 92.5
     },
     {
-      "timestamp": 1566315956.0,
+      "timestamp": 1566315956,
       "date": "2019-08-20",
       "weight_kg": 92.5
     },
     {
-      "timestamp": 1566381805.0,
+      "timestamp": 1566381805,
       "date": "2019-08-21",
       "weight_kg": 92.5
     },
     {
-      "timestamp": 1566581119.0,
+      "timestamp": 1566581119,
       "date": "2019-08-23",
       "weight_kg": 92.5
     },
     {
-      "timestamp": 1566659460.0,
+      "timestamp": 1566659460,
       "date": "2019-08-24",
       "weight_kg": 92.5
     },
     {
-      "timestamp": 1566755627.0,
+      "timestamp": 1566755627,
       "date": "2019-08-25",
       "weight_kg": 92.5
     },
     {
-      "timestamp": 1566830085.0,
+      "timestamp": 1566830085,
       "date": "2019-08-26",
       "weight_kg": 92.5
     },
     {
-      "timestamp": 1566909870.0,
+      "timestamp": 1566909870,
       "date": "2019-08-27",
       "weight_kg": 92.5
     },
     {
-      "timestamp": 1567615200.0,
+      "timestamp": 1567615200,
       "date": "2019-09-04",
       "weight_kg": 92.5
     },
     {
-      "timestamp": 1567762913.0,
+      "timestamp": 1567762913,
       "date": "2019-09-06",
       "weight_kg": 92.5
     },
     {
-      "timestamp": 1567893775.0,
+      "timestamp": 1567893775,
       "date": "2019-09-08",
       "weight_kg": 92.5
     },
     {
-      "timestamp": 1568020133.0,
+      "timestamp": 1568020133,
       "date": "2019-09-09",
       "weight_kg": 92.5
     },
     {
-      "timestamp": 1568284920.0,
+      "timestamp": 1568284920,
       "date": "2019-09-12",
       "weight_kg": 92.5
     },
     {
-      "timestamp": 1568630758.0,
+      "timestamp": 1568630758,
       "date": "2019-09-16",
       "weight_kg": 92.5
     },
     {
-      "timestamp": 1568890799.0,
+      "timestamp": 1568890799,
       "date": "2019-09-19",
       "weight_kg": 92.5
     },
     {
-      "timestamp": 1569257428.0,
+      "timestamp": 1569257428,
       "date": "2019-09-23",
       "weight_kg": 92.5
     },
     {
-      "timestamp": 1569431642.0,
+      "timestamp": 1569431642,
       "date": "2019-09-25",
       "weight_kg": 91.6
     },
     {
-      "timestamp": 1569848460.0,
+      "timestamp": 1569848460,
       "date": "2019-09-30",
       "weight_kg": 91.8
     },
     {
-      "timestamp": 1570205471.0,
+      "timestamp": 1570205471,
       "date": "2019-10-04",
       "weight_kg": 92.0
     },
     {
-      "timestamp": 1570732294.0,
+      "timestamp": 1570732294,
       "date": "2019-10-10",
       "weight_kg": 92.3
     },
     {
-      "timestamp": 1571062996.0,
+      "timestamp": 1571062996,
       "date": "2019-10-14",
       "weight_kg": 92.4
     },
     {
-      "timestamp": 1571244812.0,
+      "timestamp": 1571244812,
       "date": "2019-10-16",
       "weight_kg": 91.5
     },
     {
-      "timestamp": 1572626820.0,
+      "timestamp": 1572626820,
       "date": "2019-11-01",
       "weight_kg": 91.8
     },
     {
-      "timestamp": 1572890160.0,
+      "timestamp": 1572890160,
       "date": "2019-11-04",
       "weight_kg": 91.8
     },
     {
-      "timestamp": 1573404654.0,
+      "timestamp": 1573404654,
       "date": "2019-11-10",
       "weight_kg": 91.7
     },
     {
-      "timestamp": 1573711082.0,
+      "timestamp": 1573711082,
       "date": "2019-11-14",
       "weight_kg": 91.7
     },
     {
-      "timestamp": 1574425320.0,
+      "timestamp": 1574425320,
       "date": "2019-11-22",
       "weight_kg": 91.7
     },
     {
-      "timestamp": 1574601795.0,
+      "timestamp": 1574601795,
       "date": "2019-11-24",
       "weight_kg": 91.7
     },
     {
-      "timestamp": 1574751544.0,
+      "timestamp": 1574751544,
       "date": "2019-11-26",
       "weight_kg": 91.7
     },
     {
-      "timestamp": 1575133483.0,
+      "timestamp": 1575133483,
       "date": "2019-11-30",
       "weight_kg": 91.7
     },
     {
-      "timestamp": 1575655450.0,
+      "timestamp": 1575655450,
       "date": "2019-12-06",
       "weight_kg": 91.7
     },
     {
-      "timestamp": 1575995194.0,
+      "timestamp": 1575995194,
       "date": "2019-12-10",
       "weight_kg": 91.7
     },
     {
-      "timestamp": 1576408574.0,
+      "timestamp": 1576408574,
       "date": "2019-12-15",
       "weight_kg": 91.6
     },
     {
-      "timestamp": 1576579345.0,
+      "timestamp": 1576579345,
       "date": "2019-12-17",
       "weight_kg": 91.6
     },
     {
-      "timestamp": 1576932349.0,
+      "timestamp": 1576932349,
       "date": "2019-12-21",
       "weight_kg": 91.6
     },
     {
-      "timestamp": 1577022938.0,
+      "timestamp": 1577022938,
       "date": "2019-12-22",
       "weight_kg": 91.6
     },
     {
-      "timestamp": 1577271007.0,
+      "timestamp": 1577271007,
       "date": "2019-12-25",
       "weight_kg": 91.6
     },
     {
-      "timestamp": 1577723946.0,
+      "timestamp": 1577723946,
       "date": "2019-12-30",
       "weight_kg": 91.6
     },
     {
-      "timestamp": 1577795466.0,
+      "timestamp": 1577795466,
       "date": "2019-12-31",
       "weight_kg": 91.6
     },
     {
-      "timestamp": 1578146630.0,
+      "timestamp": 1578146630,
       "date": "2020-01-04",
       "weight_kg": 91.6
     },
     {
-      "timestamp": 1578383195.0,
+      "timestamp": 1578383195,
       "date": "2020-01-07",
       "weight_kg": 91.6
     },
     {
-      "timestamp": 1578758246.0,
+      "timestamp": 1578758246,
       "date": "2020-01-11",
       "weight_kg": 91.6
     },
     {
-      "timestamp": 1579352801.0,
+      "timestamp": 1579352801,
       "date": "2020-01-18",
       "weight_kg": 91.6
     },
     {
-      "timestamp": 1580568776.0,
+      "timestamp": 1580568776,
       "date": "2020-02-01",
       "weight_kg": 91.5
     },
     {
-      "timestamp": 1580811856.0,
+      "timestamp": 1580811856,
       "date": "2020-02-04",
       "weight_kg": 91.5
     },
     {
-      "timestamp": 1581254623.0,
+      "timestamp": 1581254623,
       "date": "2020-02-09",
       "weight_kg": 91.5
     },
     {
-      "timestamp": 1581406560.0,
+      "timestamp": 1581406560,
       "date": "2020-02-11",
       "weight_kg": 91.5
     },
     {
-      "timestamp": 1581860346.0,
+      "timestamp": 1581860346,
       "date": "2020-02-16",
       "weight_kg": 96.5
     },
     {
-      "timestamp": 1582031160.0,
+      "timestamp": 1582031160,
       "date": "2020-02-18",
       "weight_kg": 96.5
     },
     {
-      "timestamp": 1582455219.0,
+      "timestamp": 1582455219,
       "date": "2020-02-23",
       "weight_kg": 96.3
     },
     {
-      "timestamp": 1583825397.0,
+      "timestamp": 1583825397,
       "date": "2020-03-10",
       "weight_kg": 95.8
     },
     {
-      "timestamp": 1583995045.0,
+      "timestamp": 1583995045,
       "date": "2020-03-12",
       "weight_kg": 95.8
     },
     {
-      "timestamp": 1584080879.0,
+      "timestamp": 1584080879,
       "date": "2020-03-13",
       "weight_kg": 95.7
     },
     {
-      "timestamp": 1584206725.0,
+      "timestamp": 1584206725,
       "date": "2020-03-14",
       "weight_kg": 95.7
     },
     {
-      "timestamp": 1584814129.0,
+      "timestamp": 1584814129,
       "date": "2020-03-21",
       "weight_kg": 95.5
     },
     {
-      "timestamp": 1584902927.0,
+      "timestamp": 1584902927,
       "date": "2020-03-22",
       "weight_kg": 95.4
     },
     {
-      "timestamp": 1585075680.0,
+      "timestamp": 1585075680,
       "date": "2020-03-24",
       "weight_kg": 95.4
     },
     {
-      "timestamp": 1585292124.0,
+      "timestamp": 1585292124,
       "date": "2020-03-27",
       "weight_kg": 95.3
     },
     {
-      "timestamp": 1585497081.0,
+      "timestamp": 1585497081,
       "date": "2020-03-29",
       "weight_kg": 95.2
     },
     {
-      "timestamp": 1585678619.0,
+      "timestamp": 1585678619,
       "date": "2020-03-31",
       "weight_kg": 95.1
     },
     {
-      "timestamp": 1586104144.0,
+      "timestamp": 1586104144,
       "date": "2020-04-05",
       "weight_kg": 95.0
     },
     {
-      "timestamp": 1586152077.0,
+      "timestamp": 1586152077,
       "date": "2020-04-06",
       "weight_kg": 95.0
     },
     {
-      "timestamp": 1586239664.0,
+      "timestamp": 1586239664,
       "date": "2020-04-07",
       "weight_kg": 94.9
     },
     {
-      "timestamp": 1586603321.0,
+      "timestamp": 1586603321,
       "date": "2020-04-11",
       "weight_kg": 94.8
     },
     {
-      "timestamp": 1586693617.0,
+      "timestamp": 1586693617,
       "date": "2020-04-12",
       "weight_kg": 94.8
     },
     {
-      "timestamp": 1586767044.0,
+      "timestamp": 1586767044,
       "date": "2020-04-13",
       "weight_kg": 94.7
     },
     {
-      "timestamp": 1587707472.0,
+      "timestamp": 1587707472,
       "date": "2020-04-24",
       "weight_kg": 94.4
     },
     {
-      "timestamp": 1587838411.0,
+      "timestamp": 1587838411,
       "date": "2020-04-25",
       "weight_kg": 94.4
     },
     {
-      "timestamp": 1587920955.0,
+      "timestamp": 1587920955,
       "date": "2020-04-26",
       "weight_kg": 94.3
     },
     {
-      "timestamp": 1588267256.0,
+      "timestamp": 1588267256,
       "date": "2020-04-30",
       "weight_kg": 94.2
     },
     {
-      "timestamp": 1588360140.0,
+      "timestamp": 1588360140,
       "date": "2020-05-01",
       "weight_kg": 94.2
     },
     {
-      "timestamp": 1588514259.0,
+      "timestamp": 1588514259,
       "date": "2020-05-03",
       "weight_kg": 94.1
     },
     {
-      "timestamp": 1588659597.0,
+      "timestamp": 1588659597,
       "date": "2020-05-05",
       "weight_kg": 94.1
     },
     {
-      "timestamp": 1588831717.0,
+      "timestamp": 1588831717,
       "date": "2020-05-07",
       "weight_kg": 94.0
     },
     {
-      "timestamp": 1589349789.0,
+      "timestamp": 1589349789,
       "date": "2020-05-13",
       "weight_kg": 93.8
     },
     {
-      "timestamp": 1589635112.0,
+      "timestamp": 1589635112,
       "date": "2020-05-16",
       "weight_kg": 93.7
     },
     {
-      "timestamp": 1590387188.0,
+      "timestamp": 1590387188,
       "date": "2020-05-25",
       "weight_kg": 93.4
     },
     {
-      "timestamp": 1590857091.0,
+      "timestamp": 1590857091,
       "date": "2020-05-30",
       "weight_kg": 93.3
     },
     {
-      "timestamp": 1591076077.0,
+      "timestamp": 1591076077,
       "date": "2020-06-02",
       "weight_kg": 93.2
     },
     {
-      "timestamp": 1591162814.0,
+      "timestamp": 1591162814,
       "date": "2020-06-03",
       "weight_kg": 93.1
     },
     {
-      "timestamp": 1591886382.0,
+      "timestamp": 1591886382,
       "date": "2020-06-11",
       "weight_kg": 92.9
     },
     {
-      "timestamp": 1592561106.0,
+      "timestamp": 1592561106,
       "date": "2020-06-19",
       "weight_kg": 92.6
     },
     {
-      "timestamp": 1592646520.0,
+      "timestamp": 1592646520,
       "date": "2020-06-20",
       "weight_kg": 92.6
     },
     {
-      "timestamp": 1592755703.0,
+      "timestamp": 1592755703,
       "date": "2020-06-21",
       "weight_kg": 92.6
     },
     {
-      "timestamp": 1592890869.0,
+      "timestamp": 1592890869,
       "date": "2020-06-23",
       "weight_kg": 92.5
     },
     {
-      "timestamp": 1592976766.0,
+      "timestamp": 1592976766,
       "date": "2020-06-24",
       "weight_kg": 92.5
     },
     {
-      "timestamp": 1593514723.0,
+      "timestamp": 1593514723,
       "date": "2020-06-30",
       "weight_kg": 92.3
     },
     {
-      "timestamp": 1594750780.0,
+      "timestamp": 1594750780,
       "date": "2020-07-14",
       "weight_kg": 91.8
     },
     {
-      "timestamp": 1594813134.0,
+      "timestamp": 1594813134,
       "date": "2020-07-15",
       "weight_kg": 91.8
     },
     {
-      "timestamp": 1594877588.0,
+      "timestamp": 1594877588,
       "date": "2020-07-16",
       "weight_kg": 96.6
     },
     {
-      "timestamp": 1594963846.0,
+      "timestamp": 1594963846,
       "date": "2020-07-17",
       "weight_kg": 99.0
     },
     {
-      "timestamp": 1595062131.0,
+      "timestamp": 1595062131,
       "date": "2020-07-18",
       "weight_kg": 99.0
     },
     {
-      "timestamp": 1595161493.0,
+      "timestamp": 1595161493,
       "date": "2020-07-19",
       "weight_kg": 98.9
     },
     {
-      "timestamp": 1595309672.0,
+      "timestamp": 1595309672,
       "date": "2020-07-21",
       "weight_kg": 98.9
     },
     {
-      "timestamp": 1595568646.0,
+      "timestamp": 1595568646,
       "date": "2020-07-24",
       "weight_kg": 98.8
     },
     {
-      "timestamp": 1595667840.0,
+      "timestamp": 1595667840,
       "date": "2020-07-25",
       "weight_kg": 98.8
     },
     {
-      "timestamp": 1595774683.0,
+      "timestamp": 1595774683,
       "date": "2020-07-26",
       "weight_kg": 98.8
     },
     {
-      "timestamp": 1595829370.0,
+      "timestamp": 1595829370,
       "date": "2020-07-27",
       "weight_kg": 98.8
     },
     {
-      "timestamp": 1597209823.0,
+      "timestamp": 1597209823,
       "date": "2020-08-12",
       "weight_kg": 98.5
     },
     {
-      "timestamp": 1597484721.0,
+      "timestamp": 1597484721,
       "date": "2020-08-15",
       "weight_kg": 98.4
     },
     {
-      "timestamp": 1597641686.0,
+      "timestamp": 1597641686,
       "date": "2020-08-17",
       "weight_kg": 98.4
     },
     {
-      "timestamp": 1597816285.0,
+      "timestamp": 1597816285,
       "date": "2020-08-19",
       "weight_kg": 98.3
     },
     {
-      "timestamp": 1597927121.0,
+      "timestamp": 1597927121,
       "date": "2020-08-20",
       "weight_kg": 98.3
     },
     {
-      "timestamp": 1598857968.0,
+      "timestamp": 1598857968,
       "date": "2020-08-31",
       "weight_kg": 98.1
     },
     {
-      "timestamp": 1598943845.0,
+      "timestamp": 1598943845,
       "date": "2020-09-01",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1599024904.0,
+      "timestamp": 1599024904,
       "date": "2020-09-02",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1599135611.0,
+      "timestamp": 1599135611,
       "date": "2020-09-03",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1599390312.0,
+      "timestamp": 1599390312,
       "date": "2020-09-06",
       "weight_kg": 97.9
     },
     {
-      "timestamp": 1599626412.0,
+      "timestamp": 1599626412,
       "date": "2020-09-09",
       "weight_kg": 97.9
     },
     {
-      "timestamp": 1600004293.0,
+      "timestamp": 1600004293,
       "date": "2020-09-13",
       "weight_kg": 97.8
     },
     {
-      "timestamp": 1600318544.0,
+      "timestamp": 1600318544,
       "date": "2020-09-17",
       "weight_kg": 97.7
     },
     {
-      "timestamp": 1600403735.0,
+      "timestamp": 1600403735,
       "date": "2020-09-18",
       "weight_kg": 97.7
     },
     {
-      "timestamp": 1600662752.0,
+      "timestamp": 1600662752,
       "date": "2020-09-21",
       "weight_kg": 97.6
     },
     {
-      "timestamp": 1600839801.0,
+      "timestamp": 1600839801,
       "date": "2020-09-23",
       "weight_kg": 97.6
     },
     {
-      "timestamp": 1601129312.0,
+      "timestamp": 1601129312,
       "date": "2020-09-26",
       "weight_kg": 97.5
     },
     {
-      "timestamp": 1601443627.0,
+      "timestamp": 1601443627,
       "date": "2020-09-30",
       "weight_kg": 97.4
     },
     {
-      "timestamp": 1602571841.0,
+      "timestamp": 1602571841,
       "date": "2020-10-13",
       "weight_kg": 97.2
     },
     {
-      "timestamp": 1602739801.0,
+      "timestamp": 1602739801,
       "date": "2020-10-15",
       "weight_kg": 97.1
     },
     {
-      "timestamp": 1603085610.0,
+      "timestamp": 1603085610,
       "date": "2020-10-19",
       "weight_kg": 97.0
     },
     {
-      "timestamp": 1603258715.0,
+      "timestamp": 1603258715,
       "date": "2020-10-21",
       "weight_kg": 97.0
     },
     {
-      "timestamp": 1603442099.0,
+      "timestamp": 1603442099,
       "date": "2020-10-23",
       "weight_kg": 97.0
     },
     {
-      "timestamp": 1605098723.0,
+      "timestamp": 1605098723,
       "date": "2020-11-11",
       "weight_kg": 97.1
     },
     {
-      "timestamp": 1605456024.0,
+      "timestamp": 1605456024,
       "date": "2020-11-15",
       "weight_kg": 97.4
     },
     {
-      "timestamp": 1606069020.0,
+      "timestamp": 1606069020,
       "date": "2020-11-22",
       "weight_kg": 97.8
     },
     {
-      "timestamp": 1606247421.0,
+      "timestamp": 1606247421,
       "date": "2020-11-24",
       "weight_kg": 97.9
     },
     {
-      "timestamp": 1606503867.0,
+      "timestamp": 1606503867,
       "date": "2020-11-27",
       "weight_kg": 98.1
     },
     {
-      "timestamp": 1606646102.0,
+      "timestamp": 1606646102,
       "date": "2020-11-29",
       "weight_kg": 98.2
     },
     {
-      "timestamp": 1606913166.0,
+      "timestamp": 1606913166,
       "date": "2020-12-02",
       "weight_kg": 98.3
     },
     {
-      "timestamp": 1607107875.0,
+      "timestamp": 1607107875,
       "date": "2020-12-04",
       "weight_kg": 98.5
     },
     {
-      "timestamp": 1607280424.0,
+      "timestamp": 1607280424,
       "date": "2020-12-06",
       "weight_kg": 98.6
     },
     {
-      "timestamp": 1607453939.0,
+      "timestamp": 1607453939,
       "date": "2020-12-08",
       "weight_kg": 98.7
     },
     {
-      "timestamp": 1607707952.0,
+      "timestamp": 1607707952,
       "date": "2020-12-11",
       "weight_kg": 98.9
     },
     {
-      "timestamp": 1607876286.0,
+      "timestamp": 1607876286,
       "date": "2020-12-13",
       "weight_kg": 99.0
     },
     {
-      "timestamp": 1608131184.0,
+      "timestamp": 1608131184,
       "date": "2020-12-16",
       "weight_kg": 99.7
     },
     {
-      "timestamp": 1608662979.0,
+      "timestamp": 1608662979,
       "date": "2020-12-22",
       "weight_kg": 99.0
     },
     {
-      "timestamp": 1608816579.0,
+      "timestamp": 1608816579,
       "date": "2020-12-24",
       "weight_kg": 98.8
     },
     {
-      "timestamp": 1609097216.0,
+      "timestamp": 1609097216,
       "date": "2020-12-27",
       "weight_kg": 98.5
     },
     {
-      "timestamp": 1609355084.0,
+      "timestamp": 1609355084,
       "date": "2020-12-30",
       "weight_kg": 98.1
     },
     {
-      "timestamp": 1609872800.0,
+      "timestamp": 1609872800,
       "date": "2021-01-05",
       "weight_kg": 97.5
     },
     {
-      "timestamp": 1610278365.0,
+      "timestamp": 1610278365,
       "date": "2021-01-10",
       "weight_kg": 100.0
     },
     {
-      "timestamp": 1610473545.0,
+      "timestamp": 1610473545,
       "date": "2021-01-12",
       "weight_kg": 102.4
     },
     {
-      "timestamp": 1611081724.0,
+      "timestamp": 1611081724,
       "date": "2021-01-19",
       "weight_kg": 101.8
     },
     {
-      "timestamp": 1611689668.0,
+      "timestamp": 1611689668,
       "date": "2021-01-26",
       "weight_kg": 101.2
     },
     {
-      "timestamp": 1612377119.0,
+      "timestamp": 1612377119,
       "date": "2021-02-03",
       "weight_kg": 100.4
     },
     {
-      "timestamp": 1612719060.0,
+      "timestamp": 1612719060,
       "date": "2021-02-07",
       "weight_kg": 100.1
     },
     {
-      "timestamp": 1612805580.0,
+      "timestamp": 1612805580,
       "date": "2021-02-08",
       "weight_kg": 100.0
     },
     {
-      "timestamp": 1612984555.0,
+      "timestamp": 1612984555,
       "date": "2021-02-10",
       "weight_kg": 100.7
     },
     {
-      "timestamp": 1613409540.0,
+      "timestamp": 1613409540,
       "date": "2021-02-15",
       "weight_kg": 100.2
     },
     {
-      "timestamp": 1613587115.0,
+      "timestamp": 1613587115,
       "date": "2021-02-17",
       "weight_kg": 100.1
     },
     {
-      "timestamp": 1614027501.0,
+      "timestamp": 1614027501,
       "date": "2021-02-22",
       "weight_kg": 100.2
     },
     {
-      "timestamp": 1614109418.0,
+      "timestamp": 1614109418,
       "date": "2021-02-23",
       "weight_kg": 99.8
     },
     {
-      "timestamp": 1614278013.0,
+      "timestamp": 1614278013,
       "date": "2021-02-25",
       "weight_kg": 99.3
     },
     {
-      "timestamp": 1614364888.0,
+      "timestamp": 1614364888,
       "date": "2021-02-26",
       "weight_kg": 99.4
     },
     {
-      "timestamp": 1614695767.0,
+      "timestamp": 1614695767,
       "date": "2021-03-02",
       "weight_kg": 99.9
     },
     {
-      "timestamp": 1614797862.0,
+      "timestamp": 1614797862,
       "date": "2021-03-03",
       "weight_kg": 100.3
     },
     {
-      "timestamp": 1614881880.0,
+      "timestamp": 1614881880,
       "date": "2021-03-04",
       "weight_kg": 100.1
     },
     {
-      "timestamp": 1614979440.0,
+      "timestamp": 1614979440,
       "date": "2021-03-05",
       "weight_kg": 99.7
     },
     {
-      "timestamp": 1616091613.0,
+      "timestamp": 1616091613,
       "date": "2021-03-18",
       "weight_kg": 97.2
     },
     {
-      "timestamp": 1616340284.0,
+      "timestamp": 1616340284,
       "date": "2021-03-21",
       "weight_kg": 97.4
     },
     {
-      "timestamp": 1617126864.0,
+      "timestamp": 1617126864,
       "date": "2021-03-30",
       "weight_kg": 96.4
     },
     {
-      "timestamp": 1617707397.0,
+      "timestamp": 1617707397,
       "date": "2021-04-06",
       "weight_kg": 96.5
     },
     {
-      "timestamp": 1617793172.0,
+      "timestamp": 1617793172,
       "date": "2021-04-07",
       "weight_kg": 97.4
     },
     {
-      "timestamp": 1619109030.0,
+      "timestamp": 1619109030,
       "date": "2021-04-22",
       "weight_kg": 97.3
     },
     {
-      "timestamp": 1619763311.0,
+      "timestamp": 1619763311,
       "date": "2021-04-30",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1620193512.0,
+      "timestamp": 1620193512,
       "date": "2021-05-05",
       "weight_kg": 97.1
     },
     {
-      "timestamp": 1621877318.45802,
+      "timestamp": 1621877318,
       "date": "2021-05-24",
       "weight_kg": 97.5
     },
     {
-      "timestamp": 1622060188.72283,
+      "timestamp": 1622060189,
       "date": "2021-05-26",
       "weight_kg": 97.5
     },
     {
-      "timestamp": 1622096991.8333,
+      "timestamp": 1622096992,
       "date": "2021-05-27",
       "weight_kg": 97.5
     },
     {
-      "timestamp": 1622572936.46733,
+      "timestamp": 1622572936,
       "date": "2021-06-01",
       "weight_kg": 97.6
     },
     {
-      "timestamp": 1623185612.88492,
+      "timestamp": 1623185613,
       "date": "2021-06-08",
       "weight_kg": 97.8
     },
     {
-      "timestamp": 1623357190.164874,
+      "timestamp": 1623357190,
       "date": "2021-06-10",
       "weight_kg": 97.8
     },
     {
-      "timestamp": 1623624590.282571,
+      "timestamp": 1623624590,
       "date": "2021-06-14",
       "weight_kg": 97.2
     },
     {
-      "timestamp": 1624038179.671414,
+      "timestamp": 1624038180,
       "date": "2021-06-18",
       "weight_kg": 97.2
     },
     {
-      "timestamp": 1624306810.589216,
+      "timestamp": 1624306811,
       "date": "2021-06-21",
       "weight_kg": 97.1
     },
     {
-      "timestamp": 1624733253.822509,
+      "timestamp": 1624733254,
       "date": "2021-06-26",
       "weight_kg": 97.1
     },
     {
-      "timestamp": 1624787223.487604,
+      "timestamp": 1624787223,
       "date": "2021-06-27",
       "weight_kg": 97.1
     },
     {
-      "timestamp": 1625152073.418816,
+      "timestamp": 1625152073,
       "date": "2021-07-01",
       "weight_kg": 100.7
     },
     {
-      "timestamp": 1625595953.144463,
+      "timestamp": 1625595953,
       "date": "2021-07-06",
       "weight_kg": 100.2
     },
     {
-      "timestamp": 1625683858.906848,
+      "timestamp": 1625683859,
       "date": "2021-07-07",
       "weight_kg": 100.1
     },
     {
-      "timestamp": 1625921297.245596,
+      "timestamp": 1625921297,
       "date": "2021-07-10",
       "weight_kg": 99.8
     },
     {
-      "timestamp": 1626374978.264748,
+      "timestamp": 1626374978,
       "date": "2021-07-15",
       "weight_kg": 99.3
     },
     {
-      "timestamp": 1626616511.593524,
+      "timestamp": 1626616512,
       "date": "2021-07-18",
       "weight_kg": 99.0
     },
     {
-      "timestamp": 1626806780.192372,
+      "timestamp": 1626806780,
       "date": "2021-07-20",
       "weight_kg": 98.8
     },
     {
-      "timestamp": 1626895381.081658,
+      "timestamp": 1626895381,
       "date": "2021-07-21",
       "weight_kg": 98.7
     },
     {
-      "timestamp": 1627414141.050514,
+      "timestamp": 1627414141,
       "date": "2021-07-27",
       "weight_kg": 98.1
     },
     {
-      "timestamp": 1627842734.566821,
+      "timestamp": 1627842735,
       "date": "2021-08-01",
       "weight_kg": 97.6
     },
     {
-      "timestamp": 1628023355.859061,
+      "timestamp": 1628023356,
       "date": "2021-08-03",
       "weight_kg": 97.4
     },
     {
-      "timestamp": 1628324949.385477,
+      "timestamp": 1628324949,
       "date": "2021-08-07",
       "weight_kg": 101.9
     },
     {
-      "timestamp": 1628543502.379763,
+      "timestamp": 1628543502,
       "date": "2021-08-09",
       "weight_kg": 101.8
     },
     {
-      "timestamp": 1629043365.579704,
+      "timestamp": 1629043366,
       "date": "2021-08-15",
       "weight_kg": 101.5
     },
     {
-      "timestamp": 1629699298.843944,
+      "timestamp": 1629699299,
       "date": "2021-08-23",
       "weight_kg": 102.0
     },
     {
-      "timestamp": 1629826100.16707,
+      "timestamp": 1629826100,
       "date": "2021-08-24",
       "weight_kg": 102.0
     },
     {
-      "timestamp": 1630001090.026583,
+      "timestamp": 1630001090,
       "date": "2021-08-26",
       "weight_kg": 102.0
     },
     {
-      "timestamp": 1630169693.709589,
+      "timestamp": 1630169694,
       "date": "2021-08-28",
       "weight_kg": 102.0
     },
     {
-      "timestamp": 1630347239.754163,
+      "timestamp": 1630347240,
       "date": "2021-08-30",
       "weight_kg": 102.0
     },
     {
-      "timestamp": 1630389166.753774,
+      "timestamp": 1630389167,
       "date": "2021-08-31",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1630523329.158785,
+      "timestamp": 1630523329,
       "date": "2021-09-01",
       "weight_kg": 98.1
     },
     {
-      "timestamp": 1630605950.294639,
+      "timestamp": 1630605950,
       "date": "2021-09-02",
       "weight_kg": 98.1
     },
     {
-      "timestamp": 1630950027.569471,
+      "timestamp": 1630950028,
       "date": "2021-09-06",
       "weight_kg": 98.3
     },
     {
-      "timestamp": 1631125075.935869,
+      "timestamp": 1631125076,
       "date": "2021-09-08",
       "weight_kg": 98.4
     },
     {
-      "timestamp": 1631223083.06399,
+      "timestamp": 1631223083,
       "date": "2021-09-09",
       "weight_kg": 98.4
     },
     {
-      "timestamp": 1631363050.983056,
+      "timestamp": 1631363051,
       "date": "2021-09-11",
       "weight_kg": 98.5
     },
     {
-      "timestamp": 1631567856.190449,
+      "timestamp": 1631567856,
       "date": "2021-09-13",
       "weight_kg": 98.6
     },
     {
-      "timestamp": 1631647031.844482,
+      "timestamp": 1631647032,
       "date": "2021-09-14",
       "weight_kg": 98.6
     },
     {
-      "timestamp": 1631736351.142368,
+      "timestamp": 1631736351,
       "date": "2021-09-15",
       "weight_kg": 98.7
     },
     {
-      "timestamp": 1632248085.01364,
+      "timestamp": 1632248085,
       "date": "2021-09-21",
       "weight_kg": 98.9
     },
     {
-      "timestamp": 1632336955.406464,
+      "timestamp": 1632336955,
       "date": "2021-09-22",
       "weight_kg": 99.0
     },
     {
-      "timestamp": 1632423841.84294,
+      "timestamp": 1632423842,
       "date": "2021-09-23",
       "weight_kg": 99.0
     },
     {
-      "timestamp": 1632650611.36904,
+      "timestamp": 1632650611,
       "date": "2021-09-26",
       "weight_kg": 99.1
     },
     {
-      "timestamp": 1633028560.316259,
+      "timestamp": 1633028560,
       "date": "2021-09-30",
       "weight_kg": 99.3
     },
     {
-      "timestamp": 1635706161.44638,
+      "timestamp": 1635706161,
       "date": "2021-10-31",
       "weight_kg": 100.7
     },
     {
-      "timestamp": 1637051549.020547,
+      "timestamp": 1637051549,
       "date": "2021-11-16",
       "weight_kg": 101.3
     },
     {
-      "timestamp": 1638448719.539286,
+      "timestamp": 1638448720,
       "date": "2021-12-02",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1638640323.549766,
+      "timestamp": 1638640324,
       "date": "2021-12-04",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1639161341.164627,
+      "timestamp": 1639161341,
       "date": "2021-12-10",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1639495968.729225,
+      "timestamp": 1639495969,
       "date": "2021-12-14",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1640105897.650821,
+      "timestamp": 1640105898,
       "date": "2021-12-21",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1641755372.310566,
+      "timestamp": 1641755372,
       "date": "2022-01-09",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1642440507.321496,
+      "timestamp": 1642440507,
       "date": "2022-01-17",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1642699591.44283,
+      "timestamp": 1642699591,
       "date": "2022-01-20",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1643323563.505569,
+      "timestamp": 1643323564,
       "date": "2022-01-27",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1644064904.281033,
+      "timestamp": 1644064904,
       "date": "2022-02-05",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1644346668.430521,
+      "timestamp": 1644346668,
       "date": "2022-02-08",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1645992359.753538,
+      "timestamp": 1645992360,
       "date": "2022-02-27",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1646494151.123236,
+      "timestamp": 1646494151,
       "date": "2022-03-05",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1647185243.977515,
+      "timestamp": 1647185244,
       "date": "2022-03-13",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1647885663.186282,
+      "timestamp": 1647885663,
       "date": "2022-03-21",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1647971096.615088,
+      "timestamp": 1647971097,
       "date": "2022-03-22",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1648980727.52178,
+      "timestamp": 1648980728,
       "date": "2022-04-03",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1649225379.319266,
+      "timestamp": 1649225379,
       "date": "2022-04-06",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1649397879.234045,
+      "timestamp": 1649397879,
       "date": "2022-04-08",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1649518568.016322,
+      "timestamp": 1649518568,
       "date": "2022-04-09",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1649656039.432939,
+      "timestamp": 1649656039,
       "date": "2022-04-11",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1649745543.028526,
+      "timestamp": 1649745543,
       "date": "2022-04-12",
       "weight_kg": 98.0
     },
     {
-      "timestamp": 1649830005.100596,
+      "timestamp": 1649830005,
       "date": "2022-04-13",
       "weight_kg": 98.0
     },
     {
       "date": "2023-12-25",
-      "timestamp": 1703461636.0,
+      "timestamp": 1703461636,
       "weight_kg": 101.0
     },
     {
       "date": "2024-02-04",
-      "timestamp": 1707070674.0,
+      "timestamp": 1707070674,
       "weight_kg": 100.6
     },
     {
       "date": "2024-04-19",
-      "timestamp": 1713510781.0,
+      "timestamp": 1713510781,
       "weight_kg": 99.0
     }
   ]
