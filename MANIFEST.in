@@ -1,2 +1,0 @@
-include biovector/config.yaml
-graft src

@@ -1,2 +1,13 @@
-data/**
-**.pyc
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.venv/
+.mypy_cache/
+.ruff_cache/
+.vscode/
+__marimo__/
+.kilocode/
+.kilocodemodes
