@@ -37,9 +37,9 @@
       "smoothed_1rm": 124.0,
       "smoothed_1rl": 24.8,
       "total_load": 174.0,
-      "total_phi": 157.3,
-      "hard_sets": 6.3,
-      "avg_intensity": 0.8438
+      "total_phi": 148.0,
+      "hard_sets": 5.8,
+      "avg_intensity": 0.7971
     },
     {
       "date": "2018-06-26",
@@ -51,9 +51,9 @@
       "smoothed_1rm": 129.2,
       "smoothed_1rl": 25.8,
       "total_load": 186.2,
-      "total_phi": 137.4,
-      "hard_sets": 6.4,
-      "avg_intensity": 0.8481
+      "total_phi": 124.4,
+      "hard_sets": 5.7,
+      "avg_intensity": 0.7887
     },
     {
       "date": "2018-07-04",
@@ -65,9 +65,9 @@
       "smoothed_1rm": 131.2,
       "smoothed_1rl": 26.2,
       "total_load": 111.4,
-      "total_phi": 115.1,
-      "hard_sets": 5.2,
-      "avg_intensity": 0.9175
+      "total_phi": 114.6,
+      "hard_sets": 5.1,
+      "avg_intensity": 0.8854
     }
   ]
 }

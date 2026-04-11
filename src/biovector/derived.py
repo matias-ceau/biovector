@@ -39,8 +39,10 @@ from biovector.core import epley, logistic
 PIPELINE_VERSION = "1.0.0"
 
 # EWRM parameters (section 5.2 of DESIGN.md)
-HALF_LIFE_SECONDS = 8 * 7 * 86400  # 8 weeks in seconds = 4_838_400
-DECAY_RATE = math.log(2) / HALF_LIFE_SECONDS
+# Decay-to-floor model: strength decays toward FLOOR_RATIO of PR, not toward zero.
+# This reflects physiological reality — strength persists for years.
+HALF_LIFE_SECONDS = 52 * 7 * 86400  # 52 weeks (1 year) in seconds = 31_449_600
+FLOOR_RATIO = 0.75  # Strength never decays below 75% of a historical PR
 MIN_SESSIONS_FOR_CONFIDENCE = 3  # < 3 → "low", >= 3 → "high"
 
 # Only exercises with >= 5 sets get a timeseries file
@@ -379,21 +381,42 @@ class DerivedDataPipeline:
     # -- Pass 2: Smoothed 1RM (EWRM) ----------------------------------------
 
     def pass2_smoothed_1rm(self) -> None:
-        """Run the Exponentially Weighted Running Maximum algorithm per exercise."""
-        self.log("Pass 2: Smoothed 1RM (EWRM)...")
+        """Run the Exponentially Weighted Running Maximum algorithm per exercise.
+
+        Uses a decay-to-floor model: strength estimates decay toward a floor
+        (FLOOR_RATIO × PR) rather than toward zero. This reflects the
+        physiological reality that strength persists for years even without
+        training.
+
+        For each historical set at time t_i with pred_1rm_i:
+            age = current_time - t_i
+            decay = 2^(-(age) / HALF_LIFE_SECONDS)
+            effective_1rm = pred_1rm_i × (FLOOR_RATIO + (1 - FLOOR_RATIO) × decay)
+            smoothed_1rm = max over all historical sets of effective_1rm
+
+        With HALF_LIFE_SECONDS = 1 year and FLOOR_RATIO = 0.75:
+            t=0:       100% of PR
+            t=1 year:  87.5% of PR
+            t=2 years: 81.25% of PR
+            t=3 years: 78.1% of PR
+            t→∞:       75% of PR (floor)
+        """
+        self.log("Pass 2: Smoothed 1RM (EWRM, decay-to-floor)...")
 
         # Group enriched set indices by exercise name
         exercise_indices: dict[str, list[int]] = defaultdict(list)
         for i, s in enumerate(self.enriched_sets):
             exercise_indices[s["exercise_name"]].append(i)
 
+        ceiling = 1 - FLOOR_RATIO  # portion that decays (0.25)
+
         for ex_name, indices in exercise_indices.items():
             # Ensure chronological order
             indices.sort(key=lambda i: self.enriched_sets[i]["timestamp"])
 
-            smoothed_1rm = 0.0
-            smoothed_1rl = 0.0
-            last_ts = 0.0
+            # Collect all (timestamp, pred_1rm/pred_1rl) tuples as history
+            history_1rm: list[tuple[float, float]] = []
+            history_1rl: list[tuple[float, float]] = []
             session_count = 0
             last_session_id: str | None = None
 
@@ -408,21 +431,30 @@ class DerivedDataPipeline:
                 pred_1rm: float = s["pred_1rm"]
                 pred_1rl: float = s["pred_1rl"] or 0.0
 
-                # Step 1: Apply time decay to existing estimate
-                if smoothed_1rm > 0 and last_ts > 0:
-                    elapsed = ts - last_ts
-                    decay_factor = math.exp(-DECAY_RATE * elapsed)
-                    decayed_1rm = smoothed_1rm * decay_factor
-                    decayed_1rl = smoothed_1rl * decay_factor
-                else:
-                    decayed_1rm = 0.0
-                    decayed_1rl = 0.0
+                # Add current set to history
+                if pred_1rm > 0:
+                    history_1rm.append((ts, pred_1rm))
+                if pred_1rl > 0:
+                    history_1rl.append((ts, pred_1rl))
 
-                # Step 2: Take the max (new PR immediately updates, old decays)
-                smoothed_1rm = max(decayed_1rm, pred_1rm)
-                smoothed_1rl = max(decayed_1rl, pred_1rl)
+                # Compute smoothed_1rm as max of all historical effective values
+                smoothed_1rm = 0.0
+                for t_i, pr_i in history_1rm:
+                    age = ts - t_i
+                    decay = 2 ** (-(age) / HALF_LIFE_SECONDS)
+                    effective = pr_i * (FLOOR_RATIO + ceiling * decay)
+                    if effective > smoothed_1rm:
+                        smoothed_1rm = effective
 
-                # Step 3: Track distinct sessions
+                smoothed_1rl = 0.0
+                for t_i, pr_i in history_1rl:
+                    age = ts - t_i
+                    decay = 2 ** (-(age) / HALF_LIFE_SECONDS)
+                    effective = pr_i * (FLOOR_RATIO + ceiling * decay)
+                    if effective > smoothed_1rl:
+                        smoothed_1rl = effective
+
+                # Track distinct sessions
                 current_session = (
                     s["session_id"] or s["session_name"] or f"ts_{ts}"
                 )
@@ -430,7 +462,7 @@ class DerivedDataPipeline:
                     session_count += 1
                     last_session_id = current_session
 
-                # Step 4: Confidence (DESIGN.md section 5.2)
+                # Confidence (DESIGN.md section 5.2)
                 if session_count < MIN_SESSIONS_FOR_CONFIDENCE:
                     confidence = "low"
                 else:
@@ -440,8 +472,6 @@ class DerivedDataPipeline:
                 self.enriched_sets[idx]["smoothed_1rm"] = round(smoothed_1rm, 1)
                 self.enriched_sets[idx]["smoothed_1rl"] = round(smoothed_1rl, 1)
                 self.enriched_sets[idx]["smoothed_confidence"] = confidence
-
-                last_ts = ts
 
         self.log("  EWRM complete")
 
@@ -807,7 +837,8 @@ class DerivedDataPipeline:
                     "total_exercises": len(self.classifications),
                     "exercises_with_timeseries": ts_count,
                     "last_raw_set_timestamp": last_ts,
-                    "smoothing_half_life_weeks": 8,
+                    "smoothing_half_life_weeks": 52,
+                    "smoothing_floor_ratio": FLOOR_RATIO,
                     "min_sessions_for_confidence": MIN_SESSIONS_FOR_CONFIDENCE,
                 },
                 f,

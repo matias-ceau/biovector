@@ -323,7 +323,8 @@ Pipeline run information. Used to check whether derived data is current.
   "total_exercises": 191,
   "exercises_with_timeseries": 154,
   "last_raw_set_timestamp": 1775601908,
-  "smoothing_half_life_weeks": 8,
+  "smoothing_half_life_weeks": 52,
+  "smoothing_floor_ratio": 0.75,
   "min_sessions_for_confidence": 3
 }
 ```
@@ -332,7 +333,7 @@ Pipeline run information. Used to check whether derived data is current.
 
 ## Key Algorithms
 
-### Smoothed 1RM — Exponentially Weighted Running Maximum (EWRM)
+### Smoothed 1RM — Exponentially Weighted Running Maximum (EWRM) with Decay-to-Floor
 
 **Problem**: Using a simple all-time max predicted 1RM as the strength baseline has three issues:
 
@@ -340,26 +341,37 @@ Pipeline run information. Used to check whether derived data is current.
 2. **Old PRs should eventually decay.** A PR from 2 years ago shouldn't keep intensity artificially low forever.
 3. **New exercises have no history.** The first session needs a usable baseline immediately.
 
-**How it works**: For each exercise, sets are processed chronologically. The algorithm maintains a running maximum that decays over time:
+**How it works**: For each exercise, sets are processed chronologically. The algorithm uses a **decay-to-floor** model — strength estimates decay toward a floor (75% of the PR) rather than toward zero, reflecting the physiological reality that trained strength persists for years:
 
-1. **Decay** the current smoothed estimate based on elapsed time since the last update (8-week half-life — after 8 weeks without a new PR, the estimate drops to 50%)
-2. **Compare** the decayed estimate against the new set's predicted 1RM
-3. **Take the maximum** — new PRs immediately update the estimate; lighter sessions preserve the decayed value
+For each historical set at time `t_i` with `pred_1rm_i`:
+```
+age = current_time - t_i
+decay = 2^(-(age) / half_life)
+effective_1rm = pred_1rm_i × (floor_ratio + (1 - floor_ratio) × decay)
+smoothed_1rm = max over all historical sets of effective_1rm
+```
+
+Key parameters:
+- **Half-life**: 52 weeks (1 year) — after 1 year without training, the decaying portion halves
+- **Floor ratio**: 0.75 — strength never estimated below 75% of a historical PR
 
 This means the smoothed 1RM:
 - **Rises instantly** when you set a new PR
-- **Decays gradually** (exponentially) when you don't
+- **Decays gradually** toward 75% of the PR (not toward zero)
 - **Never drops from a single light session** — only from the passage of time
+- **Never drops below 75% of any historical PR** — the floor reflects retained strength
 
-**Decay examples** (starting from a 154 kg smoothed 1RM):
+**Decay examples** (starting from a 154 kg PR):
 
-| Time since PR | Decay factor | Smoothed 1RM |
-|---------------|-------------|-------------|
-| 0 weeks | 1.000 | 154.0 kg |
-| 2 weeks | 0.841 | 129.5 kg |
-| 4 weeks | 0.707 | 108.9 kg |
-| 8 weeks | 0.500 | 77.0 kg |
-| 16 weeks | 0.250 | 38.5 kg |
+| Time since PR | Decay factor | Effective % | Smoothed 1RM |
+|---------------|-------------|-------------|-------------|
+| 0 weeks | 1.000 | 100.0% | 154.0 kg |
+| 13 weeks (3mo) | 0.842 | 96.1% | 147.9 kg |
+| 26 weeks (6mo) | 0.707 | 92.7% | 142.7 kg |
+| 52 weeks (1yr) | 0.500 | 87.5% | 134.8 kg |
+| 104 weeks (2yr) | 0.250 | 81.3% | 125.1 kg |
+| 156 weeks (3yr) | 0.125 | 78.1% | 120.3 kg |
+| ∞ | 0.000 | 75.0% | 115.5 kg |
 
 **Confidence levels**:
 
@@ -371,7 +383,7 @@ This means the smoothed 1RM:
 
 **Accessories and bodyweight exercises**: The algorithm is self-referential — each exercise is compared only against its own history. For exercises where near-max testing never happens (e.g. Kroc Rows), the smoothed 1RM still reflects the running max Epley estimate, and intensity is meaningful relative to that exercise's own range.
 
-Implementation: [`DerivedDataPipeline.pass2_smoothed_1rm()`](../../src/biovector/derived.py:381)
+Implementation: [`DerivedDataPipeline.pass2_smoothed_1rm()`](../../src/biovector/derived.py:383)
 
 ---
 
@@ -411,8 +423,8 @@ Classification logic: [`DerivedDataPipeline.classify_exercises()`](../../src/bio
 | load | Ψ | `(Δ × w + BW × κ) × reps` | Biovector standardized load — accounts for exercise biomechanics and bodyweight contribution. Falls back to `w × reps` when no parameters exist. |
 | pred_1rm | — | `w × (1 + r/30)` | Predicted 1RM via Epley formula |
 | pred_1rl | — | `epley(load/reps, reps)` | Predicted 1RM in load units. `0` if no Δ/κ parameters. |
-| smoothed_1rm | — | EWRM algorithm | Smoothed current strength estimate (8-week half-life decay) |
-| smoothed_1rl | — | EWRM algorithm | Smoothed strength in load units |
+| smoothed_1rm | — | EWRM algorithm | Smoothed current strength estimate (52-week half-life, 75% floor decay-to-floor model) |
+| smoothed_1rl | — | EWRM algorithm | Smoothed strength in load units (same decay-to-floor model) |
 | intensity | I | `pred_1rl / smoothed_1rl` | Relative intensity (0–1+). Values > 1.0 indicate a new PR. |
 | h (hardness) | h | `1.05 / (1 + e^(-40(I − 0.75)))` | Logistic transform of intensity. Range 0–1.05. Saturates near 1.05 for maximal efforts. |
 | phi | Φ | `load × h` | Hard load — effective volume weighted by effort. Low for warm-ups, high for hard sets. |

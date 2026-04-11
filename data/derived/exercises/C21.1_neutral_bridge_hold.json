@@ -49,11 +49,11 @@
       "best_reps_at_best_weight": 15,
       "best_pred_1rm": 0.0,
       "smoothed_1rm": 0.0,
-      "smoothed_1rl": 0.7,
+      "smoothed_1rl": 0.8,
       "total_load": 20.7,
       "total_phi": 21.6,
-      "hard_sets": 3.2,
-      "avg_intensity": 1.0
+      "hard_sets": 3.1,
+      "avg_intensity": 0.875
     },
     {
       "date": "2019-07-18",
@@ -63,11 +63,11 @@
       "best_reps_at_best_weight": 15,
       "best_pred_1rm": 0.0,
       "smoothed_1rm": 0.0,
-      "smoothed_1rl": 0.7,
+      "smoothed_1rl": 0.8,
       "total_load": 20.7,
       "total_phi": 21.6,
-      "hard_sets": 3.2,
-      "avg_intensity": 1.0
+      "hard_sets": 3.1,
+      "avg_intensity": 0.875
     },
     {
       "date": "2019-11-01",

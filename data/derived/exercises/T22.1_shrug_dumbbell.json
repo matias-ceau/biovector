@@ -9,8 +9,8 @@
     "first": "2018-09-12",
     "last": "2019-06-04"
   },
-  "current_smoothed_1rm": 66.7,
-  "current_smoothed_1rl": 10.0,
+  "current_smoothed_1rm": 72.6,
+  "current_smoothed_1rl": 10.9,
   "all_time_best_pred_1rm": 80.0,
   "session_series": [
     {
@@ -104,12 +104,12 @@
       "best_weight": 40.0,
       "best_reps_at_best_weight": 20,
       "best_pred_1rm": 66.7,
-      "smoothed_1rm": 66.7,
-      "smoothed_1rl": 10.0,
+      "smoothed_1rm": 72.6,
+      "smoothed_1rl": 10.9,
       "total_load": 600.0,
-      "total_phi": 630.0,
+      "total_phi": 629.0,
       "hard_sets": 5.2,
-      "avg_intensity": 1.0
+      "avg_intensity": 0.9174
     }
   ]
 }

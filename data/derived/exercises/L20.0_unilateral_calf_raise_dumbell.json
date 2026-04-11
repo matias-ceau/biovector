@@ -9,8 +9,8 @@
     "first": "2018-06-14",
     "last": "2018-10-01"
   },
-  "current_smoothed_1rm": 77.8,
-  "current_smoothed_1rl": 19.4,
+  "current_smoothed_1rm": 97.4,
+  "current_smoothed_1rl": 24.3,
   "all_time_best_pred_1rm": 98.3,
   "session_series": [
     {
@@ -39,7 +39,7 @@
       "total_load": 846.5,
       "total_phi": 833.5,
       "hard_sets": 5.8,
-      "avg_intensity": 0.9333
+      "avg_intensity": 0.9191
     },
     {
       "date": "2018-09-15",
@@ -48,12 +48,12 @@
       "best_weight": 49.0,
       "best_reps_at_best_weight": 13,
       "best_pred_1rm": 70.2,
-      "smoothed_1rm": 94.5,
-      "smoothed_1rl": 23.6,
+      "smoothed_1rm": 98.2,
+      "smoothed_1rl": 24.5,
       "total_load": 759.7,
-      "total_phi": 445.7,
-      "hard_sets": 2.8,
-      "avg_intensity": 0.6984
+      "total_phi": 369.1,
+      "hard_sets": 2.3,
+      "avg_intensity": 0.6728
     },
     {
       "date": "2018-09-18",
@@ -62,12 +62,12 @@
       "best_weight": 49.0,
       "best_reps_at_best_weight": 12,
       "best_pred_1rm": 68.6,
-      "smoothed_1rm": 91.2,
-      "smoothed_1rl": 22.7,
+      "smoothed_1rm": 98.0,
+      "smoothed_1rl": 24.4,
       "total_load": 800.0,
-      "total_phi": 474.5,
-      "hard_sets": 3.1,
-      "avg_intensity": 0.7357
+      "total_phi": 353.8,
+      "hard_sets": 2.2,
+      "avg_intensity": 0.6845
     },
     {
       "date": "2018-09-27",
@@ -76,12 +76,12 @@
       "best_weight": 20.0,
       "best_reps_at_best_weight": 12,
       "best_pred_1rm": 28.0,
-      "smoothed_1rm": 81.8,
-      "smoothed_1rl": 20.4,
+      "smoothed_1rm": 97.6,
+      "smoothed_1rl": 24.3,
       "total_load": 648.0,
-      "total_phi": 176.1,
-      "hard_sets": 1.4,
-      "avg_intensity": 0.7059
+      "total_phi": 2.7,
+      "hard_sets": 0.0,
+      "avg_intensity": 0.5926
     },
     {
       "date": "2018-10-01",
@@ -90,12 +90,12 @@
       "best_weight": 20.0,
       "best_reps_at_best_weight": 10,
       "best_pred_1rm": 26.7,
-      "smoothed_1rm": 77.8,
-      "smoothed_1rl": 19.4,
+      "smoothed_1rm": 97.4,
+      "smoothed_1rl": 24.3,
       "total_load": 324.3,
-      "total_phi": 144.3,
-      "hard_sets": 1.3,
-      "avg_intensity": 0.7423
+      "total_phi": 0.6,
+      "hard_sets": 0.0,
+      "avg_intensity": 0.5926
     }
   ]
 }

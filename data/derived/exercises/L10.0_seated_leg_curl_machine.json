@@ -37,9 +37,9 @@
       "smoothed_1rm": 84.0,
       "smoothed_1rl": 42.0,
       "total_load": 622.5,
-      "total_phi": 565.0,
-      "hard_sets": 2.7,
-      "avg_intensity": 0.9195
+      "total_phi": 510.2,
+      "hard_sets": 2.4,
+      "avg_intensity": 0.9106
     },
     {
       "date": "2019-03-28",
@@ -51,9 +51,9 @@
       "smoothed_1rm": 84.0,
       "smoothed_1rl": 42.0,
       "total_load": 840.0,
-      "total_phi": 881.8,
+      "total_phi": 881.0,
       "hard_sets": 3.1,
-      "avg_intensity": 0.9604
+      "avg_intensity": 0.9379
     }
   ]
 }

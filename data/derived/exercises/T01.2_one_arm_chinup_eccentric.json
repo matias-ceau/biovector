@@ -10,7 +10,7 @@
     "last": "2018-05-31"
   },
   "current_smoothed_1rm": 0.0,
-  "current_smoothed_1rl": 62.9,
+  "current_smoothed_1rl": 71.5,
   "all_time_best_pred_1rm": 0.0,
   "session_series": [
     {
@@ -35,11 +35,11 @@
       "best_reps_at_best_weight": 5,
       "best_pred_1rm": 0.0,
       "smoothed_1rm": 0.0,
-      "smoothed_1rl": 65.2,
+      "smoothed_1rl": 72.3,
       "total_load": 651.5,
-      "total_phi": 684.1,
-      "hard_sets": 3.2,
-      "avg_intensity": 1.0
+      "total_phi": 683.2,
+      "hard_sets": 3.1,
+      "avg_intensity": 0.9198
     },
     {
       "date": "2018-05-31",
@@ -49,11 +49,11 @@
       "best_reps_at_best_weight": 2,
       "best_pred_1rm": 0.0,
       "smoothed_1rm": 0.0,
-      "smoothed_1rl": 62.9,
+      "smoothed_1rl": 71.5,
       "total_load": 117.9,
-      "total_phi": 123.8,
-      "hard_sets": 1.1,
-      "avg_intensity": 1.0
+      "total_phi": 123.1,
+      "hard_sets": 1.0,
+      "avg_intensity": 0.8797
     }
   ]
 }

@@ -10,7 +10,7 @@
     "last": "2019-03-28"
   },
   "current_smoothed_1rm": 0.0,
-  "current_smoothed_1rl": 26.9,
+  "current_smoothed_1rl": 29.9,
   "all_time_best_pred_1rm": 0.0,
   "session_series": [
     {
@@ -63,11 +63,11 @@
       "best_reps_at_best_weight": 10,
       "best_pred_1rm": 0.0,
       "smoothed_1rm": 0.0,
-      "smoothed_1rl": 26.9,
+      "smoothed_1rl": 29.9,
       "total_load": 582.4,
-      "total_phi": 611.5,
-      "hard_sets": 3.2,
-      "avg_intensity": 1.0
+      "total_phi": 611.2,
+      "hard_sets": 3.1,
+      "avg_intensity": 0.9666
     }
   ]
 }

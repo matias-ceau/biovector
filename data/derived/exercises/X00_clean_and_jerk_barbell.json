@@ -51,9 +51,9 @@
       "smoothed_1rm": 75.7,
       "smoothed_1rl": 220.0,
       "total_load": 2285.1,
-      "total_phi": 2025.1,
-      "hard_sets": 5.6,
-      "avg_intensity": 0.9104
+      "total_phi": 1532.8,
+      "hard_sets": 4.5,
+      "avg_intensity": 0.8509
     },
     {
       "date": "2019-03-18",
@@ -62,12 +62,12 @@
       "best_weight": 60.0,
       "best_reps_at_best_weight": 5,
       "best_pred_1rm": 70.0,
-      "smoothed_1rm": 70.0,
-      "smoothed_1rl": 215.1,
+      "smoothed_1rm": 75.0,
+      "smoothed_1rl": 217.9,
       "total_load": 921.9,
-      "total_phi": 968.0,
-      "hard_sets": 1.1,
-      "avg_intensity": 1.0
+      "total_phi": 967.9,
+      "hard_sets": 1.0,
+      "avg_intensity": 0.9872
     },
     {
       "date": "2019-03-28",

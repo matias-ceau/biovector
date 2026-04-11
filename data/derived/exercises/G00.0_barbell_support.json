@@ -9,8 +9,8 @@
     "first": "2018-05-03",
     "last": "2019-11-24"
   },
-  "current_smoothed_1rm": 190.0,
-  "current_smoothed_1rl": 1.9,
+  "current_smoothed_1rm": 239.1,
+  "current_smoothed_1rl": 2.4,
   "all_time_best_pred_1rm": 249.1,
   "session_series": [
     {
@@ -62,7 +62,7 @@
       "best_weight": 50.0,
       "best_reps_at_best_weight": 30,
       "best_pred_1rm": 100.0,
-      "smoothed_1rm": 118.3,
+      "smoothed_1rm": 119.9,
       "smoothed_1rl": 1.2,
       "total_load": 135.0,
       "total_phi": 136.8,
@@ -90,7 +90,7 @@
       "best_weight": 88.0,
       "best_reps_at_best_weight": 10,
       "best_pred_1rm": 117.3,
-      "smoothed_1rm": 146.3,
+      "smoothed_1rm": 149.9,
       "smoothed_1rl": 1.5,
       "total_load": 105.6,
       "total_phi": 97.2,
@@ -118,12 +118,12 @@
       "best_weight": 87.0,
       "best_reps_at_best_weight": 10,
       "best_pred_1rm": 116.0,
-      "smoothed_1rm": 171.3,
-      "smoothed_1rl": 1.7,
+      "smoothed_1rm": 179.7,
+      "smoothed_1rl": 1.8,
       "total_load": 104.4,
-      "total_phi": 15.6,
-      "hard_sets": 1.8,
-      "avg_intensity": 0.7059
+      "total_phi": 3.6,
+      "hard_sets": 0.4,
+      "avg_intensity": 0.6667
     },
     {
       "date": "2018-05-28",
@@ -146,12 +146,12 @@
       "best_weight": 140.0,
       "best_reps_at_best_weight": 4,
       "best_pred_1rm": 158.7,
-      "smoothed_1rm": 164.5,
-      "smoothed_1rl": 1.6,
+      "smoothed_1rm": 179.4,
+      "smoothed_1rl": 1.8,
       "total_load": 5.6,
       "total_phi": 5.9,
-      "hard_sets": 1.1,
-      "avg_intensity": 1.0
+      "hard_sets": 1.0,
+      "avg_intensity": 0.8889
     },
     {
       "date": "2018-06-08",
@@ -160,12 +160,12 @@
       "best_weight": 50.0,
       "best_reps_at_best_weight": 20,
       "best_pred_1rm": 83.3,
-      "smoothed_1rm": 156.7,
-      "smoothed_1rl": 1.6,
+      "smoothed_1rm": 179.0,
+      "smoothed_1rl": 1.8,
       "total_load": 30.0,
       "total_phi": 0,
       "hard_sets": 0.0,
-      "avg_intensity": 0.5
+      "avg_intensity": 0.4444
     },
     {
       "date": "2019-02-13",
@@ -188,7 +188,7 @@
       "best_weight": 89.0,
       "best_reps_at_best_weight": 10,
       "best_pred_1rm": 118.7,
-      "smoothed_1rm": 175.6,
+      "smoothed_1rm": 179.8,
       "smoothed_1rl": 1.8,
       "total_load": 106.8,
       "total_phi": 3.6,
@@ -202,12 +202,12 @@
       "best_weight": 89.0,
       "best_reps_at_best_weight": 10,
       "best_pred_1rm": 118.7,
-      "smoothed_1rm": 168.5,
-      "smoothed_1rl": 1.7,
+      "smoothed_1rm": 179.5,
+      "smoothed_1rl": 1.8,
       "total_load": 106.8,
-      "total_phi": 16.8,
-      "hard_sets": 1.8,
-      "avg_intensity": 0.7059
+      "total_phi": 3.6,
+      "hard_sets": 0.4,
+      "avg_intensity": 0.6667
     },
     {
       "date": "2019-02-20",
@@ -216,12 +216,12 @@
       "best_weight": 60.0,
       "best_reps_at_best_weight": 53,
       "best_pred_1rm": 166.0,
-      "smoothed_1rm": 166.0,
-      "smoothed_1rl": 1.7,
+      "smoothed_1rm": 179.4,
+      "smoothed_1rl": 1.8,
       "total_load": 31.8,
       "total_phi": 33.4,
-      "hard_sets": 1.1,
-      "avg_intensity": 1.0
+      "hard_sets": 1.0,
+      "avg_intensity": 0.9444
     },
     {
       "date": "2019-02-23",
@@ -230,12 +230,12 @@
       "best_weight": 88.0,
       "best_reps_at_best_weight": 10,
       "best_pred_1rm": 117.3,
-      "smoothed_1rm": 159.8,
-      "smoothed_1rl": 1.6,
+      "smoothed_1rm": 179.1,
+      "smoothed_1rl": 1.8,
       "total_load": 105.6,
-      "total_phi": 55.2,
-      "hard_sets": 6.3,
-      "avg_intensity": 0.75
+      "total_phi": 3.6,
+      "hard_sets": 0.4,
+      "avg_intensity": 0.6667
     },
     {
       "date": "2019-02-26",
@@ -272,12 +272,12 @@
       "best_weight": 95.0,
       "best_reps_at_best_weight": 30,
       "best_pred_1rm": 190.0,
-      "smoothed_1rm": 190.0,
-      "smoothed_1rl": 1.9,
+      "smoothed_1rm": 239.1,
+      "smoothed_1rl": 2.4,
       "total_load": 28.5,
-      "total_phi": 29.9,
-      "hard_sets": 1.1,
-      "avg_intensity": 1.0
+      "total_phi": 25.2,
+      "hard_sets": 0.9,
+      "avg_intensity": 0.7917
     }
   ]
 }

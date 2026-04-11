@@ -83,7 +83,8 @@ data/derived/
   "total_exercises": 95,
   "exercises_with_timeseries": 42,
   "last_raw_set_timestamp": 1744300000,
-  "smoothing_half_life_weeks": 8,
+  "smoothing_half_life_weeks": 52,
+  "smoothing_floor_ratio": 0.75,
   "min_sessions_for_confidence": 3
 }
 ```
@@ -303,21 +304,23 @@ The naive approach — using `max(all pred_1rm)` as the reference — breaks bec
 2. **Old PRs should eventually decay**: A PR from 2 years ago shouldn't keep intensity artificially low forever
 3. **New exercises have no history**: First appearance needs special handling
 
-### 5.2 Algorithm: Exponentially Weighted Running Maximum (EWRM)
+### 5.2 Algorithm: Exponentially Weighted Running Maximum (EWRM) with Decay-to-Floor
+
+The algorithm uses a **decay-to-floor** model rather than decay-to-zero. This reflects the physiological reality that strength persists for years even without training — a lifter who squatted 150kg doesn't decay to 0kg; they retain a substantial fraction of that strength indefinitely.
 
 For each exercise, processing sets in chronological order:
 
 ```
 PARAMETERS:
-  half_life = 8 weeks (in seconds: 8 * 7 * 86400 = 4838400)
-  decay_rate = ln(2) / half_life
+  half_life = 52 weeks / 1 year (in seconds: 52 * 7 * 86400 = 31449600)
+  floor_ratio = 0.75            # strength never decays below 75% of historical PR
+  ceiling = 1 - floor_ratio     # = 0.25, the portion that decays
   min_sessions_for_confidence = 3
 
 STATE per exercise:
-  smoothed_1rm: float = 0.0
-  smoothed_1rl: float = 0.0
+  history_1rm: list of (timestamp, pred_1rm) tuples = []
+  history_1rl: list of (timestamp, pred_1rl) tuples = []
   session_count: int = 0
-  last_update_ts: float = 0.0
 
 FOR EACH SET (chronologically, within exercise):
 
@@ -325,19 +328,26 @@ FOR EACH SET (chronologically, within exercise):
   pred_1rm = epley(weight, reps)
   pred_1rl = epley(load / reps, reps)   # 0 if no load params
 
-  # 2. Apply time decay to existing estimate
-  IF smoothed_1rm > 0:
-    elapsed = timestamp - last_update_ts
-    decay_factor = exp(-decay_rate * elapsed)
-    decayed_1rm = smoothed_1rm * decay_factor
-    decayed_1rl = smoothed_1rl * decay_factor
-  ELSE:
-    decayed_1rm = 0.0
-    decayed_1rl = 0.0
+  # 2. Add current set to history
+  IF pred_1rm > 0: history_1rm.append((timestamp, pred_1rm))
+  IF pred_1rl > 0: history_1rl.append((timestamp, pred_1rl))
 
-  # 3. Take the maximum: new PR immediately updates, old decays
-  smoothed_1rm = max(decayed_1rm, pred_1rm)
-  smoothed_1rl = max(decayed_1rl, pred_1rl)
+  # 3. Compute smoothed_1rm as max of all historical effective values
+  #    Each historical PR decays toward floor_ratio of itself, not toward zero
+  smoothed_1rm = 0.0
+  FOR EACH (t_i, pr_i) IN history_1rm:
+    age = timestamp - t_i
+    decay = 2^(-(age) / half_life)
+    effective = pr_i * (floor_ratio + ceiling * decay)
+    smoothed_1rm = max(smoothed_1rm, effective)
+
+  # Same for 1RL
+  smoothed_1rl = 0.0
+  FOR EACH (t_i, pr_i) IN history_1rl:
+    age = timestamp - t_i
+    decay = 2^(-(age) / half_life)
+    effective = pr_i * (floor_ratio + ceiling * decay)
+    smoothed_1rl = max(smoothed_1rl, effective)
 
   # 4. Track session count (increment when session_id changes)
   IF is_new_session:
@@ -360,34 +370,37 @@ FOR EACH SET (chronologically, within exercise):
     intensity = null
     h = null
     phi = null
-
-  last_update_ts = timestamp
 ```
 
 ### 5.3 Decay behavior examples
 
-With half_life = 8 weeks:
+With half_life = 52 weeks (1 year) and floor_ratio = 0.75:
 
-| Time since PR | Decay factor | Old 1RM=154kg decays to |
-|---------------|-------------|------------------------|
-| 0 weeks | 1.000 | 154.0 |
-| 2 weeks | 0.841 | 129.5 |
-| 4 weeks | 0.707 | 108.9 |
-| 8 weeks | 0.500 | 77.0 |
-| 12 weeks | 0.354 | 54.5 |
-| 16 weeks | 0.250 | 38.5 |
+The formula for effective 1RM at time t after a PR:
+`effective = PR × (0.75 + 0.25 × 2^(-t/52w))`
 
-This means: if you hit a 154kg squat and then don't train squats for 8 weeks, the smoothed 1RM drops to 77kg. The next heavy session will immediately restore it.
+| Time since PR | Decay factor | Effective % | Old 1RM=154kg decays to |
+|---------------|-------------|-------------|------------------------|
+| 0 weeks | 1.000 | 100.0% | 154.0 |
+| 4 weeks | 0.948 | 98.7% | 152.0 |
+| 13 weeks (3mo) | 0.842 | 96.1% | 147.9 |
+| 26 weeks (6mo) | 0.707 | 92.7% | 142.7 |
+| 52 weeks (1yr) | 0.500 | 87.5% | 134.8 |
+| 104 weeks (2yr) | 0.250 | 81.3% | 125.1 |
+| 156 weeks (3yr) | 0.125 | 78.1% | 120.3 |
+| ∞ | 0.000 | 75.0% | 115.5 |
+
+This means: if you hit a 154kg squat and stop training, after 1 year the estimate is 135kg (not 77kg as the old model would give). After 3 years it's still 120kg. The floor ensures the estimate never drops below 75% of the PR — reflecting the physiological reality that trained strength persists for years.
 
 ### 5.4 Problem A — Light workouts
 
 **Scenario**: Squat PR of 140×3 = 154kg pred_1rm. Next week, light session 100×5 = 117kg pred_1rm.
 
 ```
-After PR:      smoothed_1rm = 154.0
-1 week later:  decayed = 154 * exp(-ln2/8) = 154 * 0.917 = 141.2
-               pred_1rm from light session = 117
-               smoothed_1rm = max(141.2, 117) = 141.2  ✓ Light session preserved estimate
+After PR:      smoothed_1rm = 154.0 (the PR itself, age=0, effective=154×(0.75+0.25×1.0)=154.0)
+1 week later:  effective from PR = 154 * (0.75 + 0.25 * 2^(-1/52)) = 154 * 0.997 = 153.5
+               effective from light set = 117 * (0.75 + 0.25 * 1.0) = 117.0
+               smoothed_1rm = max(153.5, 117.0) = 153.5  ✓ Light session preserved estimate
 ```
 
 Intensity of the light session: `pred_1rl / smoothed_1rl` will be low → h ≈ 0 → phi ≈ 0. Correct behavior.
