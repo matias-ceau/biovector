@@ -1,30 +1,45 @@
-# Biovector Training Report
+# Biovector Reports
 
-**Data range:** 2018-02-12 to 2026-04-07 (2975 days)
+Training reports with charts, exercise tier filtering, and automated generation.
 
-## Summary Stats
+## Quick Start
 
-- **Total Volume (Ψ):** 3,044,649 kg·m
-- **Total Hardload (Φ):** 1,840,357 kg·m
-- **Workouts:** 456
-- **Sets:** 10779
+```bash
+# Generate a standard report (main lifts only)
+python reports/generate_report.py --type standard -o reports/latest_report.md
 
-## Recent Workouts
+# Detailed report (main + supporting exercises)
+python reports/generate_report.py --type detailed -o reports/latest_report.md
 
-| Date | Hardsets | Load | Hardload |
-|---|---|---|---|
-| 2026-04-07 | 11.6 | 2,130 | 2,234 |
-| 2022-04-17 | 0.0 | 539 | 1 |
-| 2022-04-15 | 0.3 | 583 | 64 |
-| 2022-04-13 | 0.0 | 3,080 | 15 |
-| 2022-04-12 | 0.1 | 1,301 | 21 |
+# Full report with accessories in appendix
+python reports/generate_report.py --type full --since 2026-01-01 -o reports/latest_report.md
+```
 
+## Files
 
-## Charts
+| File | Purpose |
+|------|---------|
+| [`REPORT_INSTRUCTIONS.md`](REPORT_INSTRUCTIONS.md) | Full instructions for LLMs generating reports (with or without code) |
+| [`exercise_tiers.json`](exercise_tiers.json) | Exercise classification: tier 1 (program lifts), tier 2 (supporting), tier 3 (accessories) |
+| [`generate_report.py`](generate_report.py) | CLI script — generates markdown + 5 PNG charts |
+| [`latest_report.md`](latest_report.md) | Sample generated report |
 
-![Main Lifts](main_lifts.png)
-![Volume Trends](volume_trends.png)
-![Exercise Distribution](exercise_distribution.png)
+## Charts Generated
 
----
-*Generated on 2026-04-08 02:40*
+| Chart | Description |
+|-------|-------------|
+| `chart_main_lifts.png` | Running best e1RM progression for main lifts |
+| `chart_volume.png` | Weekly standardised load with session count overlay |
+| `chart_balance.png` | Movement balance donuts (by load and by sets) |
+| `chart_sessions.png` | Per-session load breakdown by movement category |
+| `chart_bw_exercises.png` | Chin Up / Dips rep totals over time |
+
+## Exercise Tier System
+
+| Tier | Exercises | In Reports? |
+|------|-----------|-------------|
+| **1** | SQ, FS, BP, DL, MP, PC, Chin Up, Dips | ✅ Always |
+| **2** | RDL, Row, Push Press, Pull Up, Snatch, etc. | ✅ Detailed/Full |
+| **3** | Grip, Core, Curls, Calf, Neck | ❌ Excluded from aggregations |
+
+> ⚠️ Tier 3 exercises (especially grip work) produce inflated load values and are **never** included in volume totals.
