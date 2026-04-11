@@ -56,12 +56,31 @@ Each exercise has:
 | `get_weekly_summary` | Weekly volume summary |
 | `get_strength_overview` | Current strength levels across exercises |
 
+## Training State
+
+The file `strength-states.json` in the repo root tracks the current training cycle:
+
+```json
+{
+  "updated": "2026-04-10",
+  "next_session": "C1",
+  "SQ": { "state": "S2", "load": 100 },
+  "BP": { "state": "S2", "load": 70 },
+  ...
+}
+```
+
+- `next_session` — the session label for the next workout (A1, B1, C1, A2, etc.)
+- Each exercise has a `state` code (S0, S0p, S2, D0, P0, P0p) and current working `load` in kg.
+- See `AGENT.md` for the full session logging workflow.
+
 ## Common Tasks
 
 ### Logging a workout
-1. Use `add_set` for each set performed
-2. Include `session_name` to group sets into a session
+1. Read `AGENT.md` for the full procedure
+2. Use `add_set` for each set performed — include `session_name` to group sets
 3. The system auto-persists to `data/user/sets.json`
+4. After logging, update `strength-states.json` and commit + push
 
 ### Reviewing progress  
 1. `get_strength_overview` for current maximums
@@ -70,4 +89,4 @@ Each exercise has:
 
 ### Finding exercises
 1. `list_exercises` with `search` parameter
-2. Or filter by `category` (Barbell, Bodyweight, etc.)
+2. Or filter by `category` (Barbell, Bodyweight, Dumbell, Kettlebell, Machine, Other, Time)
