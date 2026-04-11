@@ -1,0 +1,73 @@
+{
+  "exercise_name": "Unilateral T-Bar Row",
+  "exercise_id": "T12.51",
+  "exercise_tier": "secondary",
+  "has_params": true,
+  "total_sets": 15,
+  "total_sessions": 4,
+  "date_range": {
+    "first": "2018-06-04",
+    "last": "2018-11-06"
+  },
+  "current_smoothed_1rm": 66.0,
+  "current_smoothed_1rl": 39.6,
+  "all_time_best_pred_1rm": 66.0,
+  "session_series": [
+    {
+      "date": "2018-06-04",
+      "session_id": "session_20180604_125417",
+      "sets": 2,
+      "best_weight": 30.0,
+      "best_reps_at_best_weight": 10,
+      "best_pred_1rm": 40.0,
+      "smoothed_1rm": 40.0,
+      "smoothed_1rl": 24.0,
+      "total_load": 324.0,
+      "total_phi": 340.2,
+      "hard_sets": 2.1,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2018-07-25",
+      "session_id": "session_20180725_130444",
+      "sets": 5,
+      "best_weight": 40.0,
+      "best_reps_at_best_weight": 5,
+      "best_pred_1rm": 46.7,
+      "smoothed_1rm": 46.7,
+      "smoothed_1rl": 28.0,
+      "total_load": 600.0,
+      "total_phi": 630.0,
+      "hard_sets": 5.2,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2018-07-30",
+      "session_id": "session_20180730_144224",
+      "sets": 5,
+      "best_weight": 58.0,
+      "best_reps_at_best_weight": 3,
+      "best_pred_1rm": 63.8,
+      "smoothed_1rm": 63.8,
+      "smoothed_1rl": 38.3,
+      "total_load": 475.2,
+      "total_phi": 498.9,
+      "hard_sets": 5.2,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2018-11-06",
+      "session_id": "session_20181106_085109",
+      "sets": 3,
+      "best_weight": 60.0,
+      "best_reps_at_best_weight": 3,
+      "best_pred_1rm": 66.0,
+      "smoothed_1rm": 66.0,
+      "smoothed_1rl": 39.6,
+      "total_load": 324.0,
+      "total_phi": 340.2,
+      "hard_sets": 3.2,
+      "avg_intensity": 1.0
+    }
+  ]
+}

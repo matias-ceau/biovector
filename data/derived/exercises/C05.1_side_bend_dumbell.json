@@ -1,0 +1,101 @@
+{
+  "exercise_name": "Side Bend (Dumbell)",
+  "exercise_id": "C05.1",
+  "exercise_tier": "accessory",
+  "has_params": true,
+  "total_sets": 12,
+  "total_sessions": 6,
+  "date_range": {
+    "first": "2018-06-27",
+    "last": "2018-07-20"
+  },
+  "current_smoothed_1rm": 53.3,
+  "current_smoothed_1rl": 10.7,
+  "all_time_best_pred_1rm": 53.3,
+  "session_series": [
+    {
+      "date": "2018-06-27",
+      "session_id": "session_20180627_132644",
+      "sets": 2,
+      "best_weight": 42.0,
+      "best_reps_at_best_weight": 6,
+      "best_pred_1rm": 50.4,
+      "smoothed_1rm": 50.4,
+      "smoothed_1rl": 10.1,
+      "total_load": 100.8,
+      "total_phi": 105.8,
+      "hard_sets": 2.1,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2018-07-05",
+      "session_id": "session_20180705_145305",
+      "sets": 2,
+      "best_weight": 32.0,
+      "best_reps_at_best_weight": 20,
+      "best_pred_1rm": 53.3,
+      "smoothed_1rm": 53.3,
+      "smoothed_1rl": 10.7,
+      "total_load": 256.0,
+      "total_phi": 268.8,
+      "hard_sets": 2.1,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2018-07-10",
+      "session_id": "session_20180710_075406",
+      "sets": 2,
+      "best_weight": 32.0,
+      "best_reps_at_best_weight": 20,
+      "best_pred_1rm": 53.3,
+      "smoothed_1rm": 53.3,
+      "smoothed_1rl": 10.7,
+      "total_load": 256.0,
+      "total_phi": 268.8,
+      "hard_sets": 2.1,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2018-07-14",
+      "session_id": "session_20180714_131859",
+      "sets": 2,
+      "best_weight": 32.0,
+      "best_reps_at_best_weight": 20,
+      "best_pred_1rm": 53.3,
+      "smoothed_1rm": 53.3,
+      "smoothed_1rl": 10.7,
+      "total_load": 256.0,
+      "total_phi": 268.8,
+      "hard_sets": 2.1,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2018-07-17",
+      "session_id": "session_20180717_081628",
+      "sets": 2,
+      "best_weight": 32.0,
+      "best_reps_at_best_weight": 20,
+      "best_pred_1rm": 53.3,
+      "smoothed_1rm": 53.3,
+      "smoothed_1rl": 10.7,
+      "total_load": 256.0,
+      "total_phi": 268.8,
+      "hard_sets": 2.1,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2018-07-20",
+      "session_id": "session_20180720_080446",
+      "sets": 2,
+      "best_weight": 32.0,
+      "best_reps_at_best_weight": 20,
+      "best_pred_1rm": 53.3,
+      "smoothed_1rm": 53.3,
+      "smoothed_1rl": 10.7,
+      "total_load": 256.0,
+      "total_phi": 268.8,
+      "hard_sets": 2.1,
+      "avg_intensity": 1.0
+    }
+  ]
+}

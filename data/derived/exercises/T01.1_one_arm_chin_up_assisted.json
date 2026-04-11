@@ -1,0 +1,45 @@
+{
+  "exercise_name": "One Arm Chin Up (assisted)",
+  "exercise_id": "T01.1",
+  "exercise_tier": "bodyweight",
+  "has_params": true,
+  "total_sets": 7,
+  "total_sessions": 2,
+  "date_range": {
+    "first": "2018-06-14",
+    "last": "2018-06-18"
+  },
+  "current_smoothed_1rm": 24.5,
+  "current_smoothed_1rl": 80.6,
+  "all_time_best_pred_1rm": 24.5,
+  "session_series": [
+    {
+      "date": "2018-06-14",
+      "session_id": "session_20180614_145254",
+      "sets": 3,
+      "best_weight": 23.0,
+      "best_reps_at_best_weight": 2,
+      "best_pred_1rm": 24.5,
+      "smoothed_1rm": 24.5,
+      "smoothed_1rl": 80.8,
+      "total_load": 302.9,
+      "total_phi": 318.1,
+      "hard_sets": 3.1,
+      "avg_intensity": 0.9785
+    },
+    {
+      "date": "2018-06-18",
+      "session_id": "session_20180618_192556",
+      "sets": 4,
+      "best_weight": 23.0,
+      "best_reps_at_best_weight": 2,
+      "best_pred_1rm": 24.5,
+      "smoothed_1rm": 24.5,
+      "smoothed_1rl": 80.6,
+      "total_load": 378.0,
+      "total_phi": 397.0,
+      "hard_sets": 4.2,
+      "avg_intensity": 0.9768
+    }
+  ]
+}

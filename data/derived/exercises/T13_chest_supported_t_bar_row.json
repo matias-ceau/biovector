@@ -1,0 +1,45 @@
+{
+  "exercise_name": "Chest Supported T-Bar Row",
+  "exercise_id": "T13",
+  "exercise_tier": "secondary",
+  "has_params": true,
+  "total_sets": 6,
+  "total_sessions": 2,
+  "date_range": {
+    "first": "2019-03-22",
+    "last": "2019-03-26"
+  },
+  "current_smoothed_1rm": 55.5,
+  "current_smoothed_1rl": 33.3,
+  "all_time_best_pred_1rm": 58.3,
+  "session_series": [
+    {
+      "date": "2019-03-22",
+      "session_id": "session_20190322_061741",
+      "sets": 3,
+      "best_weight": 50.0,
+      "best_reps_at_best_weight": 5,
+      "best_pred_1rm": 58.3,
+      "smoothed_1rm": 58.3,
+      "smoothed_1rl": 35.0,
+      "total_load": 450.0,
+      "total_phi": 472.5,
+      "hard_sets": 3.2,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2019-03-26",
+      "session_id": "session_20190326_061715",
+      "sets": 3,
+      "best_weight": 25.0,
+      "best_reps_at_best_weight": 10,
+      "best_pred_1rm": 33.3,
+      "smoothed_1rm": 55.5,
+      "smoothed_1rl": 33.3,
+      "total_load": 450.0,
+      "total_phi": 1.2,
+      "hard_sets": 0.0,
+      "avg_intensity": 0.6006
+    }
+  ]
+}

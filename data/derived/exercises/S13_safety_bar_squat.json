@@ -1,0 +1,73 @@
+{
+  "exercise_name": "Safety Bar Squat",
+  "exercise_id": "S13",
+  "exercise_tier": "secondary",
+  "has_params": true,
+  "total_sets": 11,
+  "total_sessions": 4,
+  "date_range": {
+    "first": "2019-03-22",
+    "last": "2019-06-27"
+  },
+  "current_smoothed_1rm": 99.0,
+  "current_smoothed_1rl": 150.5,
+  "all_time_best_pred_1rm": 101.3,
+  "session_series": [
+    {
+      "date": "2019-03-22",
+      "session_id": "session_20190322_061741",
+      "sets": 3,
+      "best_weight": 70.0,
+      "best_reps_at_best_weight": 8,
+      "best_pred_1rm": 88.7,
+      "smoothed_1rm": 88.7,
+      "smoothed_1rl": 141.6,
+      "total_load": 2682.9,
+      "total_phi": 2817.0,
+      "hard_sets": 3.2,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2019-03-25",
+      "session_id": "session_20190325_061447",
+      "sets": 3,
+      "best_weight": 80.0,
+      "best_reps_at_best_weight": 8,
+      "best_pred_1rm": 101.3,
+      "smoothed_1rm": 101.3,
+      "smoothed_1rl": 150.4,
+      "total_load": 2849.4,
+      "total_phi": 2991.9,
+      "hard_sets": 3.2,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2019-03-28",
+      "session_id": "session_20190328_090119",
+      "sets": 3,
+      "best_weight": 80.0,
+      "best_reps_at_best_weight": 5,
+      "best_pred_1rm": 93.3,
+      "smoothed_1rm": 97.4,
+      "smoothed_1rl": 144.7,
+      "total_load": 1780.8,
+      "total_phi": 1869.3,
+      "hard_sets": 3.1,
+      "avg_intensity": 0.9572
+    },
+    {
+      "date": "2019-06-27",
+      "session_id": "session_20190627_133224",
+      "sets": 2,
+      "best_weight": 90.0,
+      "best_reps_at_best_weight": 3,
+      "best_pred_1rm": 99.0,
+      "smoothed_1rm": 99.0,
+      "smoothed_1rl": 150.5,
+      "total_load": 1508.9,
+      "total_phi": 1584.0,
+      "hard_sets": 2.1,
+      "avg_intensity": 0.9634
+    }
+  ]
+}

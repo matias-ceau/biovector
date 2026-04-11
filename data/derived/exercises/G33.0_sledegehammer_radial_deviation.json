@@ -1,0 +1,31 @@
+{
+  "exercise_name": "Sledegehammer Radial Deviation",
+  "exercise_id": "G33.0",
+  "exercise_tier": "accessory",
+  "has_params": true,
+  "total_sets": 6,
+  "total_sessions": 1,
+  "date_range": {
+    "first": "2019-01-24",
+    "last": "2019-01-24"
+  },
+  "current_smoothed_1rm": 2.9,
+  "current_smoothed_1rl": 1.1,
+  "all_time_best_pred_1rm": 2.9,
+  "session_series": [
+    {
+      "date": "2019-01-24",
+      "session_id": "session_20190124_150958",
+      "sets": 6,
+      "best_weight": 2.6,
+      "best_reps_at_best_weight": 3,
+      "best_pred_1rm": 2.9,
+      "smoothed_1rm": 2.9,
+      "smoothed_1rl": 1.1,
+      "total_load": 11.0,
+      "total_phi": 11.5,
+      "hard_sets": 6.3,
+      "avg_intensity": 0.9394
+    }
+  ]
+}

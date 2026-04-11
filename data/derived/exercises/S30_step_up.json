@@ -1,0 +1,59 @@
+{
+  "exercise_name": "Step-up",
+  "exercise_id": "S30",
+  "exercise_tier": "bodyweight",
+  "has_params": true,
+  "total_sets": 30,
+  "total_sessions": 3,
+  "date_range": {
+    "first": "2018-12-25",
+    "last": "2019-01-18"
+  },
+  "current_smoothed_1rm": 0.0,
+  "current_smoothed_1rl": 22.5,
+  "all_time_best_pred_1rm": 0.0,
+  "session_series": [
+    {
+      "date": "2018-12-25",
+      "session_id": "session_20181225_163038",
+      "sets": 10,
+      "best_weight": 0.0,
+      "best_reps_at_best_weight": 6,
+      "best_pred_1rm": 0.0,
+      "smoothed_1rm": 0.0,
+      "smoothed_1rl": 21.1,
+      "total_load": 1056.0,
+      "total_phi": 1109.0,
+      "hard_sets": 10.5,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2019-01-05",
+      "session_id": "session_20190105_150819",
+      "sets": 10,
+      "best_weight": 0.0,
+      "best_reps_at_best_weight": 8,
+      "best_pred_1rm": 0.0,
+      "smoothed_1rm": 0.0,
+      "smoothed_1rl": 22.8,
+      "total_load": 1442.0,
+      "total_phi": 1514.0,
+      "hard_sets": 10.5,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2019-01-18",
+      "session_id": "session_20190118_072549",
+      "sets": 10,
+      "best_weight": 0.0,
+      "best_reps_at_best_weight": 8,
+      "best_pred_1rm": 0.0,
+      "smoothed_1rm": 0.0,
+      "smoothed_1rl": 22.5,
+      "total_load": 1419.0,
+      "total_phi": 1490.0,
+      "hard_sets": 10.5,
+      "avg_intensity": 1.0
+    }
+  ]
+}

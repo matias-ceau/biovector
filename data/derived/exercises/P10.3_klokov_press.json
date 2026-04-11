@@ -1,0 +1,45 @@
+{
+  "exercise_name": "Klokov Press",
+  "exercise_id": "P10.3",
+  "exercise_tier": "secondary",
+  "has_params": true,
+  "total_sets": 10,
+  "total_sessions": 2,
+  "date_range": {
+    "first": "2019-02-07",
+    "last": "2019-02-14"
+  },
+  "current_smoothed_1rm": 40.0,
+  "current_smoothed_1rl": 28.0,
+  "all_time_best_pred_1rm": 40.0,
+  "session_series": [
+    {
+      "date": "2019-02-07",
+      "session_id": "session_20190207_130206",
+      "sets": 5,
+      "best_weight": 28.0,
+      "best_reps_at_best_weight": 10,
+      "best_pred_1rm": 37.3,
+      "smoothed_1rm": 37.3,
+      "smoothed_1rl": 26.1,
+      "total_load": 980.0,
+      "total_phi": 1029.0,
+      "hard_sets": 5.2,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2019-02-14",
+      "session_id": "session_20190214_081257",
+      "sets": 5,
+      "best_weight": 30.0,
+      "best_reps_at_best_weight": 10,
+      "best_pred_1rm": 40.0,
+      "smoothed_1rm": 40.0,
+      "smoothed_1rl": 28.0,
+      "total_load": 1050.0,
+      "total_phi": 1102.5,
+      "hard_sets": 5.2,
+      "avg_intensity": 1.0
+    }
+  ]
+}

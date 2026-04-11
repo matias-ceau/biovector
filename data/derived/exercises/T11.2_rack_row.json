@@ -1,0 +1,45 @@
+{
+  "exercise_name": "Rack Row",
+  "exercise_id": "T11.2",
+  "exercise_tier": "secondary",
+  "has_params": true,
+  "total_sets": 9,
+  "total_sessions": 2,
+  "date_range": {
+    "first": "2018-11-21",
+    "last": "2019-01-06"
+  },
+  "current_smoothed_1rm": 116.3,
+  "current_smoothed_1rl": 50.3,
+  "all_time_best_pred_1rm": 116.3,
+  "session_series": [
+    {
+      "date": "2018-11-21",
+      "session_id": "session_20181121_083238",
+      "sets": 3,
+      "best_weight": 89.0,
+      "best_reps_at_best_weight": 4,
+      "best_pred_1rm": 100.9,
+      "smoothed_1rm": 100.9,
+      "smoothed_1rl": 45.3,
+      "total_load": 400.0,
+      "total_phi": 420.0,
+      "hard_sets": 3.1,
+      "avg_intensity": 0.9904
+    },
+    {
+      "date": "2019-01-06",
+      "session_id": "session_20190106_164006",
+      "sets": 6,
+      "best_weight": 109.0,
+      "best_reps_at_best_weight": 2,
+      "best_pred_1rm": 116.3,
+      "smoothed_1rm": 116.3,
+      "smoothed_1rl": 50.3,
+      "total_load": 1074.7,
+      "total_phi": 1128.4,
+      "hard_sets": 6.3,
+      "avg_intensity": 0.9986
+    }
+  ]
+}

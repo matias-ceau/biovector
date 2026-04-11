@@ -1,0 +1,59 @@
+{
+  "exercise_name": "Sitting Calf Raise",
+  "exercise_id": "L21.0",
+  "exercise_tier": "secondary",
+  "has_params": true,
+  "total_sets": 11,
+  "total_sessions": 3,
+  "date_range": {
+    "first": "2018-06-08",
+    "last": "2018-08-21"
+  },
+  "current_smoothed_1rm": 66.7,
+  "current_smoothed_1rl": 6.7,
+  "all_time_best_pred_1rm": 137.6,
+  "session_series": [
+    {
+      "date": "2018-06-08",
+      "session_id": "session_20180608_114938",
+      "sets": 4,
+      "best_weight": 96.0,
+      "best_reps_at_best_weight": 13,
+      "best_pred_1rm": 137.6,
+      "smoothed_1rm": 137.6,
+      "smoothed_1rl": 13.8,
+      "total_load": 499.2,
+      "total_phi": 524.0,
+      "hard_sets": 4.2,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2018-06-20",
+      "session_id": "session_20180620_063922",
+      "sets": 4,
+      "best_weight": 90.0,
+      "best_reps_at_best_weight": 15,
+      "best_pred_1rm": 135.0,
+      "smoothed_1rm": 135.0,
+      "smoothed_1rl": 13.5,
+      "total_load": 540.0,
+      "total_phi": 567.2,
+      "hard_sets": 4.2,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2018-08-21",
+      "session_id": "session_20180821_140009",
+      "sets": 3,
+      "best_weight": 40.0,
+      "best_reps_at_best_weight": 20,
+      "best_pred_1rm": 66.7,
+      "smoothed_1rm": 66.7,
+      "smoothed_1rl": 6.7,
+      "total_load": 240.0,
+      "total_phi": 252.0,
+      "hard_sets": 3.2,
+      "avg_intensity": 1.0
+    }
+  ]
+}

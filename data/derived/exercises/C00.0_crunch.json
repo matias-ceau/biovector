@@ -1,0 +1,45 @@
+{
+  "exercise_name": "Crunch",
+  "exercise_id": "C00.0",
+  "exercise_tier": "bodyweight",
+  "has_params": true,
+  "total_sets": 5,
+  "total_sessions": 2,
+  "date_range": {
+    "first": "2019-08-02",
+    "last": "2024-04-05"
+  },
+  "current_smoothed_1rm": 28.0,
+  "current_smoothed_1rl": 10.2,
+  "all_time_best_pred_1rm": 28.0,
+  "session_series": [
+    {
+      "date": "2019-08-02",
+      "session_id": "session_20190802_100132",
+      "sets": 4,
+      "best_weight": 0.0,
+      "best_reps_at_best_weight": 30,
+      "best_pred_1rm": 0.0,
+      "smoothed_1rm": 0.0,
+      "smoothed_1rl": 7.3,
+      "total_load": 438.8,
+      "total_phi": 460.8,
+      "hard_sets": 4.2,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2024-04-05",
+      "session_id": "nosess_2024-04-05",
+      "sets": 1,
+      "best_weight": 24.0,
+      "best_reps_at_best_weight": 5,
+      "best_pred_1rm": 28.0,
+      "smoothed_1rm": 28.0,
+      "smoothed_1rl": 10.2,
+      "total_load": 43.9,
+      "total_phi": 46.1,
+      "hard_sets": 1.1,
+      "avg_intensity": 1.0
+    }
+  ]
+}

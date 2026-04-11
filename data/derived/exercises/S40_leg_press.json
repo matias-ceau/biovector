@@ -1,0 +1,45 @@
+{
+  "exercise_name": "Leg Press",
+  "exercise_id": "S40",
+  "exercise_tier": "accessory",
+  "has_params": true,
+  "total_sets": 9,
+  "total_sessions": 2,
+  "date_range": {
+    "first": "2018-08-21",
+    "last": "2019-03-20"
+  },
+  "current_smoothed_1rm": 268.3,
+  "current_smoothed_1rl": 144.6,
+  "all_time_best_pred_1rm": 268.3,
+  "session_series": [
+    {
+      "date": "2018-08-21",
+      "session_id": "session_20180821_140009",
+      "sets": 3,
+      "best_weight": 20.0,
+      "best_reps_at_best_weight": 45,
+      "best_pred_1rm": 50.0,
+      "smoothed_1rm": 50.0,
+      "smoothed_1rl": 47.0,
+      "total_load": 2535.3,
+      "total_phi": 2662.2,
+      "hard_sets": 3.2,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2019-03-20",
+      "session_id": "session_20190320_061505",
+      "sets": 6,
+      "best_weight": 230.0,
+      "best_reps_at_best_weight": 5,
+      "best_pred_1rm": 268.3,
+      "smoothed_1rm": 268.3,
+      "smoothed_1rl": 144.6,
+      "total_load": 3344.4,
+      "total_phi": 3511.6,
+      "hard_sets": 6.3,
+      "avg_intensity": 1.0
+    }
+  ]
+}

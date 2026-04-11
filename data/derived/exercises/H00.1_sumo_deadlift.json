@@ -1,0 +1,73 @@
+{
+  "exercise_name": "Sumo Deadlift",
+  "exercise_id": "H00.1",
+  "exercise_tier": "secondary",
+  "has_params": true,
+  "total_sets": 24,
+  "total_sessions": 4,
+  "date_range": {
+    "first": "2019-04-23",
+    "last": "2021-02-03"
+  },
+  "current_smoothed_1rm": 57.6,
+  "current_smoothed_1rl": 79.9,
+  "all_time_best_pred_1rm": 57.6,
+  "session_series": [
+    {
+      "date": "2019-04-23",
+      "session_id": "session_20190423_194347",
+      "sets": 6,
+      "best_weight": 48.0,
+      "best_reps_at_best_weight": 6,
+      "best_pred_1rm": 57.6,
+      "smoothed_1rm": 57.6,
+      "smoothed_1rl": 74.7,
+      "total_load": 1307.0,
+      "total_phi": 1370.6,
+      "hard_sets": 6.3,
+      "avg_intensity": 0.9304
+    },
+    {
+      "date": "2019-05-17",
+      "session_id": "session_20190517_100052",
+      "sets": 6,
+      "best_weight": 48.0,
+      "best_reps_at_best_weight": 6,
+      "best_pred_1rm": 57.6,
+      "smoothed_1rm": 57.6,
+      "smoothed_1rl": 74.8,
+      "total_load": 1308.7,
+      "total_phi": 1372.5,
+      "hard_sets": 6.3,
+      "avg_intensity": 0.9305
+    },
+    {
+      "date": "2019-07-09",
+      "session_id": "session_20190709_200727",
+      "sets": 6,
+      "best_weight": 48.0,
+      "best_reps_at_best_weight": 6,
+      "best_pred_1rm": 57.6,
+      "smoothed_1rm": 57.6,
+      "smoothed_1rl": 75.8,
+      "total_load": 1327.2,
+      "total_phi": 1391.9,
+      "hard_sets": 6.3,
+      "avg_intensity": 0.9308
+    },
+    {
+      "date": "2021-02-03",
+      "session_id": "session_20210203_193159",
+      "sets": 6,
+      "best_weight": 48.0,
+      "best_reps_at_best_weight": 6,
+      "best_pred_1rm": 57.6,
+      "smoothed_1rm": 57.6,
+      "smoothed_1rl": 79.9,
+      "total_load": 1397.8,
+      "total_phi": 1465.9,
+      "hard_sets": 6.3,
+      "avg_intensity": 0.9303
+    }
+  ]
+}

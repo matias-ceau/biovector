@@ -1,0 +1,73 @@
+{
+  "exercise_name": "Supination Curl",
+  "exercise_id": "U00.4",
+  "exercise_tier": "secondary",
+  "has_params": true,
+  "total_sets": 15,
+  "total_sessions": 4,
+  "date_range": {
+    "first": "2019-01-21",
+    "last": "2019-01-30"
+  },
+  "current_smoothed_1rm": 19.2,
+  "current_smoothed_1rl": 11.5,
+  "all_time_best_pred_1rm": 20.7,
+  "session_series": [
+    {
+      "date": "2019-01-21",
+      "session_id": "session_20190121_151631",
+      "sets": 3,
+      "best_weight": 10.0,
+      "best_reps_at_best_weight": 9,
+      "best_pred_1rm": 13.0,
+      "smoothed_1rm": 13.0,
+      "smoothed_1rl": 7.8,
+      "total_load": 162.0,
+      "total_phi": 170.1,
+      "hard_sets": 3.2,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2019-01-24",
+      "session_id": "session_20190124_150958",
+      "sets": 6,
+      "best_weight": 20.0,
+      "best_reps_at_best_weight": 1,
+      "best_pred_1rm": 20.7,
+      "smoothed_1rm": 20.7,
+      "smoothed_1rl": 12.4,
+      "total_load": 169.8,
+      "total_phi": 178.1,
+      "hard_sets": 6.3,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2019-01-28",
+      "session_id": "session_20190128_210305",
+      "sets": 3,
+      "best_weight": 10.0,
+      "best_reps_at_best_weight": 8,
+      "best_pred_1rm": 12.7,
+      "smoothed_1rm": 19.6,
+      "smoothed_1rl": 11.8,
+      "total_load": 96.0,
+      "total_phi": 0.7,
+      "hard_sets": 0.0,
+      "avg_intensity": 0.5989
+    },
+    {
+      "date": "2019-01-30",
+      "session_id": "session_20190130_152102",
+      "sets": 3,
+      "best_weight": 15.0,
+      "best_reps_at_best_weight": 5,
+      "best_pred_1rm": 17.5,
+      "smoothed_1rm": 19.2,
+      "smoothed_1rl": 11.5,
+      "total_load": 102.0,
+      "total_phi": 75.3,
+      "hard_sets": 2.1,
+      "avg_intensity": 0.7942
+    }
+  ]
+}

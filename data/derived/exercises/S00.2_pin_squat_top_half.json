@@ -1,0 +1,59 @@
+{
+  "exercise_name": "Pin Squat (Top Half)",
+  "exercise_id": "S00.2",
+  "exercise_tier": "secondary",
+  "has_params": true,
+  "total_sets": 20,
+  "total_sessions": 3,
+  "date_range": {
+    "first": "2018-06-20",
+    "last": "2018-07-05"
+  },
+  "current_smoothed_1rm": 149.8,
+  "current_smoothed_1rl": 73.1,
+  "all_time_best_pred_1rm": 149.8,
+  "session_series": [
+    {
+      "date": "2018-06-20",
+      "session_id": "session_20180620_161449",
+      "sets": 8,
+      "best_weight": 130.0,
+      "best_reps_at_best_weight": 1,
+      "best_pred_1rm": 134.3,
+      "smoothed_1rm": 134.3,
+      "smoothed_1rl": 67.4,
+      "total_load": 588.3,
+      "total_phi": 617.9,
+      "hard_sets": 8.4,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2018-06-27",
+      "session_id": "session_20180627_122931",
+      "sets": 8,
+      "best_weight": 139.0,
+      "best_reps_at_best_weight": 1,
+      "best_pred_1rm": 143.6,
+      "smoothed_1rm": 143.6,
+      "smoothed_1rl": 70.0,
+      "total_load": 649.3,
+      "total_phi": 610.4,
+      "hard_sets": 8.0,
+      "avg_intensity": 0.9548
+    },
+    {
+      "date": "2018-07-05",
+      "session_id": "session_20180705_135946",
+      "sets": 4,
+      "best_weight": 145.0,
+      "best_reps_at_best_weight": 1,
+      "best_pred_1rm": 149.8,
+      "smoothed_1rm": 149.8,
+      "smoothed_1rl": 73.1,
+      "total_load": 453.3,
+      "total_phi": 476.0,
+      "hard_sets": 4.2,
+      "avg_intensity": 1.0
+    }
+  ]
+}

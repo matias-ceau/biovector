@@ -1,0 +1,87 @@
+{
+  "exercise_name": "L-sit",
+  "exercise_id": "C06.0",
+  "exercise_tier": "accessory",
+  "has_params": true,
+  "total_sets": 21,
+  "total_sessions": 5,
+  "date_range": {
+    "first": "2018-04-30",
+    "last": "2018-05-28"
+  },
+  "current_smoothed_1rm": 0.0,
+  "current_smoothed_1rl": 1.8,
+  "all_time_best_pred_1rm": 0.0,
+  "session_series": [
+    {
+      "date": "2018-04-30",
+      "session_id": "session_20180430_070008",
+      "sets": 3,
+      "best_weight": 0.0,
+      "best_reps_at_best_weight": 3,
+      "best_pred_1rm": 0.0,
+      "smoothed_1rm": 0.0,
+      "smoothed_1rl": 1.8,
+      "total_load": 13.8,
+      "total_phi": 14.6,
+      "hard_sets": 3.2,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2018-05-07",
+      "session_id": "session_20180507_070004",
+      "sets": 3,
+      "best_weight": 0.0,
+      "best_reps_at_best_weight": 5,
+      "best_pred_1rm": 0.0,
+      "smoothed_1rm": 0.0,
+      "smoothed_1rl": 1.9,
+      "total_load": 22.6,
+      "total_phi": 23.7,
+      "hard_sets": 3.2,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2018-05-14",
+      "session_id": "session_20180514_062615",
+      "sets": 5,
+      "best_weight": 0.0,
+      "best_reps_at_best_weight": 5,
+      "best_pred_1rm": 0.0,
+      "smoothed_1rm": 0.0,
+      "smoothed_1rl": 1.8,
+      "total_load": 23.8,
+      "total_phi": 25.1,
+      "hard_sets": 5.2,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2018-05-21",
+      "session_id": "session_20180521_085506",
+      "sets": 5,
+      "best_weight": 0.0,
+      "best_reps_at_best_weight": 5,
+      "best_pred_1rm": 0.0,
+      "smoothed_1rm": 0.0,
+      "smoothed_1rl": 1.9,
+      "total_load": 37.0,
+      "total_phi": 38.8,
+      "hard_sets": 5.2,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2018-05-28",
+      "session_id": "session_20180528_062551",
+      "sets": 5,
+      "best_weight": 0.0,
+      "best_reps_at_best_weight": 3,
+      "best_pred_1rm": 0.0,
+      "smoothed_1rm": 0.0,
+      "smoothed_1rl": 1.8,
+      "total_load": 22.1,
+      "total_phi": 23.4,
+      "hard_sets": 5.2,
+      "avg_intensity": 1.0
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "exercise_name": "Kneeling Landmine Press",
+  "exercise_id": "P30",
+  "exercise_tier": "secondary",
+  "has_params": true,
+  "total_sets": 15,
+  "total_sessions": 5,
+  "date_range": {
+    "first": "2018-05-23",
+    "last": "2018-07-25"
+  },
+  "current_smoothed_1rm": 53.3,
+  "current_smoothed_1rl": 21.3,
+  "all_time_best_pred_1rm": 63.3,
+  "session_series": [
+    {
+      "date": "2018-05-23",
+      "session_id": "session_20180523_062448",
+      "sets": 2,
+      "best_weight": 50.0,
+      "best_reps_at_best_weight": 8,
+      "best_pred_1rm": 63.3,
+      "smoothed_1rm": 63.3,
+      "smoothed_1rl": 25.3,
+      "total_load": 280.0,
+      "total_phi": 294.0,
+      "hard_sets": 2.1,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2018-05-30",
+      "session_id": "session_20180530_065508",
+      "sets": 2,
+      "best_weight": 40.0,
+      "best_reps_at_best_weight": 10,
+      "best_pred_1rm": 53.3,
+      "smoothed_1rm": 58.0,
+      "smoothed_1rl": 23.2,
+      "total_load": 320.0,
+      "total_phi": 335.6,
+      "hard_sets": 2.1,
+      "avg_intensity": 0.9181
+    },
+    {
+      "date": "2018-06-08",
+      "session_id": "session_20180608_114938",
+      "sets": 3,
+      "best_weight": 40.0,
+      "best_reps_at_best_weight": 10,
+      "best_pred_1rm": 53.3,
+      "smoothed_1rm": 53.3,
+      "smoothed_1rl": 21.3,
+      "total_load": 480.0,
+      "total_phi": 504.0,
+      "hard_sets": 3.2,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2018-06-20",
+      "session_id": "session_20180620_063922",
+      "sets": 3,
+      "best_weight": 50.0,
+      "best_reps_at_best_weight": 8,
+      "best_pred_1rm": 63.3,
+      "smoothed_1rm": 63.3,
+      "smoothed_1rl": 25.3,
+      "total_load": 416.0,
+      "total_phi": 407.4,
+      "hard_sets": 2.9,
+      "avg_intensity": 0.8683
+    },
+    {
+      "date": "2018-07-25",
+      "session_id": "session_20180725_130444",
+      "sets": 5,
+      "best_weight": 40.0,
+      "best_reps_at_best_weight": 10,
+      "best_pred_1rm": 53.3,
+      "smoothed_1rm": 53.3,
+      "smoothed_1rl": 21.3,
+      "total_load": 800.0,
+      "total_phi": 840.0,
+      "hard_sets": 5.2,
+      "avg_intensity": 1.0
+    }
+  ]
+}

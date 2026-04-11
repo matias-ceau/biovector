@@ -1,0 +1,1343 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-04-11T17:25:13Z",
+  "classifications": {
+    "Squat": {
+      "id": "S00",
+      "tier": "major",
+      "has_params": true,
+      "total_sets_in_data": 772,
+      "total_sessions": 142
+    },
+    "Deadlift": {
+      "id": "H00.0",
+      "tier": "major",
+      "has_params": true,
+      "total_sets_in_data": 630,
+      "total_sessions": 114
+    },
+    "Bench Press": {
+      "id": "P01.00",
+      "tier": "major",
+      "has_params": true,
+      "total_sets_in_data": 688,
+      "total_sessions": 125
+    },
+    "Push Up": {
+      "id": "P00.00",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 161,
+      "total_sessions": 31
+    },
+    "Dips": {
+      "id": "P20",
+      "tier": "major",
+      "has_params": true,
+      "total_sets_in_data": 248,
+      "total_sessions": 56
+    },
+    "Chin Up": {
+      "id": "T00",
+      "tier": "major",
+      "has_params": true,
+      "total_sets_in_data": 907,
+      "total_sessions": 188
+    },
+    "Dragon Flag": {
+      "id": "C02.1",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 73,
+      "total_sessions": 10
+    },
+    "Military Press": {
+      "id": "P10.0",
+      "tier": "major",
+      "has_params": true,
+      "total_sets_in_data": 634,
+      "total_sessions": 122
+    },
+    "Neck Curl (Bench)": {
+      "id": "C20.0",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 116,
+      "total_sessions": 32
+    },
+    "Close Grip Bench Press": {
+      "id": "P01.01",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 214,
+      "total_sessions": 52
+    },
+    "Neck Extension (Harness)": {
+      "id": "C21.0",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 100,
+      "total_sessions": 27
+    },
+    "Unilateral Calf Raise (Belt)": {
+      "id": "L20.1",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 25,
+      "total_sessions": 9
+    },
+    "Skullcrusher (Barbell)": {
+      "id": "U10",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 19,
+      "total_sessions": 6
+    },
+    "Lateral Raise (Dumbbell)": {
+      "id": "U20",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 16,
+      "total_sessions": 5
+    },
+    "Block Pinch Hold": {
+      "id": "G20.0",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 230,
+      "total_sessions": 37
+    },
+    "Dumbell Crush": {
+      "id": "G10.1",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 18,
+      "total_sessions": 6
+    },
+    "Wrist Roller": {
+      "id": "G30.0",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 125,
+      "total_sessions": 30
+    },
+    "Wide Pull Up": {
+      "id": "T00.02",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 30,
+      "total_sessions": 3
+    },
+    "Australian Pull Up": {
+      "id": "T10.0",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 79,
+      "total_sessions": 12
+    },
+    "Snatch (Barbell)": {
+      "id": "X01.0",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 6,
+      "total_sessions": 1
+    },
+    "Jackknife Sit Up": {
+      "id": "C02.2",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 61,
+      "total_sessions": 15
+    },
+    "Romanian Deadlift": {
+      "id": "H01.0",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 122,
+      "total_sessions": 14
+    },
+    "Front Squat": {
+      "id": "S10",
+      "tier": "major",
+      "has_params": true,
+      "total_sets_in_data": 470,
+      "total_sessions": 106
+    },
+    "Bulgarian Split Squat": {
+      "id": "S31",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 24,
+      "total_sessions": 6
+    },
+    "Glute Bridge": {
+      "id": "H11.0",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 13,
+      "total_sessions": 3
+    },
+    "Reverse Lunge (Dumbbells)": {
+      "id": "S32",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 14,
+      "total_sessions": 4
+    },
+    "Good Morning": {
+      "id": "H30.0",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 114,
+      "total_sessions": 14
+    },
+    "Ring Dips": {
+      "id": "P21",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 59,
+      "total_sessions": 11
+    },
+    "A9": {
+      "id": "P00.09",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 33,
+      "total_sessions": 5
+    },
+    "Power Clean": {
+      "id": "T20.1",
+      "tier": "major",
+      "has_params": true,
+      "total_sets_in_data": 192,
+      "total_sessions": 28
+    },
+    "L-sit": {
+      "id": "C06.0",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 21,
+      "total_sessions": 4
+    },
+    "Pendlay Row": {
+      "id": "T11.1",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 62,
+      "total_sessions": 15
+    },
+    "Rack Pull (Barbell)": {
+      "id": "T21.0",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 27,
+      "total_sessions": 7
+    },
+    "Shrug (Barbell)": {
+      "id": "T22.0",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 29,
+      "total_sessions": 8
+    },
+    "Reverse Curl (Barbell)": {
+      "id": "U01.0",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 48,
+      "total_sessions": 17
+    },
+    "Bicep Curl (Barbell)": {
+      "id": "U00.0",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 110,
+      "total_sessions": 32
+    },
+    "Nordic Hamstring Curl (Eccentric)": {
+      "id": "L11.1",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 5,
+      "total_sessions": 1
+    },
+    "Pistol Squat": {
+      "id": "S03",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 86,
+      "total_sessions": 19
+    },
+    "Jump Squat": {
+      "id": "S02",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 44,
+      "total_sessions": 9
+    },
+    "Clean and Jerk (Barbell)": {
+      "id": "X00",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 29,
+      "total_sessions": 7
+    },
+    "Bar Hang": {
+      "id": "G01.0",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 256,
+      "total_sessions": 57
+    },
+    "One Arm Chinup (Eccentric)": {
+      "id": "T01.2",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 5,
+      "total_sessions": 2
+    },
+    "Barbell Support": {
+      "id": "G00.0",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 98,
+      "total_sessions": 19
+    },
+    "Barbell Crush": {
+      "id": "G10.0",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 125,
+      "total_sessions": 32
+    },
+    "Zercher Squat (Barbell)": {
+      "id": "S11",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 33,
+      "total_sessions": 8
+    },
+    "Hip Thrust (Barbell)": {
+      "id": "H10.0",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 19,
+      "total_sessions": 7
+    },
+    "Fingertip Hold": {
+      "id": "G21.0",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 76,
+      "total_sessions": 19
+    },
+    "Reverse Wrist Curl": {
+      "id": "G32.0",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 57,
+      "total_sessions": 18
+    },
+    "Wrist Curl": {
+      "id": "G31.0",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 66,
+      "total_sessions": 21
+    },
+    "Nordic Hamstring Curl (Assisted)": {
+      "id": "L11.2",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 43,
+      "total_sessions": 11
+    },
+    "RTO Hold": {
+      "id": "C30.0",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 34,
+      "total_sessions": 7
+    },
+    "Hanging Leg Raise": {
+      "id": "C01.0",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 125,
+      "total_sessions": 24
+    },
+    "Kneeling Landmine Press": {
+      "id": "P30",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 15,
+      "total_sessions": 5
+    },
+    "Side Crunch": {
+      "id": "C05.0",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 5,
+      "total_sessions": 1
+    },
+    "Hanging Knee Raise": {
+      "id": "C01.10",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 147,
+      "total_sessions": 31
+    },
+    "Pull Up": {
+      "id": "T00.1",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 158,
+      "total_sessions": 52
+    },
+    "Cable Twist": {
+      "id": "C04.1",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 41,
+      "total_sessions": 12
+    },
+    "L-sit (Fingertip)": {
+      "id": "C06.1",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 15,
+      "total_sessions": 3
+    },
+    "Zercher Hold": {
+      "id": "C12.00",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 1,
+      "total_sessions": 1
+    },
+    "Unilateral T-Bar Row": {
+      "id": "T12.51",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 15,
+      "total_sessions": 4
+    },
+    "Pin Bench (Top Half)": {
+      "id": "P01.10",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 29,
+      "total_sessions": 4
+    },
+    "Superman": {
+      "id": "C11.0",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 85,
+      "total_sessions": 18
+    },
+    "Single Leg Romanian Deadlift": {
+      "id": "H01.1",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 5,
+      "total_sessions": 2
+    },
+    "One Arm Push Up": {
+      "id": "P00.1",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 8,
+      "total_sessions": 3
+    },
+    "Ab Wheel (Kneeling)": {
+      "id": "C03.1",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 154,
+      "total_sessions": 35
+    },
+    "Sitting Calf Raise": {
+      "id": "L21.0",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 11,
+      "total_sessions": 3
+    },
+    "Pin Squat (Top Quarter)": {
+      "id": "S00.4",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 7,
+      "total_sessions": 1
+    },
+    "Bent Over Row": {
+      "id": "T11.0",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 287,
+      "total_sessions": 52
+    },
+    "Hang Clean (Barbell)": {
+      "id": "T20.2",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 26,
+      "total_sessions": 5
+    },
+    "Push Press": {
+      "id": "P10.2",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 177,
+      "total_sessions": 26
+    },
+    "Kettlebell Swing": {
+      "id": "H20.0",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 496,
+      "total_sessions": 79
+    },
+    "Kettlebell Turkish Get Up": {
+      "id": "X10",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 159,
+      "total_sessions": 36
+    },
+    "Sit Up": {
+      "id": "C00.1",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 43,
+      "total_sessions": 10
+    },
+    "Unilateral Calf Raise (Dumbell)": {
+      "id": "L20.0",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 31,
+      "total_sessions": 6
+    },
+    "Rack Pull (18'')": {
+      "id": "T21.0",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 36,
+      "total_sessions": 6
+    },
+    "One Arm Chin Up (assisted)": {
+      "id": "T01.1",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 7,
+      "total_sessions": 1
+    },
+    "Kroc Row": {
+      "id": "T12.5",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 208,
+      "total_sessions": 49
+    },
+    "Pin Squat (Top Half)": {
+      "id": "S00.2",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 20,
+      "total_sessions": 3
+    },
+    "Side Bend (Dumbell)": {
+      "id": "C05.1",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 12,
+      "total_sessions": 1
+    },
+    "Reverse Curl (Dumbbell)": {
+      "id": "U01.2",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 4,
+      "total_sessions": 1
+    },
+    "Bicep Curl (Dumbbell)": {
+      "id": "U00.1",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 15,
+      "total_sessions": 4
+    },
+    "Hammer Curl (Dumbbell)": {
+      "id": "U02.0",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 4,
+      "total_sessions": 1
+    },
+    "Unilateral Reverse Wrist Curl": {
+      "id": "G32.1",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 4,
+      "total_sessions": 1
+    },
+    "Unilateral Wrist Curl": {
+      "id": "G31.1",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 4,
+      "total_sessions": 1
+    },
+    "Triceps Extension (Dumbbell)": {
+      "id": "U12",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 7,
+      "total_sessions": 2
+    },
+    "Dumbbell Snatch": {
+      "id": "X01.2",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 10,
+      "total_sessions": 1
+    },
+    "Unilateral Military Press": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 17,
+      "total_sessions": 5
+    },
+    "Goblet Squat": {
+      "id": "S12.1",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 22,
+      "total_sessions": 5
+    },
+    "Karwoski Rows": {
+      "id": "T23.1",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 53,
+      "total_sessions": 10
+    },
+    "Snatch Grip Deadlift": {
+      "id": "H03.1",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 93,
+      "total_sessions": 17
+    },
+    "Upper Chest Raise": {
+      "id": "U21",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 2,
+      "total_sessions": 1
+    },
+    "Unilateral Reverse Dumbbell Press": {
+      "id": "P12.1",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 3,
+      "total_sessions": 1
+    },
+    "Reverse Military Press": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 45,
+      "total_sessions": 11
+    },
+    "Zercher Goodmorning": {
+      "id": "H30.1",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 61,
+      "total_sessions": 18
+    },
+    "Box Jump": {
+      "id": "S02.1",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 4,
+      "total_sessions": 2
+    },
+    "Leg Press": {
+      "id": "S40",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 9,
+      "total_sessions": 2
+    },
+    "Leg Extension (Machine)": {
+      "id": "L00.0",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 3,
+      "total_sessions": 1
+    },
+    "Leg Curl": {
+      "id": "L10.1",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 3,
+      "total_sessions": 1
+    },
+    "Lat Pulldown (Single Arm)": {
+      "id": "T03",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 2,
+      "total_sessions": 1
+    },
+    "Russian Twist (Weighted)": {
+      "id": "C04.0",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 17,
+      "total_sessions": 4
+    },
+    "Tricep Pushdown": {
+      "id": "U11",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 32,
+      "total_sessions": 8
+    },
+    "Shrug (Dumbbell)": {
+      "id": "T22.1",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 23,
+      "total_sessions": 7
+    },
+    "Upright Row (Barbell)": {
+      "id": "T23.0",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 46,
+      "total_sessions": 17
+    },
+    "Unilateral Block Pinch Hold": {
+      "id": "G20.1",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 26,
+      "total_sessions": 7
+    },
+    "Hammer Curl (towel)": {
+      "id": "U02.1",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 4,
+      "total_sessions": 1
+    },
+    "Deficit Deadlift": {
+      "id": "H03.0",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 40,
+      "total_sessions": 2
+    },
+    "High Bar Squat": {
+      "id": "S01",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 79,
+      "total_sessions": 5
+    },
+    "Squat (Bodyweight)": {
+      "id": "S12.0",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 85,
+      "total_sessions": 13
+    },
+    "Lying Neck Hold (Barbell)": {
+      "id": "C20.1",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 6,
+      "total_sessions": 1
+    },
+    "Harness Neck Hold (Barbell)": {
+      "id": "C21.2",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 6,
+      "total_sessions": 1
+    },
+    "Finger Pull Up (Crush Grip)": {
+      "id": "G11.0",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 3,
+      "total_sessions": 1
+    },
+    "Rack Row": {
+      "id": "T11.2",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 9,
+      "total_sessions": 2
+    },
+    "T Bar Row": {
+      "id": "T11.3",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 3,
+      "total_sessions": 1
+    },
+    "Bench Press (Dumbbell)": {
+      "id": "P01.2",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 13,
+      "total_sessions": 4
+    },
+    "Seated Reverse Press": {
+      "id": "P11.2",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 5,
+      "total_sessions": 1
+    },
+    "Concentration Curl (Dumbbell)": {
+      "id": "U00.2",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 5,
+      "total_sessions": 1
+    },
+    "Step-up": {
+      "id": "S30",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 30,
+      "total_sessions": 3
+    },
+    "Z Press": {
+      "id": "P11.0",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 6,
+      "total_sessions": 2
+    },
+    "Ring Push Up": {
+      "id": "P00.2",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 3,
+      "total_sessions": 1
+    },
+    "Deadlift High Pull (Barbell)": {
+      "id": "T20",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 7,
+      "total_sessions": 1
+    },
+    "Supination Curl": {
+      "id": "U00.4",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 15,
+      "total_sessions": 4
+    },
+    "Sledegehammer Radial Deviation": {
+      "id": "G33.0",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 6,
+      "total_sessions": 1
+    },
+    "Radial Deviation Curl": {
+      "id": "U00.3",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 3,
+      "total_sessions": 1
+    },
+    "Pronation Curl": {
+      "id": "U01.1",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 3,
+      "total_sessions": 1
+    },
+    "Klokov Press": {
+      "id": "P10.3",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 10,
+      "total_sessions": 2
+    },
+    "Knees to Elbows": {
+      "id": "C07.2",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 13,
+      "total_sessions": 3
+    },
+    "Thruster (Barbell)": {
+      "id": "X02",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 6,
+      "total_sessions": 1
+    },
+    "Hanging Inverted Row": {
+      "id": "T10.1",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 12,
+      "total_sessions": 3
+    },
+    "Back Extension": {
+      "id": "C10.00",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 23,
+      "total_sessions": 8
+    },
+    "Seated Cable Row": {
+      "id": "T12.4",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 12,
+      "total_sessions": 3
+    },
+    "Reverse Hyper": {
+      "id": "H31.0",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 3,
+      "total_sessions": 1
+    },
+    "Captain Knee Raise": {
+      "id": "C01.11",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 12,
+      "total_sessions": 4
+    },
+    "Triceps Pushdown (Cable - Straight Bar)": {
+      "id": "U11.1",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 3,
+      "total_sessions": 1
+    },
+    "Preacher Curl (Barbell)": {
+      "id": "U00.5",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 6,
+      "total_sessions": 2
+    },
+    "Trap Bar Deadlift": {
+      "id": "H02.0",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 9,
+      "total_sessions": 3
+    },
+    "Safety Bar Squat": {
+      "id": "S13",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 11,
+      "total_sessions": 4
+    },
+    "Seated Leg Curl (Machine)": {
+      "id": "L10.0",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 9,
+      "total_sessions": 3
+    },
+    "Lying Neck Curl": {
+      "id": "C20.0",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 3,
+      "total_sessions": 1
+    },
+    "Chest Supported T-Bar Row": {
+      "id": "T13",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 6,
+      "total_sessions": 2
+    },
+    "Hack Squat": {
+      "id": "S41",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 3,
+      "total_sessions": 1
+    },
+    "Military Press (Plate Loaded)": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 3,
+      "total_sessions": 1
+    },
+    "Reverse Plank": {
+      "id": "C11.1",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 18,
+      "total_sessions": 2
+    },
+    "Power Snatch (Barbell)": {
+      "id": "X01.01",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 34,
+      "total_sessions": 5
+    },
+    "Hip Thrust (Bodyweight)": {
+      "id": "H10.1",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 9,
+      "total_sessions": 1
+    },
+    "Sumo Deadlift": {
+      "id": "H00.1",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 24,
+      "total_sessions": 1
+    },
+    "Neutral Bridge Hold": {
+      "id": "C21.1",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 20,
+      "total_sessions": 6
+    },
+    "Inverted Row (Bodyweight)": {
+      "id": "T10.0",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 20,
+      "total_sessions": 8
+    },
+    "Halo": {
+      "id": "C07.1",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 1,
+      "total_sessions": 1
+    },
+    "Floor Press (Barbell)": {
+      "id": "P01.1",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 3,
+      "total_sessions": 1
+    },
+    "Unilateral Kettlebell Swing": {
+      "id": "H20.01",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 55,
+      "total_sessions": 13
+    },
+    "Burpee": {
+      "id": "X11",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 24,
+      "total_sessions": 2
+    },
+    "Crunch": {
+      "id": "C00.0",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 5,
+      "total_sessions": 2
+    },
+    "Overhead Squat": {
+      "id": "S20",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 6,
+      "total_sessions": 2
+    },
+    "Kettlebell Snatch": {
+      "id": "X01.1",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 36,
+      "total_sessions": 7
+    },
+    "Farmer Carry": {
+      "id": "G00.1",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 5,
+      "total_sessions": 1
+    },
+    "Reverse Crunch": {
+      "id": "C02.0",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 48,
+      "total_sessions": 16
+    },
+    "Chin Up (Assisted)": {
+      "id": "T00.01",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 8,
+      "total_sessions": 3
+    },
+    "Rope Climb (legless)": {
+      "id": "T02",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 5,
+      "total_sessions": 2
+    },
+    "Seated Military Press (Barbell)": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 14,
+      "total_sessions": 4
+    },
+    "Tactical Stand Up": {
+      "id": "X12",
+      "tier": "bodyweight",
+      "has_params": true,
+      "total_sets_in_data": 10,
+      "total_sessions": 2
+    },
+    "Military Press (Dumbbell)": {
+      "id": "P12.2",
+      "tier": "accessory",
+      "has_params": true,
+      "total_sets_in_data": 3,
+      "total_sessions": 1
+    },
+    "Band Face Pulls": {
+      "id": "T30.1",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 43,
+      "total_sessions": 7
+    },
+    "Unilateral Overhead Press": {
+      "id": "P12.0",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 3,
+      "total_sessions": 1
+    },
+    "Seated Overhead Press (Barbell)": {
+      "id": "P11.1",
+      "tier": "secondary",
+      "has_params": true,
+      "total_sets_in_data": 3,
+      "total_sessions": 1
+    },
+    "Clean and Jerk": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 10,
+      "total_sessions": 7
+    },
+    "Bicep Curl": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 50,
+      "total_sessions": 20
+    },
+    "Bent Over One Arm Row": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 3,
+      "total_sessions": 2
+    },
+    "Snatch Pull": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 8,
+      "total_sessions": 3
+    },
+    "Hand Gripper": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 38,
+      "total_sessions": 27
+    },
+    "Upright Row": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 40,
+      "total_sessions": 19
+    },
+    "Power Snatch": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 31,
+      "total_sessions": 10
+    },
+    "Snatch": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 10,
+      "total_sessions": 5
+    },
+    "Squat Jump": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 1,
+      "total_sessions": 1
+    },
+    "Hang Clean": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 12,
+      "total_sessions": 7
+    },
+    "Split Jerk": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 26,
+      "total_sessions": 12
+    },
+    "Clean Pull": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 1,
+      "total_sessions": 1
+    },
+    "Hang Snatch": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 18,
+      "total_sessions": 8
+    },
+    "Lunge": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 3,
+      "total_sessions": 1
+    },
+    "Deadlift High Pull": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 1,
+      "total_sessions": 1
+    },
+    "Snatch Sots Press": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 1,
+      "total_sessions": 1
+    },
+    "Dip": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 15,
+      "total_sessions": 10
+    },
+    "Jefferson Curl": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 15,
+      "total_sessions": 15
+    },
+    "Side Bend": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 21,
+      "total_sessions": 15
+    },
+    "Overhead Press": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 12,
+      "total_sessions": 6
+    },
+    "Ab Wheel": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 1,
+      "total_sessions": 1
+    },
+    "Weighted Russian Twist": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 1,
+      "total_sessions": 1
+    },
+    "Standing Calf Raise": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 1,
+      "total_sessions": 1
+    },
+    "Supergripper": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 21,
+      "total_sessions": 6
+    },
+    "KB Belt Curl": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 6,
+      "total_sessions": 2
+    },
+    "Ring Dip": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 9,
+      "total_sessions": 4
+    },
+    "KB Belt Row": {
+      "id": null,
+      "tier": "other",
+      "has_params": false,
+      "total_sets_in_data": 2,
+      "total_sessions": 1
+    }
+  }
+}

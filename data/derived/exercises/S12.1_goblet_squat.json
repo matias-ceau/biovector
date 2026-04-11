@@ -1,0 +1,87 @@
+{
+  "exercise_name": "Goblet Squat",
+  "exercise_id": "S12.1",
+  "exercise_tier": "accessory",
+  "has_params": true,
+  "total_sets": 22,
+  "total_sessions": 5,
+  "date_range": {
+    "first": "2018-06-29",
+    "last": "2022-04-11"
+  },
+  "current_smoothed_1rm": 42.7,
+  "current_smoothed_1rl": 121.3,
+  "all_time_best_pred_1rm": 65.3,
+  "session_series": [
+    {
+      "date": "2018-06-29",
+      "session_id": "session_20180629_151913",
+      "sets": 10,
+      "best_weight": 16.0,
+      "best_reps_at_best_weight": 20,
+      "best_pred_1rm": 26.7,
+      "smoothed_1rm": 26.7,
+      "smoothed_1rl": 119.7,
+      "total_load": 4668.3,
+      "total_phi": 2782.1,
+      "hard_sets": 3.4,
+      "avg_intensity": 0.7301
+    },
+    {
+      "date": "2019-07-12",
+      "session_id": "session_20190712_200716",
+      "sets": 2,
+      "best_weight": 24.0,
+      "best_reps_at_best_weight": 5,
+      "best_pred_1rm": 28.0,
+      "smoothed_1rm": 28.0,
+      "smoothed_1rl": 94.6,
+      "total_load": 811.2,
+      "total_phi": 851.8,
+      "hard_sets": 2.1,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2019-07-13",
+      "session_id": "session_20190713_200615",
+      "sets": 1,
+      "best_weight": 24.0,
+      "best_reps_at_best_weight": 5,
+      "best_pred_1rm": 28.0,
+      "smoothed_1rm": 28.0,
+      "smoothed_1rl": 94.6,
+      "total_load": 405.6,
+      "total_phi": 425.9,
+      "hard_sets": 1.1,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2019-08-21",
+      "session_id": "session_20190821_120325",
+      "sets": 4,
+      "best_weight": 56.0,
+      "best_reps_at_best_weight": 5,
+      "best_pred_1rm": 65.3,
+      "smoothed_1rm": 65.3,
+      "smoothed_1rl": 121.3,
+      "total_load": 1883.2,
+      "total_phi": 1977.4,
+      "hard_sets": 4.2,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2022-04-11",
+      "session_id": "session_20220411_074719",
+      "sets": 5,
+      "best_weight": 32.0,
+      "best_reps_at_best_weight": 10,
+      "best_pred_1rm": 42.7,
+      "smoothed_1rm": 42.7,
+      "smoothed_1rl": 121.3,
+      "total_load": 4074.0,
+      "total_phi": 4275.5,
+      "hard_sets": 5.2,
+      "avg_intensity": 0.9556
+    }
+  ]
+}

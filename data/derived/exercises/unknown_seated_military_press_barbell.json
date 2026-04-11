@@ -1,0 +1,73 @@
+{
+  "exercise_name": "Seated Military Press (Barbell)",
+  "exercise_id": null,
+  "exercise_tier": "other",
+  "has_params": false,
+  "total_sets": 14,
+  "total_sessions": 4,
+  "date_range": {
+    "first": "2019-12-22",
+    "last": "2020-06-23"
+  },
+  "current_smoothed_1rm": 59.2,
+  "current_smoothed_1rl": 0.0,
+  "all_time_best_pred_1rm": 68.8,
+  "session_series": [
+    {
+      "date": "2019-12-22",
+      "session_id": "session_20191222_145538",
+      "sets": 7,
+      "best_weight": 66.0,
+      "best_reps_at_best_weight": 1,
+      "best_pred_1rm": 68.8,
+      "smoothed_1rm": 68.8,
+      "smoothed_1rl": 0.0,
+      "total_load": 1123.0,
+      "total_phi": 0,
+      "hard_sets": 0.0,
+      "avg_intensity": null
+    },
+    {
+      "date": "2020-04-24",
+      "session_id": "session_20200424_075112",
+      "sets": 3,
+      "best_weight": 49.0,
+      "best_reps_at_best_weight": 5,
+      "best_pred_1rm": 57.2,
+      "smoothed_1rm": 57.2,
+      "smoothed_1rl": 0.0,
+      "total_load": 735.0,
+      "total_phi": 0,
+      "hard_sets": 0.0,
+      "avg_intensity": null
+    },
+    {
+      "date": "2020-06-19",
+      "session_id": "session_20200619_120506",
+      "sets": 1,
+      "best_weight": 49.0,
+      "best_reps_at_best_weight": 8,
+      "best_pred_1rm": 62.1,
+      "smoothed_1rm": 62.1,
+      "smoothed_1rl": 0.0,
+      "total_load": 392.0,
+      "total_phi": 0,
+      "hard_sets": 0.0,
+      "avg_intensity": null
+    },
+    {
+      "date": "2020-06-23",
+      "session_id": "session_20200623_074109",
+      "sets": 3,
+      "best_weight": 49.0,
+      "best_reps_at_best_weight": 5,
+      "best_pred_1rm": 57.2,
+      "smoothed_1rm": 59.2,
+      "smoothed_1rl": 0.0,
+      "total_load": 735.0,
+      "total_phi": 0,
+      "hard_sets": 0.0,
+      "avg_intensity": null
+    }
+  ]
+}

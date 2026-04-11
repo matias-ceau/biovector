@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-04-11T17:25:13Z",
+  "pipeline_version": "1.0.0",
+  "total_sets_processed": 11527,
+  "total_sessions": 624,
+  "total_exercises": 191,
+  "exercises_with_timeseries": 154,
+  "last_raw_set_timestamp": 1775601908,
+  "smoothing_half_life_weeks": 8,
+  "min_sessions_for_confidence": 3
+}

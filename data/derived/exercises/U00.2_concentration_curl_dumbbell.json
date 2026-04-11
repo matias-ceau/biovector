@@ -1,0 +1,31 @@
+{
+  "exercise_name": "Concentration Curl (Dumbbell)",
+  "exercise_id": "U00.2",
+  "exercise_tier": "accessory",
+  "has_params": true,
+  "total_sets": 5,
+  "total_sessions": 1,
+  "date_range": {
+    "first": "2018-12-08",
+    "last": "2018-12-08"
+  },
+  "current_smoothed_1rm": 15.0,
+  "current_smoothed_1rl": 9.0,
+  "all_time_best_pred_1rm": 15.0,
+  "session_series": [
+    {
+      "date": "2018-12-08",
+      "session_id": "session_20181208_162431",
+      "sets": 5,
+      "best_weight": 10.0,
+      "best_reps_at_best_weight": 15,
+      "best_pred_1rm": 15.0,
+      "smoothed_1rm": 15.0,
+      "smoothed_1rl": 9.0,
+      "total_load": 450.0,
+      "total_phi": 472.5,
+      "hard_sets": 5.2,
+      "avg_intensity": 1.0
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "exercise_name": "Side Crunch",
+  "exercise_id": "C05.0",
+  "exercise_tier": "bodyweight",
+  "has_params": true,
+  "total_sets": 5,
+  "total_sessions": 1,
+  "date_range": {
+    "first": "2018-05-25",
+    "last": "2018-05-25"
+  },
+  "current_smoothed_1rm": 0.0,
+  "current_smoothed_1rl": 4.2,
+  "all_time_best_pred_1rm": 0.0,
+  "session_series": [
+    {
+      "date": "2018-05-25",
+      "session_id": "session_20180525_062057",
+      "sets": 5,
+      "best_weight": 0.0,
+      "best_reps_at_best_weight": 7,
+      "best_pred_1rm": 0.0,
+      "smoothed_1rm": 0.0,
+      "smoothed_1rl": 4.2,
+      "total_load": 118.0,
+      "total_phi": 124.0,
+      "hard_sets": 5.2,
+      "avg_intensity": 1.0
+    }
+  ]
+}

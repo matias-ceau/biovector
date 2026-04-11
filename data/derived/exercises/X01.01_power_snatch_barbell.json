@@ -1,0 +1,87 @@
+{
+  "exercise_name": "Power Snatch (Barbell)",
+  "exercise_id": "X01.01",
+  "exercise_tier": "secondary",
+  "has_params": true,
+  "total_sets": 34,
+  "total_sessions": 5,
+  "date_range": {
+    "first": "2019-04-05",
+    "last": "2019-08-24"
+  },
+  "current_smoothed_1rm": 62.9,
+  "current_smoothed_1rl": 177.4,
+  "all_time_best_pred_1rm": 66.1,
+  "session_series": [
+    {
+      "date": "2019-04-05",
+      "session_id": "session_20190405_075053",
+      "sets": 9,
+      "best_weight": 60.0,
+      "best_reps_at_best_weight": 1,
+      "best_pred_1rm": 62.0,
+      "smoothed_1rm": 62.0,
+      "smoothed_1rl": 171.5,
+      "total_load": 1321.2,
+      "total_phi": 1387.2,
+      "hard_sets": 9.5,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2019-04-12",
+      "session_id": "session_20190412_075103",
+      "sets": 9,
+      "best_weight": 62.0,
+      "best_reps_at_best_weight": 1,
+      "best_pred_1rm": 64.1,
+      "smoothed_1rm": 64.1,
+      "smoothed_1rl": 174.8,
+      "total_load": 1339.2,
+      "total_phi": 1211.7,
+      "hard_sets": 7.5,
+      "avg_intensity": 0.9032
+    },
+    {
+      "date": "2019-04-19",
+      "session_id": "session_20190419_141322",
+      "sets": 9,
+      "best_weight": 64.0,
+      "best_reps_at_best_weight": 1,
+      "best_pred_1rm": 66.1,
+      "smoothed_1rm": 66.1,
+      "smoothed_1rl": 179.0,
+      "total_load": 1364.4,
+      "total_phi": 1229.8,
+      "hard_sets": 7.4,
+      "avg_intensity": 0.9003
+    },
+    {
+      "date": "2019-06-03",
+      "session_id": "session_20190603_113542",
+      "sets": 5,
+      "best_weight": 58.0,
+      "best_reps_at_best_weight": 1,
+      "best_pred_1rm": 59.9,
+      "smoothed_1rm": 59.9,
+      "smoothed_1rl": 169.2,
+      "total_load": 642.1,
+      "total_phi": 674.2,
+      "hard_sets": 5.2,
+      "avg_intensity": 0.9846
+    },
+    {
+      "date": "2019-08-24",
+      "session_id": "session_20190824_171100",
+      "sets": 2,
+      "best_weight": 59.0,
+      "best_reps_at_best_weight": 2,
+      "best_pred_1rm": 62.9,
+      "smoothed_1rm": 62.9,
+      "smoothed_1rl": 177.4,
+      "total_load": 777.6,
+      "total_phi": 816.4,
+      "hard_sets": 2.1,
+      "avg_intensity": 1.0
+    }
+  ]
+}

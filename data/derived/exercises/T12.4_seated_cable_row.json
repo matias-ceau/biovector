@@ -1,0 +1,59 @@
+{
+  "exercise_name": "Seated Cable Row",
+  "exercise_id": "T12.4",
+  "exercise_tier": "accessory",
+  "has_params": true,
+  "total_sets": 12,
+  "total_sessions": 3,
+  "date_range": {
+    "first": "2019-03-18",
+    "last": "2019-08-06"
+  },
+  "current_smoothed_1rm": 131.8,
+  "current_smoothed_1rl": 92.3,
+  "all_time_best_pred_1rm": 131.8,
+  "session_series": [
+    {
+      "date": "2019-03-18",
+      "session_id": "session_20190318_151824",
+      "sets": 4,
+      "best_weight": 70.0,
+      "best_reps_at_best_weight": 5,
+      "best_pred_1rm": 81.7,
+      "smoothed_1rm": 81.7,
+      "smoothed_1rl": 57.2,
+      "total_load": 770.0,
+      "total_phi": 808.5,
+      "hard_sets": 4.2,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2019-03-21",
+      "session_id": "session_20190321_061328",
+      "sets": 4,
+      "best_weight": 59.0,
+      "best_reps_at_best_weight": 8,
+      "best_pred_1rm": 74.7,
+      "smoothed_1rm": 79.1,
+      "smoothed_1rl": 55.4,
+      "total_load": 1321.6,
+      "total_phi": 1387.2,
+      "hard_sets": 4.2,
+      "avg_intensity": 0.944
+    },
+    {
+      "date": "2019-08-06",
+      "session_id": "session_20190806_105444",
+      "sets": 4,
+      "best_weight": 113.0,
+      "best_reps_at_best_weight": 5,
+      "best_pred_1rm": 131.8,
+      "smoothed_1rm": 131.8,
+      "smoothed_1rl": 92.3,
+      "total_load": 1158.5,
+      "total_phi": 1216.5,
+      "hard_sets": 4.2,
+      "avg_intensity": 1.0
+    }
+  ]
+}

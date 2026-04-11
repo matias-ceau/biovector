@@ -1,0 +1,87 @@
+{
+  "exercise_name": "Wide Pull Up",
+  "exercise_id": "T00.02",
+  "exercise_tier": "bodyweight",
+  "has_params": true,
+  "total_sets": 30,
+  "total_sessions": 5,
+  "date_range": {
+    "first": "2018-04-27",
+    "last": "2018-05-24"
+  },
+  "current_smoothed_1rm": 0.0,
+  "current_smoothed_1rl": 74.9,
+  "all_time_best_pred_1rm": 0.0,
+  "session_series": [
+    {
+      "date": "2018-04-27",
+      "session_id": "session_20180427_120048",
+      "sets": 6,
+      "best_weight": 0.0,
+      "best_reps_at_best_weight": 6,
+      "best_pred_1rm": 0.0,
+      "smoothed_1rm": 0.0,
+      "smoothed_1rl": 74.0,
+      "total_load": 2220.0,
+      "total_phi": 2331.0,
+      "hard_sets": 6.3,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2018-05-03",
+      "session_id": "session_20180503_070015",
+      "sets": 6,
+      "best_weight": 0.0,
+      "best_reps_at_best_weight": 7,
+      "best_pred_1rm": 0.0,
+      "smoothed_1rm": 0.0,
+      "smoothed_1rl": 70.5,
+      "total_load": 2174.7,
+      "total_phi": 2283.3,
+      "hard_sets": 6.3,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2018-05-10",
+      "session_id": "session_20180510_073024",
+      "sets": 6,
+      "best_weight": 0.0,
+      "best_reps_at_best_weight": 7,
+      "best_pred_1rm": 0.0,
+      "smoothed_1rm": 0.0,
+      "smoothed_1rl": 73.0,
+      "total_load": 2487.0,
+      "total_phi": 2611.2,
+      "hard_sets": 6.3,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2018-05-17",
+      "session_id": "session_20180517_064838",
+      "sets": 6,
+      "best_weight": 0.0,
+      "best_reps_at_best_weight": 7,
+      "best_pred_1rm": 0.0,
+      "smoothed_1rm": 0.0,
+      "smoothed_1rl": 74.2,
+      "total_load": 2525.4,
+      "total_phi": 2651.4,
+      "hard_sets": 6.3,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2018-05-24",
+      "session_id": "session_20180524_070628",
+      "sets": 6,
+      "best_weight": 0.0,
+      "best_reps_at_best_weight": 8,
+      "best_pred_1rm": 0.0,
+      "smoothed_1rm": 0.0,
+      "smoothed_1rl": 74.9,
+      "total_load": 2839.2,
+      "total_phi": 2981.4,
+      "hard_sets": 6.3,
+      "avg_intensity": 1.0
+    }
+  ]
+}

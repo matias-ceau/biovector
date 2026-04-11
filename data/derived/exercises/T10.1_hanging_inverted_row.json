@@ -1,0 +1,59 @@
+{
+  "exercise_name": "Hanging Inverted Row",
+  "exercise_id": "T10.1",
+  "exercise_tier": "bodyweight",
+  "has_params": true,
+  "total_sets": 12,
+  "total_sessions": 3,
+  "date_range": {
+    "first": "2019-02-27",
+    "last": "2019-03-11"
+  },
+  "current_smoothed_1rm": 0.0,
+  "current_smoothed_1rl": 71.4,
+  "all_time_best_pred_1rm": 0.0,
+  "session_series": [
+    {
+      "date": "2019-02-27",
+      "session_id": "session_20190227_105229",
+      "sets": 3,
+      "best_weight": 0.0,
+      "best_reps_at_best_weight": 4,
+      "best_pred_1rm": 0.0,
+      "smoothed_1rm": 0.0,
+      "smoothed_1rl": 70.7,
+      "total_load": 748.5,
+      "total_phi": 786.0,
+      "hard_sets": 3.2,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2019-03-06",
+      "session_id": "session_20190306_145237",
+      "sets": 6,
+      "best_weight": 0.0,
+      "best_reps_at_best_weight": 4,
+      "best_pred_1rm": 0.0,
+      "smoothed_1rm": 0.0,
+      "smoothed_1rl": 70.0,
+      "total_load": 926.1,
+      "total_phi": 972.6,
+      "hard_sets": 6.3,
+      "avg_intensity": 1.0
+    },
+    {
+      "date": "2019-03-11",
+      "session_id": "session_20190311_084557",
+      "sets": 3,
+      "best_weight": 0.0,
+      "best_reps_at_best_weight": 4,
+      "best_pred_1rm": 0.0,
+      "smoothed_1rm": 0.0,
+      "smoothed_1rl": 71.4,
+      "total_load": 756.0,
+      "total_phi": 793.8,
+      "hard_sets": 3.2,
+      "avg_intensity": 1.0
+    }
+  ]
+}
