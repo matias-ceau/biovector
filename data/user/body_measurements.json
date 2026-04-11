@@ -1,0 +1,11 @@
+{
+  "body_fat_percentage": [
+    {
+      "date": "2024-02-04",
+      "timestamp": 1707070405.0,
+      "value": 24.5,
+      "unit": "%"
+    }
+  ],
+  "source": "strong_app_measurements_2026-04-11"
+}
