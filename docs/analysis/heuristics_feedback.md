@@ -99,7 +99,7 @@ Your data shows clear pressing declines (Bench -19%, Military Press -12%). Consi
 
 ### 6. Exercise-Specific Δ/κ Calibration
 
-Your exercises.csv shows measured values ("measured by hand", "measured with picture"). Consider:
+Your `data/reference/exercises.json` contains measured values ("measured by hand", "measured with picture"). Consider:
 
 - Documenting your measurement protocol
 - Adding uncertainty estimates (Δ ± error)
