@@ -20,12 +20,12 @@
       "best_weight": 20.0,
       "best_reps_at_best_weight": 45,
       "best_pred_1rm": 50.0,
-      "smoothed_1rm": 50.0,
-      "smoothed_1rl": 47.0,
+      "smoothed_1rm": 0.0,
+      "smoothed_1rl": 0.0,
       "total_load": 2535.3,
-      "total_phi": 2662.2,
-      "hard_sets": 3.2,
-      "avg_intensity": 1.0
+      "total_phi": 0,
+      "hard_sets": 0.0,
+      "avg_intensity": null
     },
     {
       "date": "2019-03-20",

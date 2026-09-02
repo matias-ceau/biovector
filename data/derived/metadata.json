@@ -1,12 +1,13 @@
 {
-  "generated_at": "2026-04-11T18:01:47Z",
-  "pipeline_version": "1.0.0",
-  "total_sets_processed": 11527,
+  "generated_at": "2026-09-02T09:17:32Z",
+  "pipeline_version": "1.1.0",
+  "total_sets_processed": 11543,
   "total_sessions": 624,
   "total_exercises": 191,
   "exercises_with_timeseries": 154,
-  "last_raw_set_timestamp": 1775601908,
+  "last_raw_set_timestamp": 1788299100,
   "smoothing_half_life_weeks": 52,
   "smoothing_floor_ratio": 0.75,
-  "min_sessions_for_confidence": 3
+  "min_sessions_for_confidence": 3,
+  "baseline_max_reps": 12
 }

@@ -9,8 +9,8 @@
     "first": "2021-06-08",
     "last": "2021-07-21"
   },
-  "current_smoothed_1rm": 30.0,
-  "current_smoothed_1rl": 15.0,
+  "current_smoothed_1rm": 19.9,
+  "current_smoothed_1rl": 10.0,
   "all_time_best_pred_1rm": 30.0,
   "session_series": [
     {
@@ -104,12 +104,12 @@
       "best_weight": 15.0,
       "best_reps_at_best_weight": 30,
       "best_pred_1rm": 30.0,
-      "smoothed_1rm": 30.0,
-      "smoothed_1rl": 15.0,
+      "smoothed_1rm": 19.9,
+      "smoothed_1rl": 10.0,
       "total_load": 382.5,
-      "total_phi": 346.6,
-      "hard_sets": 3.2,
-      "avg_intensity": 0.8633
+      "total_phi": 401.5,
+      "hard_sets": 4.2,
+      "avg_intensity": 1.065
     }
   ]
 }

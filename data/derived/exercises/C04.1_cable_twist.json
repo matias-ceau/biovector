@@ -9,8 +9,8 @@
     "first": "2018-05-31",
     "last": "2018-09-17"
   },
-  "current_smoothed_1rm": 44.7,
-  "current_smoothed_1rl": 26.8,
+  "current_smoothed_1rm": 38.4,
+  "current_smoothed_1rl": 23.1,
   "all_time_best_pred_1rm": 45.0,
   "session_series": [
     {
@@ -34,12 +34,12 @@
       "best_weight": 30.0,
       "best_reps_at_best_weight": 15,
       "best_pred_1rm": 45.0,
-      "smoothed_1rm": 45.0,
-      "smoothed_1rl": 27.0,
+      "smoothed_1rm": 40.0,
+      "smoothed_1rl": 24.0,
       "total_load": 630.0,
-      "total_phi": 660.8,
-      "hard_sets": 3.1,
-      "avg_intensity": 0.963
+      "total_phi": 661.5,
+      "hard_sets": 3.2,
+      "avg_intensity": 1.0417
     },
     {
       "date": "2018-06-05",
@@ -48,12 +48,12 @@
       "best_weight": 30.0,
       "best_reps_at_best_weight": 10,
       "best_pred_1rm": 40.0,
-      "smoothed_1rm": 44.9,
-      "smoothed_1rl": 27.0,
+      "smoothed_1rm": 40.0,
+      "smoothed_1rl": 24.0,
       "total_load": 810.0,
-      "total_phi": 686.0,
-      "hard_sets": 6.6,
-      "avg_intensity": 0.7917
+      "total_phi": 846.3,
+      "hard_sets": 8.4,
+      "avg_intensity": 0.8906
     },
     {
       "date": "2018-06-07",
@@ -62,12 +62,12 @@
       "best_weight": 30.0,
       "best_reps_at_best_weight": 10,
       "best_pred_1rm": 40.0,
-      "smoothed_1rm": 44.9,
-      "smoothed_1rl": 26.9,
+      "smoothed_1rm": 40.0,
+      "smoothed_1rl": 24.0,
       "total_load": 720.0,
-      "total_phi": 753.6,
+      "total_phi": 756.0,
       "hard_sets": 4.2,
-      "avg_intensity": 0.8922
+      "avg_intensity": 1.0
     },
     {
       "date": "2018-06-14",
@@ -76,12 +76,12 @@
       "best_weight": 30.0,
       "best_reps_at_best_weight": 10,
       "best_pred_1rm": 40.0,
-      "smoothed_1rm": 44.7,
-      "smoothed_1rl": 26.8,
+      "smoothed_1rm": 40.0,
+      "smoothed_1rl": 24.0,
       "total_load": 540.0,
-      "total_phi": 565.2,
-      "hard_sets": 3.1,
-      "avg_intensity": 0.8955
+      "total_phi": 567.0,
+      "hard_sets": 3.2,
+      "avg_intensity": 1.0
     },
     {
       "date": "2018-06-19",
@@ -90,12 +90,12 @@
       "best_weight": 30.0,
       "best_reps_at_best_weight": 10,
       "best_pred_1rm": 40.0,
-      "smoothed_1rm": 44.6,
-      "smoothed_1rl": 26.8,
+      "smoothed_1rm": 40.0,
+      "smoothed_1rl": 24.0,
       "total_load": 540.0,
-      "total_phi": 565.2,
-      "hard_sets": 3.1,
-      "avg_intensity": 0.8955
+      "total_phi": 567.0,
+      "hard_sets": 3.2,
+      "avg_intensity": 1.0
     },
     {
       "date": "2018-06-26",
@@ -104,12 +104,12 @@
       "best_weight": 30.0,
       "best_reps_at_best_weight": 15,
       "best_pred_1rm": 45.0,
-      "smoothed_1rm": 45.0,
-      "smoothed_1rl": 27.0,
+      "smoothed_1rm": 39.9,
+      "smoothed_1rl": 23.9,
       "total_load": 270.0,
       "total_phi": 283.5,
       "hard_sets": 1.1,
-      "avg_intensity": 1.0
+      "avg_intensity": 1.1297
     },
     {
       "date": "2018-07-26",
@@ -118,12 +118,12 @@
       "best_weight": 30.0,
       "best_reps_at_best_weight": 15,
       "best_pred_1rm": 45.0,
-      "smoothed_1rm": 45.0,
-      "smoothed_1rl": 27.0,
+      "smoothed_1rm": 39.3,
+      "smoothed_1rl": 23.6,
       "total_load": 540.0,
       "total_phi": 567.0,
       "hard_sets": 2.1,
-      "avg_intensity": 1.0
+      "avg_intensity": 1.1441
     },
     {
       "date": "2018-07-30",
@@ -132,12 +132,12 @@
       "best_weight": 30.0,
       "best_reps_at_best_weight": 15,
       "best_pred_1rm": 45.0,
-      "smoothed_1rm": 45.0,
-      "smoothed_1rl": 27.0,
+      "smoothed_1rm": 39.2,
+      "smoothed_1rl": 23.5,
       "total_load": 540.0,
       "total_phi": 567.0,
       "hard_sets": 2.1,
-      "avg_intensity": 1.0
+      "avg_intensity": 1.1489
     },
     {
       "date": "2018-09-04",
@@ -146,12 +146,12 @@
       "best_weight": 30.0,
       "best_reps_at_best_weight": 15,
       "best_pred_1rm": 45.0,
-      "smoothed_1rm": 45.0,
-      "smoothed_1rl": 27.0,
+      "smoothed_1rm": 38.6,
+      "smoothed_1rl": 23.2,
       "total_load": 540.0,
       "total_phi": 567.0,
       "hard_sets": 2.1,
-      "avg_intensity": 1.0
+      "avg_intensity": 1.1638
     },
     {
       "date": "2018-09-10",
@@ -160,12 +160,12 @@
       "best_weight": 30.0,
       "best_reps_at_best_weight": 6,
       "best_pred_1rm": 36.0,
-      "smoothed_1rm": 44.9,
-      "smoothed_1rl": 26.9,
+      "smoothed_1rm": 38.5,
+      "smoothed_1rl": 23.1,
       "total_load": 540.0,
-      "total_phi": 506.0,
-      "hard_sets": 4.7,
-      "avg_intensity": 0.803
+      "total_phi": 566.5,
+      "hard_sets": 5.2,
+      "avg_intensity": 0.9351
     },
     {
       "date": "2018-09-17",
@@ -174,12 +174,12 @@
       "best_weight": 30.0,
       "best_reps_at_best_weight": 5,
       "best_pred_1rm": 35.0,
-      "smoothed_1rm": 44.7,
-      "smoothed_1rl": 26.8,
+      "smoothed_1rm": 38.4,
+      "smoothed_1rl": 23.1,
       "total_load": 450.0,
-      "total_phi": 375.0,
-      "hard_sets": 4.2,
-      "avg_intensity": 0.7836
+      "total_phi": 471.5,
+      "hard_sets": 5.2,
+      "avg_intensity": 0.9091
     }
   ]
 }

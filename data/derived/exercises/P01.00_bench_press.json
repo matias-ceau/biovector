@@ -3,14 +3,14 @@
   "exercise_id": "P01.00",
   "exercise_tier": "major",
   "has_params": true,
-  "total_sets": 688,
-  "total_sessions": 129,
+  "total_sets": 693,
+  "total_sessions": 130,
   "date_range": {
     "first": "2018-02-12",
-    "last": "2026-04-07"
+    "last": "2026-09-01"
   },
-  "current_smoothed_1rm": 102.0,
-  "current_smoothed_1rl": 51.0,
+  "current_smoothed_1rm": 101.7,
+  "current_smoothed_1rl": 50.8,
   "all_time_best_pred_1rm": 135.4,
   "session_series": [
     {
@@ -1686,12 +1686,12 @@
       "best_weight": 70.0,
       "best_reps_at_best_weight": 15,
       "best_pred_1rm": 105.0,
-      "smoothed_1rm": 105.0,
-      "smoothed_1rl": 52.5,
+      "smoothed_1rm": 102.2,
+      "smoothed_1rl": 51.1,
       "total_load": 700.0,
       "total_phi": 711.8,
       "hard_sets": 2.0,
-      "avg_intensity": 0.8992
+      "avg_intensity": 0.9129
     },
     {
       "date": "2024-03-24",
@@ -1703,9 +1703,9 @@
       "smoothed_1rm": 112.0,
       "smoothed_1rl": 56.0,
       "total_load": 680.0,
-      "total_phi": 713.4,
+      "total_phi": 713.7,
       "hard_sets": 2.1,
-      "avg_intensity": 0.9473
+      "avg_intensity": 0.9569
     },
     {
       "date": "2024-04-07",
@@ -1818,6 +1818,20 @@
       "total_phi": 488.0,
       "hard_sets": 2.2,
       "avg_intensity": 0.8085
+    },
+    {
+      "date": "2026-09-01",
+      "session_id": "nosess_2026-09-01",
+      "sets": 5,
+      "best_weight": 70.0,
+      "best_reps_at_best_weight": 4,
+      "best_pred_1rm": 83.3,
+      "smoothed_1rm": 101.7,
+      "smoothed_1rl": 50.8,
+      "total_load": 1150.0,
+      "total_phi": 995.3,
+      "hard_sets": 3.9,
+      "avg_intensity": 0.7811
     }
   ]
 }

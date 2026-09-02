@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "generated_at": "2026-04-11T18:01:47Z",
+  "version": "1.1.0",
+  "generated_at": "2026-09-02T09:17:32Z",
   "classifications": {
     "Squat": {
       "id": "S00",
@@ -13,15 +13,15 @@
       "id": "H00.0",
       "tier": "major",
       "has_params": true,
-      "total_sets_in_data": 630,
-      "total_sessions": 114
+      "total_sets_in_data": 631,
+      "total_sessions": 115
     },
     "Bench Press": {
       "id": "P01.00",
       "tier": "major",
       "has_params": true,
-      "total_sets_in_data": 688,
-      "total_sessions": 125
+      "total_sets_in_data": 693,
+      "total_sessions": 126
     },
     "Push Up": {
       "id": "P00.00",
@@ -34,15 +34,15 @@
       "id": "P20",
       "tier": "major",
       "has_params": true,
-      "total_sets_in_data": 248,
-      "total_sessions": 56
+      "total_sets_in_data": 249,
+      "total_sessions": 57
     },
     "Chin Up": {
       "id": "T00",
       "tier": "major",
       "has_params": true,
-      "total_sets_in_data": 907,
-      "total_sessions": 188
+      "total_sets_in_data": 908,
+      "total_sessions": 189
     },
     "Dragon Flag": {
       "id": "C02.1",
@@ -55,8 +55,8 @@
       "id": "P10.0",
       "tier": "major",
       "has_params": true,
-      "total_sets_in_data": 634,
-      "total_sessions": 122
+      "total_sets_in_data": 636,
+      "total_sessions": 123
     },
     "Neck Curl (Bench)": {
       "id": "C20.0",
@@ -160,8 +160,8 @@
       "id": "S10",
       "tier": "major",
       "has_params": true,
-      "total_sets_in_data": 470,
-      "total_sessions": 106
+      "total_sets_in_data": 473,
+      "total_sessions": 107
     },
     "Bulgarian Split Squat": {
       "id": "S31",
@@ -251,8 +251,8 @@
       "id": "U00.0",
       "tier": "secondary",
       "has_params": true,
-      "total_sets_in_data": 110,
-      "total_sessions": 32
+      "total_sets_in_data": 113,
+      "total_sessions": 33
     },
     "Nordic Hamstring Curl (Eccentric)": {
       "id": "L11.1",
