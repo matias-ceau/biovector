@@ -85,7 +85,8 @@ data/derived/
   "last_raw_set_timestamp": 1744300000,
   "smoothing_half_life_weeks": 52,
   "smoothing_floor_ratio": 0.75,
-  "min_sessions_for_confidence": 3
+  "min_sessions_for_confidence": 3,
+  "baseline_max_reps": 12
 }
 ```
 
@@ -172,6 +173,7 @@ Each set in `enriched_sets.json` is the raw record plus all derived fields. The 
 | `h` | float | `logistic(intensity)`, or `null` if no baseline |
 | `phi` | float | `round(load * h)`, or `null` if no baseline |
 | `is_hard_set` | bool | `h >= 0.5`, or `false` if h is null |
+| `baseline_fallback` | bool | True if this exercise's baseline used the all-sets fallback (no short sets) |
 | `session_id` | string | Matched session ID from sessions.json, or `null` |
 
 ---
@@ -426,6 +428,35 @@ For bodyweight exercises (Chin Up, Dips):
 - `weight` field represents **added weight** (0 for unassisted)
 - `pred_1rm = epley(bw + added_weight, reps)`
 - `load` uses the exercise's delta/rho/theta as normal since bodyweight is already factored in via kappa
+
+### 5.7 Baseline eligibility — short sets only (r ≤ 12)
+
+Epley's linear model is only calibrated in the low-rep range (≤ 10–12 reps).
+Beyond that, prediction variance grows sharply, and since the smoothed baseline
+is a **running maximum**, noisy high estimates from long sets can only push the
+baseline upward — a systematic ratchet effect. Long sets also tend to appear
+first for many accessory exercises, manufacturing an artificial baseline that
+suppresses every future set's intensity (and with a 1-year half-life, the
+damage persists for months).
+
+Therefore, as of pipeline 1.1.0:
+
+- The **official baseline** (`smoothed_1rm` / `smoothed_1rl`) is built only from
+  sets with `reps ≤ 12` (Epley validity zone; `baseline_max_reps` in metadata).
+- **Per-set `pred_1rm` / `pred_1rl` remain computed for every set** (pass 1,
+  unchanged) — the habitual e1RM signal is preserved for post-processing and
+  curve plotting (`1RM` = true singles, `e1RMs` = official short-set baseline,
+  `e1RM` = habitual all-sets estimate).
+- Every set — including long ones — is scored against the official baseline:
+  a long set can be a hard set (h up to the logistic ceiling of 1.05) but can
+  never raise the baseline.
+- **Fallback**: an exercise with *no* short set in its entire history (e.g.
+  grip work always logged at 15–20 reps) has no eligible baseline source. Its
+  baseline is then built from all its sets, every set is flagged
+  `baseline_fallback: true`, and `smoothed_confidence` is forced to `"low"`.
+  The first short set switches the exercise back to the official layer.
+- Sets performed before an exercise's first short set get `smoothed_* = 0.0`
+  and no intensity/h/phi (no official baseline existed yet at that time).
 
 ---
 

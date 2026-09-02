@@ -36,7 +36,7 @@ from biovector.core import epley, logistic
 # Constants
 # ---------------------------------------------------------------------------
 
-PIPELINE_VERSION = "1.0.0"
+PIPELINE_VERSION = "1.1.0"
 
 # EWRM parameters (section 5.2 of DESIGN.md)
 # Decay-to-floor model: strength decays toward FLOOR_RATIO of PR, not toward zero.
@@ -44,6 +44,12 @@ PIPELINE_VERSION = "1.0.0"
 HALF_LIFE_SECONDS = 52 * 7 * 86400  # 52 weeks (1 year) in seconds = 31_449_600
 FLOOR_RATIO = 0.75  # Strength never decays below 75% of a historical PR
 MIN_SESSIONS_FOR_CONFIDENCE = 3  # < 3 → "low", >= 3 → "high"
+
+# Official baseline eligibility (section 5.7 of DESIGN.md): the EWRM baseline is
+# built only from sets within Epley's validity zone. Per-set e1RM is still
+# computed for every set (pass 1); long sets are scored against the official
+# baseline but can never raise it.
+BASELINE_MAX_REPS = 12  # inclusive
 
 # Only exercises with >= 5 sets get a timeseries file
 MIN_SETS_FOR_TIMESERIES = 5
@@ -414,7 +420,20 @@ class DerivedDataPipeline:
             # Ensure chronological order
             indices.sort(key=lambda i: self.enriched_sets[i]["timestamp"])
 
-            # Collect all (timestamp, pred_1rm/pred_1rl) tuples as history
+            # Baseline eligibility (section 5.7): the official baseline is built
+            # only from sets within Epley's validity zone (reps <= BASELINE_MAX_REPS).
+            # If an exercise has no short set at all (e.g. grip work always logged
+            # at 15-20 reps), fall back to all sets with confidence "low" so that
+            # long sets can still be scored as hard sets.
+            has_short_sets = any(
+                self.enriched_sets[i]["reps"] <= BASELINE_MAX_REPS
+                and self.enriched_sets[i]["pred_1rm"] is not None
+                and self.enriched_sets[i]["pred_1rm"] > 0
+                for i in indices
+            )
+            baseline_fallback = not has_short_sets
+
+            # Collect (timestamp, pred_1rm/pred_1rl) tuples as baseline history
             history_1rm: list[tuple[float, float]] = []
             history_1rl: list[tuple[float, float]] = []
             session_count = 0
@@ -431,11 +450,12 @@ class DerivedDataPipeline:
                 pred_1rm: float = s["pred_1rm"]
                 pred_1rl: float = s["pred_1rl"] or 0.0
 
-                # Add current set to history
-                if pred_1rm > 0:
-                    history_1rm.append((ts, pred_1rm))
-                if pred_1rl > 0:
-                    history_1rl.append((ts, pred_1rl))
+                # Add current set to baseline history if eligible (section 5.7)
+                if baseline_fallback or s["reps"] <= BASELINE_MAX_REPS:
+                    if pred_1rm > 0:
+                        history_1rm.append((ts, pred_1rm))
+                    if pred_1rl > 0:
+                        history_1rl.append((ts, pred_1rl))
 
                 # Compute smoothed_1rm as max of all historical effective values
                 smoothed_1rm = 0.0
@@ -462,8 +482,8 @@ class DerivedDataPipeline:
                     session_count += 1
                     last_session_id = current_session
 
-                # Confidence (DESIGN.md section 5.2)
-                if session_count < MIN_SESSIONS_FOR_CONFIDENCE:
+                # Confidence (DESIGN.md sections 5.2 and 5.7)
+                if session_count < MIN_SESSIONS_FOR_CONFIDENCE or baseline_fallback:
                     confidence = "low"
                 else:
                     confidence = "high"
@@ -472,6 +492,8 @@ class DerivedDataPipeline:
                 self.enriched_sets[idx]["smoothed_1rm"] = round(smoothed_1rm, 1)
                 self.enriched_sets[idx]["smoothed_1rl"] = round(smoothed_1rl, 1)
                 self.enriched_sets[idx]["smoothed_confidence"] = confidence
+                if baseline_fallback:
+                    self.enriched_sets[idx]["baseline_fallback"] = True
 
         self.log("  EWRM complete")
 
@@ -840,6 +862,7 @@ class DerivedDataPipeline:
                     "smoothing_half_life_weeks": 52,
                     "smoothing_floor_ratio": FLOOR_RATIO,
                     "min_sessions_for_confidence": MIN_SESSIONS_FOR_CONFIDENCE,
+                    "baseline_max_reps": BASELINE_MAX_REPS,
                 },
                 f,
                 indent=2,
