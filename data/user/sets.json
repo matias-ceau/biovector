@@ -80810,6 +80810,134 @@
       "weight": 0.0,
       "reps": 3,
       "session_name": "B1"
+    },
+    {
+      "timestamp": 1788296400,
+      "exercise_name": "Deadlift",
+      "weight": 100.0,
+      "reps": 11,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1788296580,
+      "exercise_name": "Bench Press",
+      "weight": 50.0,
+      "reps": 20,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1788296760,
+      "exercise_name": "Front Squat",
+      "weight": 60.0,
+      "reps": 5,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1788296940,
+      "exercise_name": "Bicep Curl (Barbell)",
+      "weight": 50.0,
+      "reps": 7,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1788297120,
+      "exercise_name": "Bench Press",
+      "weight": 60.0,
+      "reps": 10,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1788297300,
+      "exercise_name": "Military Press",
+      "weight": 50.0,
+      "reps": 4,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1788297480,
+      "exercise_name": "Bicep Curl (Barbell)",
+      "weight": 50.0,
+      "reps": 6,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1788297660,
+      "exercise_name": "Bench Press",
+      "weight": 70.0,
+      "reps": 3,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1788297840,
+      "exercise_name": "Front Squat",
+      "weight": 50.0,
+      "reps": 8,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1788298020,
+      "exercise_name": "Bench Press",
+      "weight": 70.0,
+      "reps": 4,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1788298200,
+      "exercise_name": "Front Squat",
+      "weight": 50.0,
+      "reps": 8,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1788298380,
+      "exercise_name": "Bench Press",
+      "weight": 70.0,
+      "reps": 3,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1788298560,
+      "exercise_name": "Bicep Curl (Barbell)",
+      "weight": 50.0,
+      "reps": 5,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1788298740,
+      "exercise_name": "Military Press",
+      "weight": 50.0,
+      "reps": 3,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1788298920,
+      "exercise_name": "Chin Up",
+      "weight": 0.0,
+      "reps": 5,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1788299100,
+      "exercise_name": "Dips",
+      "weight": 0.0,
+      "reps": 3,
+      "session_name": "reprise",
+      "notes": ""
     }
   ]
 }
