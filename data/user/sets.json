@@ -80938,6 +80938,78 @@
       "reps": 3,
       "session_name": "reprise",
       "notes": ""
+    },
+    {
+      "timestamp": 1788784800,
+      "exercise_name": "Bench Press",
+      "weight": 70.0,
+      "reps": 10,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1788784950,
+      "exercise_name": "Bench Press",
+      "weight": 70.0,
+      "reps": 6,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1788785100,
+      "exercise_name": "Bench Press",
+      "weight": 70.0,
+      "reps": 6,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1788785250,
+      "exercise_name": "Bench Press",
+      "weight": 70.0,
+      "reps": 6,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1788785400,
+      "exercise_name": "Squat",
+      "weight": 80.0,
+      "reps": 6,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1788785550,
+      "exercise_name": "Squat",
+      "weight": 80.0,
+      "reps": 6,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1788785700,
+      "exercise_name": "Squat",
+      "weight": 80.0,
+      "reps": 6,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1788785850,
+      "exercise_name": "Squat",
+      "weight": 80.0,
+      "reps": 6,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1788786000,
+      "exercise_name": "Military Press",
+      "weight": 50.0,
+      "reps": 8,
+      "session_name": "reprise",
+      "notes": ""
     }
   ]
 }
