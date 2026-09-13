@@ -81010,6 +81010,102 @@
       "reps": 8,
       "session_name": "reprise",
       "notes": ""
+    },
+    {
+      "timestamp": 1789321200,
+      "exercise_name": "Squat",
+      "weight": 90.0,
+      "reps": 6,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1789321309,
+      "exercise_name": "Squat",
+      "weight": 90.0,
+      "reps": 6,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1789321418,
+      "exercise_name": "Squat",
+      "weight": 90.0,
+      "reps": 6,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1789321527,
+      "exercise_name": "Bench Press",
+      "weight": 70.0,
+      "reps": 8,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1789321636,
+      "exercise_name": "Bench Press",
+      "weight": 70.0,
+      "reps": 8,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1789321745,
+      "exercise_name": "Bench Press",
+      "weight": 70.0,
+      "reps": 8,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1789321855,
+      "exercise_name": "Chin Up",
+      "weight": 0.0,
+      "reps": 6,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1789321964,
+      "exercise_name": "Chin Up",
+      "weight": 0.0,
+      "reps": 6,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1789322073,
+      "exercise_name": "Chin Up",
+      "weight": 0.0,
+      "reps": 6,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1789322182,
+      "exercise_name": "Military Press",
+      "weight": 50.0,
+      "reps": 5,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1789322291,
+      "exercise_name": "Military Press",
+      "weight": 50.0,
+      "reps": 5,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1789322400,
+      "exercise_name": "Military Press",
+      "weight": 50.0,
+      "reps": 5,
+      "session_name": "reprise",
+      "notes": ""
     }
   ]
 }
