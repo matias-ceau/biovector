@@ -81106,6 +81106,22 @@
       "reps": 5,
       "session_name": "reprise",
       "notes": ""
+    },
+    {
+      "timestamp": 1789676100,
+      "exercise_name": "Bench Press",
+      "weight": 80.0,
+      "reps": 9,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1789676700,
+      "exercise_name": "Squat",
+      "weight": 80.0,
+      "reps": 12,
+      "session_name": "reprise",
+      "notes": ""
     }
   ]
 }
