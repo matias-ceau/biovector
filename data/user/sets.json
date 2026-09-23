@@ -81122,6 +81122,38 @@
       "reps": 12,
       "session_name": "reprise",
       "notes": ""
+    },
+    {
+      "timestamp": 1790180100,
+      "exercise_name": "Squat",
+      "weight": 90.0,
+      "reps": 10,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1790180400,
+      "exercise_name": "Squat",
+      "weight": 100.0,
+      "reps": 5,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1790180700,
+      "exercise_name": "Military Press",
+      "weight": 50.0,
+      "reps": 10,
+      "session_name": "reprise",
+      "notes": ""
+    },
+    {
+      "timestamp": 1790181000,
+      "exercise_name": "Bicep Curl (Barbell)",
+      "weight": 56.0,
+      "reps": 5,
+      "session_name": "reprise",
+      "notes": ""
     }
   ]
 }
